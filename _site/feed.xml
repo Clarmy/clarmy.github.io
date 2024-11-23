@@ -1,0 +1,1315 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2024-11-24T01:22:12+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Clarmy.me</title><subtitle>一个正在创业的体制外气象 IT 人的博客</subtitle><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><entry><title type="html">传说中的“德尔菲气象定律”真的存在吗？</title><link href="http://localhost:4000/does-delphi-meteo-law-really-exists/" rel="alternate" type="text/html" title="传说中的“德尔菲气象定律”真的存在吗？" /><published>2024-03-12T19:00:00+08:00</published><updated>2024-03-12T19:00:00+08:00</updated><id>http://localhost:4000/does-delphi-meteo-law-really-exists</id><content type="html" xml:base="http://localhost:4000/does-delphi-meteo-law-really-exists/"><![CDATA[<p>如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。</p>
+
+<p>首先，从我们习惯上来说，对于一个陌生的概念，我们会下意识地去搜索百科词条，我们来看一下百度百科在这个概念上的描述：</p>
+
+<p><img src="./1.webp" alt="1" /></p>
+
+<p>可以看到，百度百科对该定律有明确的定义，但是并没有任何引用的链接，没有办法从这里找到这个定律的原始出处。我们再来看该词条的编辑历史：</p>
+
+<p><img src="./2.webp" alt="2" /></p>
+
+<p>可以看到这个词条早在<strong>2011</strong>年就已经创建了，那么我们就从这里获得了一条有用的时间线索。</p>
+
+<p>搜索完百度百科，我们再来搜索一下维基百科：</p>
+
+<p><img src="./3.png" alt="3" /></p>
+
+<p>不好意思，没有相应的词条。有意思的事情出现了，如果德尔菲气象定律是一个来自于西方发达国家的著名经济学定律，那么维基百科为什么会不收录呢？</p>
+
+<p>我们先合理怀疑这是因为语言差异造成的，众所周知，有很多维基百科的词条是没有对应的中文翻译版本的，所以可能是我们用中文搜索所以搜索不到。那么我们现在就把这个定律用英文的形式在维基百科里再做一次搜索：</p>
+
+<p><img src="./4.webp" alt="4" /></p>
+
+<p>哦吼，也没有。</p>
+
+<p>好吧，到这里，我们还可以合理怀疑，这是由于维基百科在模糊搜索匹配上太弱造成的。那我们请出 Google 大法来做搜索：</p>
+
+<p><img src="./5.webp" alt="5" /></p>
+
+<p>根据搜索结果来看，并没有很好匹配的结果，但是 Google 为我们带来了一些新的相关信息：Delphi Method（德尔菲法）。当我们去维基百科搜索这个词条时，它是存在的：</p>
+
+<p><img src="./6.webp" alt="6" /></p>
+
+<p>但是从这个词条的描述来看，它只是一种问卷调查的方法，并没有任何与气象相关的信息，也并没有记述任何与 “98” 相关的描述。</p>
+
+<p>既然我们要考证的德尔菲气象定律与 “98” 这个数字紧密联系，那么我们是不是可以从这个点下手，在搜索时加入“98” 这个关键字：</p>
+
+<p><img src="./7.webp" alt="7" /></p>
+
+<p>结果令人失望，我查看了靠前的几个搜索结果，并没有得到想要的。</p>
+
+<p>到这里，我们已经可以合理怀疑这条所谓的“西方著名的经济学定律”可能并不存在。</p>
+
+<p>我们再回到中文互联网语境下，来根据时间查找这条定律在中文圈里最早的来源。还记得前面百度百科的那个时间线索吗？2011年。我们可以用搜索引擎搜索2011年以前的相关记录：</p>
+
+<p><img src="./8.png" alt="8" /></p>
+
+<p>Google 中最早可以找到一条在 2003 年由新浪新闻发布的文章：</p>
+
+<p><img src="./9.webp" alt="9" /></p>
+
+<p>这条新闻写的出处来自国际先驱导报，但是在网上似乎没有办法找到国际先驱导报里相应的文章。好吧，线索断了，那我们就转战学术圈，毕竟学术圈是相对严谨和负责任的，通常都会注明结论的出处。现在我们去中国知网搜索相关的信息：</p>
+
+<p><img src="./10.webp" alt="10" /></p>
+
+<p>可以看到，知网中收录的相关信息，也是出自2003年，是一篇名为《“德尔菲气象定律”与“气象经济”》的文章，根据知网自动生成的标准引用：</p>
+
+<blockquote>
+  <p>[1]吴伟民.“德尔菲气象定律”与“气象经济”[J].中学政治教学参考,2003(12):54-55.</p>
+</blockquote>
+
+<p>很明显这个“中学政治教学参考”并不是一个气象或者经济学领域的期刊。</p>
+
+<p><img src="./11.webp" alt="11" /></p>
+
+<p>我们再来看看《“德尔菲气象定律”与“气象经济”》这篇文章的具体内容，这篇文章的开头，有这么一段引子：</p>
+
+<blockquote>
+  <p>2003年全国文综考试第39题：以西方气象经济学界流行的“德尔菲气象定律”为材料，揭示了气象与经济之间的关系，并要求学生运用所学的政治知识对“人工增雨”“气象经济”进行分析。“德尔菲气象定律”与“气象经济”有何关联呢？要了解这个问题，先从德尔菲、德尔菲法谈起。</p>
+</blockquote>
+
+<p>哇，又有新的线索产生了，居然是2003年全国文综考试的试题。然后我就直接去搜索这张高考试卷，还真的让我找到了这道题：</p>
+
+<p><img src="./12.webp" alt="12" /></p>
+
+<p>鉴于高考的时间一般是每年的6-7月，因此我们在互联网上无法搜索到在2003年7月之前的任何有关“德尔菲气象定律”的信息，这也和我们实际搜索结果相吻合，因此基本可以断定这个文综考题即为该定律在国内流传的最原始出处。然而，该出处并没有引用任何真实的外文参考文献做支撑，再结合之前在英文语境下的搜索结果，我们大致可以确认“德尔菲气象定律”不是一个来源可靠的定律，很有可能并不真实存在。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。]]></summary></entry><entry><title type="html">优雅地解译机场 METAR 报文</title><link href="http://localhost:4000/elegantly-interpreting-airport-metar-reports/" rel="alternate" type="text/html" title="优雅地解译机场 METAR 报文" /><published>2024-01-31T00:00:00+08:00</published><updated>2024-01-31T00:00:00+08:00</updated><id>http://localhost:4000/elegantly-interpreting-airport-metar-reports</id><content type="html" xml:base="http://localhost:4000/elegantly-interpreting-airport-metar-reports/"><![CDATA[<p>当我们想要获取气象观测数据的时候，除了抓取气象局的网站以外，还可以考虑抓取民航的航空例行天气报告（METAR），METAR 报告是隶属于民航空管局或机场的气象部门（非气象局序列）对机场天气状况的观测报告。这类报告不仅囊括了常规的天气要素，还会对影响飞机起降的特殊天气现象做额外的观测和报告。其观测质量并不逊色于气象局的站点观测，甚至在特殊天气现象的观测质量上要比气象局的观测结果更准确。</p>
+
+<p>而且 METAR 报是全球公开共享的公共数据，在网络上很容易获取。比如我们可以从美国的航空天气网 <a href="https://aviationweather.gov">https://aviationweather.gov</a> 实时获取全球任何国家的国际机场（4F级）的最新 METAR 报文。而民航机场的地理坐标也是公开的，很方便对观测数据的地理坐标做校准。因此 METAR 报文是气象实况观测数据的一个很好的补充，甚至美国的气象预报测评网站 ForecastWatch 也主要使用机场 METAR 报文解析后的数据作为测评的真值。</p>
+
+<p>METAR 报文有着全球统一的格式标准，任何熟悉该格式规则的人，都可以很容易地将原始报文解译成真实的观测数据。当然，为了能更简单和优雅地解译报文，有一些工具可以帮助我们做这一类工作。比如 <code class="language-plaintext highlighter-rouge">metpy.io.parse_metar_to_dataframe</code>，可以把原始报文解译并构建成 DataFrame 对象，有兴趣的朋友可以自己去了解这个函数。</p>
+
+<p>今天我想要介绍的还是自己写的一个解译 METAR/TAF 报文的 Python 扩展包：pymetaf。这个包是很多年前由于工作需要而临时开发的，当时 metpy 还没有开发相关功能的函数。现在虽然 metpy 有解析 METAR 的功能，但是由于 metpy 的 METAR 解译函数在单位等方面并不适合我们国内的使用习惯，因此近期我对 pymetaf 做了一些通用化的调整，让它的解译结果更适合我们中国宝宝体质。</p>
+
+<p>我们可以使用 pip 来安装 pymetaf:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pymetaf
+</code></pre></div></div>
+
+<p>解译的方法也很简单，我们来看一个简单的例子：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pymetaf</span> <span class="kn">import</span> <span class="n">parse_text</span>
+
+<span class="c1"># 一条首都机场在2021年5月发出的真实 METAR 报文
+</span><span class="n">metar_string</span> <span class="o">=</span> <span class="sh">"</span><span class="s">METAR ZBAA 311400Z 01002MPS CAVOK 14/12 Q1009 NOSIG=</span><span class="sh">"</span>
+
+<span class="c1"># 由于 METAR 原始报文不包含年和月的信息，需要手动传入年月信息
+</span><span class="n">data</span> <span class="o">=</span> <span class="nf">parse_text</span><span class="p">(</span><span class="n">metar_string</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>解译后的结果：</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METAR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZBAA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-31T14:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m/s"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gust"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_range"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cavok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility"</span><span class="p">:</span><span class="w"> </span><span class="mi">99999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dew_temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh"</span><span class="p">:</span><span class="w"> </span><span class="mi">1009</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hPa"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cloud"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Clear Sky"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"auto"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>结果是以字典的形式存储的，对于一些未观测或者省略的字段，用空值来填充了。由于该报文发出了 CAVOK 的标志，意思是好天气，因此 visibility 的值会被处理为 99999，它代表的不是缺省，而是能见度无限好。</p>
+
+<p>除了这种很常规的报文解译，它还可以解译一些相对比较特殊的报文结果，例如下面这条报文：</p>
+<blockquote>
+  <p>METAR RCKH 160600Z VRB03KT 2500 SHRA BR SCT003 BKN006 OVC020 26/26 Q1008 TEMPO 5000 -SHRA RMK A2977 RA AMT 5.4MM=</p>
+</blockquote>
+
+<p>这条来自我国台湾地区的高雄国际机场（2021年5月16日），可以看到它与首都机场有一个明显不同的地方是风观测组：VRB03KT，而首都机场的风观测组是 01002MPS。这里第一个不同是单位，高雄机场使用的单位是 KT，即“节”(knot)。在我们的使用习惯里，作为公制单位的 MPS(m/s) 才是主流，因此 pymetaf 会对其做一次单位转换。第二个不同，VRB03KT 中的 VRB 表示不定风向，也就是风速太小了风向不确定或者风向变化过快没有主导风向，对于这种情况 pymetaf 会把风向的结果输出为 None。</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METAR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RCKH"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"auto"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-16T06:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m/s"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gust"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_range"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cavok"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dew_temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh"</span><span class="p">:</span><span class="w"> </span><span class="mi">1008</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hPa"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cloud"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"cloud_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_height_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_mask"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"cloud_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_height_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_mask"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"cloud_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_height_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_mask"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Showers of Rain"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Mist"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>这一条解译的结果多了一些，由于我们对 METAR 解析的首要目标是观测而非预测，所以 pymetaf 会把趋势报（TEMPO后面的部分）剪掉，然后解译前面的部分，天气现象部分，SHRA 对应 Showers of Rain（阵雨），BR 对应 Mist（轻雾）；云组部分，根据 METAR 的标准规范反算出以米为单位的云高 cloud_height，及云覆盖度 cloud_mask，由于原始的云覆盖度是以 FEW/SCT/BKN/OVC 等字符编码表示，它们各自对应一个8分位的覆盖度范围，pymetaf 会对其进行一个标准化处理，输出为 0-1 的小数，以适应常规气象数据的使用习惯。如果报文中出现带有云类型表示的云组，例如 SCT030CB，则它可以解译出 <code class="language-plaintext highlighter-rouge">"cloud_type": "cumulonimbus"</code>。</p>
+
+<p>另外，对于一些自动观测的报文，或者使用英里作为能见度单位的报文，pymetaf 也能轻松处理：</p>
+
+<blockquote>
+  <p>METAR ZYQQ 081700Z AUTO /////MPS //// // ////// M05/M07 Q1006</p>
+
+  <p>METAR KSUA 300715Z AUTO 10SM CLR 12/08 A3013 RMK AO2 T01170076</p>
+</blockquote>
+
+<p>当然，虽然我为该项目编写了一些测试用例，但是依然不能保证遇到一些更特殊的报文会触发某些 BUG。也希望读者朋友们如果使用的话，遇到 BUG 可以给我提一些 Issue。</p>
+
+<p>项目地址：<a href="https://github.com/cnmetlab/pymetaf">https://github.com/cnmetlab/pymetaf</a></p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="python" /><category term="metar" /><summary type="html"><![CDATA[当我们想要获取气象观测数据的时候，除了抓取气象局的网站以外，还可以考虑抓取民航的航空例行天气报告（METAR），METAR 报告是隶属于民航空管局或机场的气象部门（非气象局序列）对机场天气状况的观测报告。这类报告不仅囊括了常规的天气要素，还会对影响飞机起降的特殊天气现象做额外的观测和报告。其观测质量并不逊色于气象局的站点观测，甚至在特殊天气现象的观测质量上要比气象局的观测结果更准确。]]></summary></entry><entry><title type="html">聊一聊机器学习在 WRF 模型上的应用</title><link href="http://localhost:4000/discussing-the-application-of-machine-learning-in-wrf-models/" rel="alternate" type="text/html" title="聊一聊机器学习在 WRF 模型上的应用" /><published>2024-01-24T00:00:00+08:00</published><updated>2024-01-24T00:00:00+08:00</updated><id>http://localhost:4000/discussing-the-application-of-machine-learning-in-wrf-models</id><content type="html" xml:base="http://localhost:4000/discussing-the-application-of-machine-learning-in-wrf-models/"><![CDATA[<p>这是一个粉丝的万事屋的需求，原始需求是这样的：</p>
+
+<blockquote>
+  <p>我的问题是，目前对机器学习在 WRF 模型上的应用有哪些方向？希望您对这方面有了解且能出一期简单的科普</p>
+</blockquote>
+
+<p>要聊这个话题说实话我还是有一些压力，因为实话实说我本身既不是 AI 方面的专家也不是 WRF 方面的专家。而且机器学习对数值预报的辅助应用在行业内也是比较受关注的话题，有很多老师在这个方面也做了一些研究。比如在准备本篇文章的过程中我就拜读了《人工智能技术气候预测应用简介》这篇综述文章，个人觉得论文内容在于机器学习在数值预报的辅助应用的话题上已经介绍得相当全面和深入了，强烈建议对这一话题感兴趣的朋友阅读一下这篇论文。虽然我觉得我肯定不可能写得比这篇论文更好，但是我也不想鸽掉这个需求，所以我就简要聊一下我个人在这个话题上的一些见解，不一定对。</p>
+
+<h2 id="机器学习可以为-wrf-做什么">机器学习可以为 WRF 做什么</h2>
+<p>首先简单介绍一下 WRF，WRF（Weather Research and Forecasting Model） 是一个历史悠久、规模庞大的开源的区域数值天气预报项目（<a href="https://github.com/wrf-model/WRF">https://github.com/wrf-model/WRF</a>），主要由 Fortran 语言编写（项目中还纵跨了 Fortran 语言的多个历史版本），包含了用于大气化学和空气污染建模的 WRF-Chem 及用于水文模拟的 WRF-Hydro 扩展分支，全部代码量约200万行，通常运行需要消耗大量的并行计算资源（CPU）。</p>
+
+<p>粗略地划分，WRF 的预报流程大致分为前处理 -&gt; 模型运算 -&gt; 后处理三大部分。其中模型运算部分是 WRF 运算的核心，它是由复杂的数学运算代码编写的，通常来说 ML（Machine Learning，机器学习）是难以参与其中的，但是上述论文中也提到有人尝试用机器学习方法直接求解数值预报中的偏微分方程，说明这也是一种利用 ML 为数值预报赋能的研究方向。但这明显已经超出了 WRF 的范畴，对于 WRF 这种历史悠久的巨型项目来说，用 ML 方法替换核心求解过程的难度可能要高于新建一个项目推倒重来。</p>
+
+<p>因此在我看来，就 WRF 而言，ML 为其服务的主要关注点可能还是应该放在前处理（这里的前处理不是狭义地单指 WPS，而是模型运算之前的所有流程，包括资料同化）和后处理阶段上。</p>
+
+<h2 id="资料同化">资料同化</h2>
+<p>众所周知，高质量的数值预报离不开资料同化，而资料同化的质量也直接影响着预报的效果。资料同化通俗来说就是利用最新的观测资料对初始预报场做订正，生成一个与真实世界更接近的初始场用于模式预报。资料同化与模型运算是解耦的，有着明确的边界（例如 WRF 框架中有专门的资料同化组件 WRFDA）这也让用机器学习替换原有资料同化的过程从工程上变得相对简单。</p>
+
+<p>目前传统主流方案有集合卡尔曼滤波（EnKF）、3/4D变分（Var）等，这些方案具有比较强的可解释性。但是也有着比较明显的缺点，例如像3D-Var和4D-Var这样的方法在其核心算法中做了线性或准线性的假设，这可能限制了它们捕获非线性系统的能力。另外在计算开销方面，4D-Var需要多次运行模型来计算所需的梯度信息，这可能非常耗时。而像EnKF这样的方法需要维护一个集合，集合的大小和表示可能限制了其能够捕获的不确定性的范围，并且集合成员较多时其运算开销也比较大。</p>
+
+<p>而基于数据驱动的机器学习有着一些天然的优势，比如深度学习模型，特别是神经网络，天然地可以处理高度非线性的关系，这是许多传统方法难以捕获的。此外机器学习方法直接从数据中学习，这意味着它们可能更适合捕获复杂的、从理论上难以建模的大气规律。</p>
+
+<p>近年来，许多学者利用人工智能改进数据同化方法。其中我觉得比较有意思的是伦敦帝国理工的一个学者利用循环神经网络学习数据同化过程，提出了 DDA（Deep Data Assimilation，深度数据同化）2的概念。其他还有一些研究工作的列举可以下面这两篇论文的介绍，由于论文真的写得很好所以在这里我就不再赘述。<em>DOI:10.13878/j.cnki.dqkxxb.20210623003DOI:10.11898/1001-7313.20210101</em></p>
+
+<h2 id="模式后处理">模式后处理</h2>
+<p>模式后处理的分支有很多，比如模式输出后订正，它是目前行业内开展得比较流行的一种技术，这个领域主要是对模式输出的结果做二次订正。实践证明这种技术确实可以有效地提高模式预报的质量。当下比较流行的方案是 MOS（Model Output Statistics），它通过结合数值模型的预测和观测历史数据来纠正和优化模型输出。</p>
+
+<p>MOS 的主要思想是：尽管数值模型可能在某些方面存在偏差或误差，但这些偏差往往是可以预测的。例如，如果一个模型在特定条件下系统性地预测温度偏高，那么可以使用 MOS 技术来纠正这种偏差。</p>
+
+<p>类似地，如果将简单的统计订正方法替换成机器学习的算法，也就成了机器学习模式后处理，或者一种比较新兴的说法是 MOML（Model Output Machine Learning）。我所知道的一个比较典型的例子是国内某气象公司就是基于 XGBoost 的方法做模式后订正，还在某全球气象预报评测的结果中获得了不错的成绩。另据报道，在北京冬奥会期间举办的预报测试比赛中，MOML 算法也取得了不错的成绩。由于模式后订正在研究和工程化上成本较低，易于开展和实施，且效果立竿见影，因此有很多公司和团队在这一领域倾注了不少人力物力。</p>
+
+<p>除了后订正以外，机器学习技术还可以在 WRF 模式输出产品的时空降尺度方面提供帮助。得益于深度学习在图像处理领域取得的进步，人们在“图像超分辨率”或者叫“图像去模糊”技术上已经取得了理想的效果。对于模式输出的格点预报这种“类图”数据，尝试借助图片领域的超分辨率技术获取更高空间分辨率的预报产品。此外，基于 GAN 类神经网络可以开发出善于在预报间隔之间“创作”的模型，从而获取更高时间分辨率且高质量的预报产品，例如将3小时预报变为1小时预报甚至10分钟预报，而这一工作原本通常是由线性插值完成的。</p>
+
+<p>相信未来随着算力的提升和观测数据的增加，基于机器学习的模式后订正还有更多的想象空间。</p>
+
+<h2 id="参考文献延伸阅读">参考文献&amp;延伸阅读</h2>
+<p><em>杨淑贤,零丰华,应武杉等.人工智能技术气候预测应用简介[J].大气科学学报,2022,45(05):641-659.DOI:10.13878/j.cnki.dqkxxb.20210623003.</em></p>
+
+<p><em>孙健, 曹卓, 李恒, 等. 人工智能技术在数值天气预报中的应用. 应用气象学报, 2021, 32(1): 1-11. DOI:  10.11898/1001-7313.20210101.</em></p>
+
+<p><em>Arcucci, R.; Zhu, J.; Hu, S.; Guo, Y.-K. Deep Data Assimilation: Integrating Deep Learning with Data Assimilation. Appl. Sci. 2021, 11, 1114. https://doi.org/10.3390/app11031114</em></p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="python" /><summary type="html"><![CDATA[这是一个粉丝的万事屋的需求，原始需求是这样的：我的问题是，目前对机器学习在 WRF 模型上的应用有哪些方向？希望您对这方面有了解且能出一期简单的科普]]></summary></entry><entry><title type="html">聊一聊最近 AI 技术给气象工作者带来的焦虑</title><link href="http://localhost:4000/discussing-the-anxiety-among-meteorologists-due-to-recent-ai-technologies/" rel="alternate" type="text/html" title="聊一聊最近 AI 技术给气象工作者带来的焦虑" /><published>2023-09-20T00:00:00+08:00</published><updated>2023-09-20T00:00:00+08:00</updated><id>http://localhost:4000/discussing-the-anxiety-among-meteorologists-due-to-recent-ai-technologies</id><content type="html" xml:base="http://localhost:4000/discussing-the-anxiety-among-meteorologists-due-to-recent-ai-technologies/"><![CDATA[<p><em>如果把数值天气预报与人工智能预报技术的 PK 比作一把王者荣耀，那毫无疑问人工智能队已经拔掉了二塔。</em></p>
+
+<p>自从盘古气象模型点爆气象圈子以后，各种 AI 预报模型就像雨后春笋一样遍地开花，名字起得好听不说，还争相上了《Nature》。这些 AI 预报模型在赚足了眼球的同时，也迎来了业内的一些质疑，而 AI 预报模型的盛行也真真切切地让很多气象工作者感到焦虑，甚至有一些博主喊出了“留口饭吃”的口号。很多行业专家、学者、KOL都在热烈讨论 AI 预报的这个话题。我也看了很多观点，有一些感触，所以也想就着话题的热度，聊一聊我的看法。</p>
+
+<h2 id="这次为什么不一样">这次为什么不一样？</h2>
+<p>说起来 AI 技术在气象领域的应用那可不是新鲜事，得有一些年头了。就据我所知，市面上叫得出名字的短临预报产品，无一例外都是基于神经网络实现的。不管是彩云还是墨迹的分钟级降水预报早在七八年前就已经面世了，而且这么多年过来也比较受业内认可。并没有觉得给气象工作者带来了多么强烈的焦虑感，但为什么今年这一波会给行业内造成如此强烈的心理冲击？</p>
+
+<p>关键词在于“替代性”。</p>
+
+<p>之所以 AI 短临大行其道的时候人们并没有那么强的焦虑，是因为 AI 技术在短临上的应用属于是一种空白的填补，而并不会替代什么原有的岗位。</p>
+
+<p>用过数值预报产品的人都知道，数值预报的时效性是一个硬伤，就拿 NCEP-GFS 和 ECMWF 的数值预报产品为例，前者发布的平均延迟4小时，后者平均7小时。也就是说，它今天早上8点做的预报，你最早得到下午2、3点才能拿到结果。这中间的几个小时实质上是无效预报，但是由于其求解的逻辑限制，你也不能跳过。</p>
+
+<p>而且我们所见到的主流的数值预报产品，最高的时间颗粒度就是1小时间隔，想要制作分钟级的预报以现在的算力和代码架构在工程上根本不可能实现。</p>
+
+<p>所以，一直以来数值预报都没有能力吃到 0-6 小时短临预报这块蛋糕，市面上 AI 短临预报的出现也是填补了数值预报无能为力的这部分空白，它是从无到有的一个过程，也就几乎不会对原有体系造成很大的冲击。</p>
+
+<p>而盘古不一样，它从出现的那一刻就自带了“踢馆”属性。</p>
+
+<p>我记得在去年盘古刚开始立项的时候就已经对外放出消息，要在天气预报领域搞事情。而从结果来看盘古的目标也很明确，初来乍到就是要在数值预报的地盘跟数值预报最强的对手板板手腕，于是它真的直接就去欧洲数值预报中心“踢馆”了，我猜想华为是想来一场气象界的“AlphaGO对战李世乭”的戏码，搞个大新闻。结果大家也都知道了，不仅搞了大新闻，也差点把气象工作者的心态搞崩了。</p>
+
+<p>就目前的现状来说，ECMWF 几乎已经成了业内大部分人的一种“技术信仰”，它的很多产品已经成了气象数值预报领域实质上的标杆。很多机构研发团队在自研格点预报产品以后，也都会去跟 EC 的预报做做对比。所以在这么一个大背景下，盘古对 EC 的冲击，毫无疑问会也会对业界的研发工作者产生心理冲击。</p>
+
+<p>排除技术信仰的因素不说，盘古的预报形式，本质上也就是在以替代数值预报为目的的，它能用排列组合的方式灵活地制作出1小时、3小时、6小时、12小时和24小时间隔的预报，这些都是模仿数值预报的预报间隔，并且运行效率还出奇的快，工程上能极大地减少无效预报的时间，而准确率还与数值预报有得一拼，甚至它可以直接在个人电脑上运行。</p>
+
+<p>简直就是天气预报的卷王。职场上冒出来一个显眼包大家会不喜欢，那预报界来这么一个卷王，谁能受得了啊？所以从现实利益和心理情感的双重角度来看，盘古的出现必然也会受到行业内一定程度的抵制，大家即使嘴上不说，心理也会不服气。</p>
+
+<p>因此对于 AI 预报的质疑声不断出现，比如大家质疑声中出现频率最高的，就是预报的可解释性。</p>
+
+<h2 id="ai-可解释性问题">AI 可解释性问题</h2>
+<p>AI 的可解释性问题并不是气象预报才有，它是一个“历史悠久”的问题，几乎是与 AI 科学相伴而生的，甚至已经逐渐成了 AI 的一种“原罪”，有很多学者在这个问题上写了不少论文。所以我们首先要承认的是：AI 天气预报结果的可解释性的问题确实存在，并且会长期存在，且难以解决。</p>
+
+<p>但同时我的另一个观点是：即使可解释性不明，但也不会阻碍它在应用领域的发展。就好像目前理论量子力学还有很多问题没有完全搞清楚，但也并不影响量子计算机的研发一样的道理。</p>
+
+<p>在我看来，可解释性问题可能并不是“可不可解释”的问题，而是“我们是否具备了解释能力”的问题。</p>
+
+<p>任何显性的知识都是经历了现象 -&gt; 规律 -&gt; 理论 -&gt; 知识的过程，现代气象科学发展这一两百年时间，几乎所有写到课本里的知识都是从“无法解释”到“可解释”的，如果因为观察到的现象“无法解释”就抵制、排斥，那气象学早就不存在了。所以“可解释性问题”并不应该是 AI 的原罪，而应该是我们发现更大世界总结更多规律获取更多知识的机会。</p>
+
+<p>此外，从现实意义出发，如果我们挣脱“可解释性问题”的枷锁，真真切切能够获得好处和实惠，那又何乐而不为呢？几千年前的老祖宗不知道大气的确切运行原理，但也不妨碍他们利用气候规律发展出发达的农耕文明，一样的道理。</p>
+
+<p>如果我们经过实测 AI 预报的效果确实更好，那么就利用它的优势创造价值就好了，至于其中难以解释的原因，可以留给未来无聊的人生慢慢探索。</p>
+
+<p>可能有人要问了，如果连内在原理都不知道，完全就是一个黑箱，那这预报的结果可信吗？敢用吗？</p>
+
+<p>我的观点是不管黑猫白猫，抓到耗子就是好猫。对于预报结果可信不可信的评判，主要还是应该取决于长期的测评结果，而不应该取决于内在原理是否透明。古代的人不知道万有引力定理，但也不妨碍他们笃信抛到空中的物体一定会落到地面，这就是长期稳定观察得到的结果。所以不管是什么算法，只要它实际测试的预报效果好，并且是长期稳定地好，那当然可以相信，也可以放心地使用。</p>
+
+<p>对于可解释性问题，还有一个观点认为 AI 的黑盒特性会造成其持续发展的路径不清晰，效果好也许只是撞大运。</p>
+
+<p>聊到这里，我想起来之前看到一篇文章中一个有趣的比喻：</p>
+
+<p>“看！我发明了汽车，它跑得比马快！” VS “看！我家骡子吃错了药，它跑得比马快！”</p>
+
+<p>原作者认为盘古当前的表现可能是上述这两种情况中的一种，并且认为我们所需要的是前一种而非后一种。</p>
+
+<p>首先这个例子里前一句是一个后入为主的比喻，它是以现代人已经普遍认知“汽车”概念以后再用回顾古代的方式叙述的。而如果真的让当时一个不知汽车为何物的人来描述，它的说法大概应该是：</p>
+
+<p>“看！我家铁皮通了汽，它跑得比马快！”</p>
+
+<p>如果用这种说法，给人的直观感觉似乎也并不比骡子吃错药好到哪去。当然我在这里并不是想咬文嚼字，而是当我们把二者拉到同一起跑线以后再看这个问题，才更公平。</p>
+
+<p>从实用主义的角度考虑，如果我们首要考虑的是速度，无论是吃错药的骡子还是通汽的铁皮，都是OK的，甚至我们应该让吃药的骡子和通汽的铁皮也比一场，才能最终得出哪个是我们所想要的，不论谁胜出，我们都去用更好的那个就好了。</p>
+
+<p>而且 AI 技术是一个动态发展自我迭代的过程，每年有成百上千的论文发表，也提出了大量的模型方案，这其中必然有吃错药的骡子也有通汽的铁皮，我们只需要在不断试错中淘汰掉那些掉队的骡子，而筛选出我们想要的“汽车”就行了，所以用汽车骡马论来质疑 AI 预报潜力在我看来也是不成立的。</p>
+
+<p>再说回实用主义，在计算机领域，有一个非常有名的命题叫“鸭子类型”，它的描述很有趣：“如果一个实体它叫声像鸭子，走路像鸭子，那它就是鸭子。”乖乖，只要符合我的需求，连鸭子是不是真的都不在乎，也从侧面也可以看出实用主义在计算机领域是多么的普遍，所以永远不要低估一个工程师对实用主义的追求程度，而如今的 AI 技术也确实是在这样一群信奉实用主义的人的手底下成长起来的。</p>
+
+<p>事实上，AI 科学能发展到今天这种程度，巨量的资金砸向这个领域，也都是拜实用主义所赐，如果每个投资人都是追求“可解释性”的严厉学者，那这个行业早就胎死腹中了。</p>
+
+<h2 id="ai-是否会替代数值预报">AI 是否会替代数值预报</h2>
+
+<p>还记得文章开头那个比喻吗？</p>
+
+<blockquote>
+  <p>如果把数值天气预报与人工智能预报技术的 PK 比作一把王者荣耀，那毫无疑问人工智能队已经拔掉了二塔。</p>
+</blockquote>
+
+<p>之所以说 AI 只拔了二塔，是因为目前以盘古为首的各种 AI 大模型虽然取得了一定程度的成功，但是由于它在数据的种类的丰富度上并不能完全覆盖 NWP（Numerical Weather Prediction，数值天气预报，下同）的预报要素，所以 AI 预报目前仍然不具备完全替代 NWP 的实力，但是逐渐蚕食的过程已经在进行之中了。</p>
+
+<p>很多人认为目前的 AI 模型严重依赖再分析数据，而再分析数据是 NWP 体系下资料同化的产品，所以当下的 AI 模型预报也不是真正独立于 NWP 的体系，而是寄生于 NWP 体系的一个分支。这个观点乍一看确实没有问题，因为从现在公开的资料来看，AI 预报大模型的训练数据几乎无一例外都是用 ERA5 数据作为训练集的。但问题是目前 AI 模型训练之所以都用 ERA5 再分析数据，是因为真实观测数据极度缺乏，除了 ERA5 几乎没有其他可选项。如果把 AI 天气大模型比作是一个婴儿，那 ERA5 就是它的婴儿车，而标志婴儿长大第一件事就是丢弃婴儿车。所以你怎么确定 AI 未来在真实观测数据充足的情况下，不能憋个大招来一个彻彻底底的端到端预报呢？如果你认为 AI 永远都离不开再分析数据，那格局就有点小了。</p>
+
+<p>而且，说现在 AI 预报模型依赖再分析数据也不完全准确，因为从工程的角度来说，现在的模型在推理阶段实质上是与数据来源无关的，只要它的输入是按照预先设定好的变量种类顺序、维度组织的多维数组，就可以执行推理，它并不在乎输入的矩阵是来自什么机构的什么产品，不同的矩阵输入大概就类似于原装电池和山寨电池的区别，现在也有很多人在尝试用多种不同来源的输入场来驱动盘古以比较其预报效果。所以这些模型严格意义上并不是被卡脖子的技术。</p>
+
+<p>从长远来看，我认为 AI 大概率是能够替代 NWP 的，而且是全链路的替代，包括资料同化。或者换一种说法，AI 最终追求的将是前面提到的端到端预报，也就是直接给模型输入非标准化的观测资料，模型直接吐出最终的预报结果，把同化和预报的界限打破，最终形成一套完全独立于 NWP 的预报体系，这几乎是 AI 进化的一个必经之路。</p>
+
+<p>当 AI 的模型真的实现了这种端到端预报，并且预报效果能追平 NWP。那就说明 AI 预报已经从婴儿车里跳了出来，可以独立行走了。到那个时候，直接的面对面竞争才算真正开始。</p>
+
+<p><em>而到那个时候，AI 就攻上了高地。</em></p>
+
+<h2 id="ai-预报的阶段性展望--nwp-还有什么机会">AI 预报的阶段性展望 &amp; NWP 还有什么机会</h2>
+<p>从短期来看（未来1年以内），除了更多基于 ERA5 的同质化模型跳出来发论文以外，应该不会有太多亮眼的新闻。可能比较值得期待的是国家队的表现，事实上现在这些模型无一例外都是基于欧洲的 ERA5 数据做的训练，而国家队实际上手里还握着比 ERA5 质量更好（中国区）的再分析数据 CRA40 没有放出来。如果能够以这套再分析做训练，是否可以得到更好的结果？值得期待。</p>
+
+<p>从中期来看（未来1-5年），一定会陆陆续续出现独立于 NWP 体系的端到端 AI 预报大模型出来，各方应该都在憋大招，就看谁先放出来了。保守估计这个时间可能会在一年到一年半之间。</p>
+
+<p>从长期来看（未来5-10年），NWP 将迎来与 AI 的直接竞争，并且 AI 模型可以凭借其数据驱动的灵活性，在资料同化、常规预报、气候预测、后处理、质控等气象预报的各个阶段和细分领域大放异彩，同时它也会不断在更终端的位置补齐从气象数据到用户真实需求的最后一公里，从而在气象的长尾市场里攻城略地，最终成为行业的主流方案。</p>
+
+<p>上个月跟一个朋友骑车的时候聊过 AI 与 NWP 竞争的话题。他的一个观点我觉得是挺有道理的。他认为对于 NWP 来说，只要能够提高运算效率，计算速度能达到与 AI 的运算相同量级，那么 NWP 也是未来可期的。</p>
+
+<p>事实上，确实有人在这方面做努力，比如我们都认识的一个前同事，就正在一家云计算公司里研发改造 WRF 让其在 GPU 上运行的项目，而且据说已经有所突破。</p>
+
+<p>假如说，当 NWP 能够利用 GPU 实现计算性能大幅提升，提升到与 AI 的计算性能相当的水平，那未来的结局可能还真未可知。当然，即使最终 NWP 在业务预报领域难以抵挡 AI 预报的竞争，也并不意味着它没有任何生存空间。</p>
+
+<p>打个不那么恰当的比方，我们可以认为 NWP 是在追求一种数学上完美的解析解（推导过程），而 AI 是通过不断迭代试错寻求一种近似值的数值解（无需推导）。众所周知，数学上大多数方程都是没有解析解的，在应用数学和工程领域，数值解才是主流。</p>
+
+<p>那么同理 NWP 其实更适合在理论研究领域发挥作用，它可以用于对各种气象假说或猜想的计算机模拟验证，这一点是 AI 模型所无法做到的（黑盒）。所以学术研究将是 NWP 的一块无人能撼动的自留地。</p>
+
+<h2 id="人生苦短我用-ai">人生苦短，我用 AI</h2>
+<p>我认为气象工作者并不需要焦虑，因为 AI 技术最终会是一种普惠的技术。它并不会让你失业，相反，它会让你工作得更幸福。</p>
+
+<p>举个例子，比如说程序员，ChatGPT 出来以后，很多人也说程序员要被替代了。但从我的观察来看这件事似乎并没有发生，反而程序员们在 Copilot 的“按摩”下过上了神仙般的日子。</p>
+
+<p>你可以想象一下，未来某个团队，基于开源大语言模型，加上几乎全部的天气过程分析的论文再加上全部的气象教材做语料，同时结合标签化的观测数据做多模态训练，训练了一个叫“首席”的 AI 模型，他每天自己去把观测数据拿下来，然后给你一通分析，最后把天气分析报告和结论都给你写好了，你只需要看一看没啥问题签个字然后发布就行了，这日子不美吗？而这个“首席”模型不也正是预报员真实需求的“最后一公里”吗？</p>
+
+<p>AI 无法替代人的一个最重要的现实因素是，AI 不能作为责任体来承担责任，通俗来讲就是“AI不粘锅定理”，气象行业是一个需要背锅的行业，AI 没有软肋，不领工资，无法开除，你能让它背锅？所以说气象工作者还是无法替代的。</p>
+
+<p>最后，人生苦短，用上 AI 好好享受生活它不香吗？</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[自从盘古气象模型点爆气象圈子以后，各种 AI 预报模型就像雨后春笋一样遍地开花，名字起得好听不说，还争相上了《Nature》。这些 AI 预报模型在赚足了眼球的同时，也迎来了业内的一些质疑，而 AI 预报模型的盛行也真真切切地让很多气象工作者感到焦虑，甚至有一些博主喊出了“留口饭吃”的口号。很多行业专家、学者、KOL都在热烈讨论 AI 预报的这个话题。我也看了很多观点，有一些感触，所以也想就着话题的热度，聊一聊我的看法。]]></summary></entry><entry><title type="html">漫谈面向对象编程</title><link href="http://localhost:4000/rambling-about-object-oriented-programming/" rel="alternate" type="text/html" title="漫谈面向对象编程" /><published>2023-04-24T19:00:00+08:00</published><updated>2023-04-24T19:00:00+08:00</updated><id>http://localhost:4000/rambling-about-object-oriented-programming</id><content type="html" xml:base="http://localhost:4000/rambling-about-object-oriented-programming/"><![CDATA[<p><em>任何计算机问题都可以通过加一层来解决，如果解决不了，那就再加一层。</em></p>
+
+<p>如果有人问我怎么解释面向对象编程，我感觉我很难用一句言简意赅的话来回答，但如果一定要试着解释，我可能会说：“面向对象编程是一种在代码中模拟现实世界的编程理念，它是把程序里的逻辑实体当做物体来组织它们的关系并处理问题的方法论。”</p>
+
+<p>显然这不是一句人话，可能有些人还会认为这种解释是故弄玄虚，因为直觉告诉我们，如果一个人不能用一句言简意赅的话来总结一个理论，那么他可能根本就没有搞懂这个理论。我不敢说现在的自己对面向对象编程的理解有多么的深，但是我觉得我还是可以阐述一下我的浅薄理解。既然一句话说不清，那我们就来一场漫谈吧。</p>
+
+<h2 id="从抽象谈起">从抽象谈起</h2>
+<p>我先用一个例子来开始这段漫谈，假如我说我要做以下这些事：</p>
+
+<p>拿出一瓶矿泉水。
+拧开瓶盖。
+把瓶口对准嘴巴。
+抬起瓶底让水从瓶口流进嘴里。
+把进入嘴里的水咽下。
+把瓶底放低让剩下的水流回瓶里。
+拧上瓶盖。
+你看我说这些可能要急死，不就是“喝水”吗，干嘛要说得这么啰嗦。是的，对于一个正常人类来说，没有人会罗列上面的一系列动作来描述喝水，只会用“喝水”这种词语来描述这一系列动作。其实这个过程就是一种 <strong>抽象</strong> ，即把上面的一系列动作抽象为“喝水”这个概念，而人类的思维习惯是建立在抽象概念上的。</p>
+
+<p>正是因为有了抽象，我们才能从琐碎的具体步骤中解放出来，来思考和解决逻辑复杂度更高的问题，而且越复杂的逻辑必然抽象的程度越高。但是在编程领域，计算机没有人类抽象的意识，我们必须要用具体的指令来指挥它做事。那么在编程的时候有没有什么方法能既满足人类的逻辑习惯，又能指挥计算机正确地做事呢？这就需要我们首先做一件事：<strong>封装</strong>。</p>
+
+<h2 id="封装与继承">封装与继承</h2>
+<p>我认为广义的封装可以概括为 <strong>隐藏具体，暴露抽象</strong>  ，比如喝水的例子，我们把喝水的步骤聚集在一起统一起个名字叫做“喝水”，以后任何人都用“喝水”这个词来交流，隐藏了内部具体步骤，这就是一种封装。</p>
+
+<p>在编程的时候，封装无处不在，甚至我们日常使用的各种高级语言本身就是在底层语言基础上层层封装而来的。在我们编写逻辑代码的时候，如果某一段代码可以概括为一件事情，那么为了抽象和代码重用，我们通常会把它定义为一个 <strong>函数</strong> ，而这个函数的调用参数和返回规则这种与外界交互的东西，也就是我们经常说到的 <strong>接口</strong> 。</p>
+
+<p>当我们我们写了一堆函数以后，也许很快会发现，有一些函数的参数有重复。比如一个 Python 的脚本：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">get_data_mean</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">array</span><span class="p">.</span><span class="nf">mean</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">get_data_std</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">array</span><span class="p">.</span><span class="nf">std</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="sh">'</span><span class="s">./array.npy</span><span class="sh">'</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="nf">get_data_mean</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">std</span> <span class="o">=</span> <span class="nf">get_data_std</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>这里有 2 个函数，都是用 numpy 打开一个文件并计算它的一些统计值，假如我们是计算同一个文件的这 2 个统计量，那么我们就需要对文件打开 2 遍，虽然反复调用的时候做到了代码重用，但是没有做到数据重用，增加了系统的 IO 压力和不必要的开销。</p>
+
+<p>那么我们怎么来解决这些问题呢？这个时候就可以定义自定义对象了：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">class</span> <span class="nc">MyStatistic</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_data_mean</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">array</span><span class="p">.</span><span class="nf">mean</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">get_data_std</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">array</span><span class="p">.</span><span class="nf">std</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="sh">'</span><span class="s">./array.npy</span><span class="sh">'</span>
+    <span class="n">ms</span> <span class="o">=</span> <span class="nc">MyStatistic</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="nf">get_data_mean</span><span class="p">()</span>
+    <span class="n">std</span> <span class="o">=</span> <span class="n">ms</span><span class="p">.</span><span class="nf">get_data_std</span><span class="p">()</span>
+</code></pre></div></div>
+<p>现在我们自定义一个 <code class="language-plaintext highlighter-rouge">MyStatistic</code>  对象，在初始化的时候加载 <code class="language-plaintext highlighter-rouge">file_path</code> 文件，然后后续的每一次计算都基于已经加载的这个文件而无需重复加载。</p>
+
+<p>做完这些，不经意间我们已经进行了一次面向对象编程所定义的 <strong>封装</strong> ，也就是 <strong>隐藏对象的属性和实现细节</strong>，仅对外公开接口 ，<code class="language-plaintext highlighter-rouge">MyStatistic</code> 对外暴露的接口就是那 2 个计算统计量的“函数”（比较学究的叫法是 <strong>对象方法</strong> ），而加载的数组数据可以通过 <strong>属性</strong> 的方式在对象内部共享，对外隐藏了这些的数据。</p>
+
+<p>向对象的封装将处理步骤与数据结合在一起，成为了一个实体，也就模拟了现实世界的物体（数据）和行为（方法），做到了代码重用 + 数据重用。</p>
+
+<p>但是对于程序员来说仅这种程度的重用就够了吗？当然不，程序员希望对象可以更像现实世界一些，现实世界中，实体都是物以类聚的，不同的实体都有既有相似又有不同，而且同类的实体似乎又都是遵循某些模板而精心设计出来的。那么在代码中如果想要做出类似的效果，就必须引出另一种机制：<strong>继承</strong> 。</p>
+
+<p>所谓继承跟现实世界中的继承类似，就是把一个对象的一些属性和方法复制传递给另一个或者多个对象，二者形成父子关系，子类们继承了父类的一些共同的属性和方法的同时，又各自实现一些特有的属性和方法。</p>
+
+<p>继承可以进一步提高代码的重用性，也是因为有了继承，让我们可以在程序设计中实现逻辑上的层级管理，建立父类与子类的关系以构建出复杂而丰富的体系。继承的含义很好理解，例子也有很多，这里就不再过多赘述。</p>
+
+<p>在封装和继承的基础上，我们似乎已经可以很好地用比特类比现实世界了，但是不好意思，这些还不够，我们还需要一个魔法：<strong>多态</strong> 。</p>
+
+<h2 id="从鸭子类型到多态">从鸭子类型到多态</h2>
+<p>你认识鸭子吗？这个问题听起来有点可笑，但这却是计算机科学一个著名的命题：鸭子类型。</p>
+
+<p>鸭子类型这个命题大概的意思是，我们在区分一个动物是不是鸭子的时候，可以通过它的行为来判断，如果它走路像鸭子，叫声像鸭子，那么我们认为它就是鸭子。</p>
+
+<p>这段描述听起来感觉像是废话，它又和多态有什么关系呢？理解鸭子类型是理解多态的基础。如果说封装和继承是为了提高代码的重用性，那么多态就是为了提高接口的重用性。</p>
+
+<p>现在我们先忘记鸭子类型，用一个更生动的例子来描述类似的场景，假如有一个 PM 说：“我们的设计非常完美，现在就缺一个写代码的了，有没有人来给我写代码？”</p>
+
+<p>这个 PM 需要的是什么？是一个写代码的人对吧，对他来说，是男是女重要吗？年纪大小重要吗？长得好不好看重要吗？ <del>除了最后一条</del> 都不重要对吧。 也就是说，他关注的是 <strong>写代码</strong> 这个行为，而非写代码的人，不管这个人是男是女，年纪大小，只要能写代码，他都欢迎。</p>
+
+<p>在编程时我们也会面临类似的场景，我们需要的是完成某件事情，而并不在意执行对象的本质是什么。回过头来看鸭子类型的命题，可能就能理解它的真正含义了，我们要的不是鸭子，而是走路像鸭子、叫声像鸭子的东西，因为我要最终需要的，可能只是鸭子的脚印和叫声。</p>
+
+<p>现在我们再来看看维基百科里对多态的定义：</p>
+
+<blockquote>
+  <p>多态 （英语：polymorphism）指为不同数据类型的实体提供统一的接口。</p>
+</blockquote>
+
+<p>在鸭子类型中，“像鸭子走路”和“像鸭子叫”是 <strong>统一接口</strong> ，而背后做这件事的各种对象（你想象一只能像鸭子一样走路，叫声也像鸭子的老鼠或水牛）即是 <strong>不同类型</strong> 。</p>
+
+<p>如果说封装和继承是为了在比特世界里创造更丰富的实体，那么多态就是为这些实例建立更灵活的关系。</p>
+
+<p>事实上我们的现实世界也是一个实现了多态的世界，比如我们可以听到猫的叫声，猫也可以听到我们说话，就是因为虽然我们属于不同类型的实体，但都实现了统一的“发出声音”和“听到声音”的接口。</p>
+
+<p>Python 里一个基于多态的著名魔法是装饰器，因为在 Python 里一切皆是对象，函数也不例外，而且 Python 中函数是一等公民，也就是说它是可以作为参数传递的，那么你就可以构建一个闭包。</p>
+
+<p>例如下面这个例子，<code class="language-plaintext highlighter-rouge">fix_zero_division</code> 是在函数抛出 <code class="language-plaintext highlighter-rouge">ZeroDivisionError</code> 时返回一个numpy 的 NaN 对象：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">fix_zero_division</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="err">“””</span><span class="n">Check</span> <span class="k">if</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">zero</span> <span class="n">division</span> <span class="ow">and</span> <span class="n">fix</span> <span class="n">it</span><span class="p">.</span><span class="err">”””</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</code></pre></div></div>
+
+<p>它的实际调用方式是：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">divide_by_zero</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">not_divide_by_zero</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">/</span><span class="mi">1</span>
+
+<span class="n">new_divide_by_zero</span> <span class="o">=</span> <span class="nf">fix_zero_division</span><span class="p">(</span><span class="n">divide_by_zero</span><span class="p">)</span>
+<span class="n">new_not_divide_by_zero</span> <span class="o">=</span> <span class="nf">fix_zero_division</span><span class="p">(</span><span class="n">not_divide_by_zero</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">new_divide_by_zero</span><span class="p">())</span>  <span class="c1"># nan
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">new_not_divide_by_zero</span><span class="p">())</span> <span class="c1"># 2.0
+</span></code></pre></div></div>
+
+<p>这个例子里，<code class="language-plaintext highlighter-rouge">divide_by_zero</code> 和 <code class="language-plaintext highlighter-rouge">not_divide_by_zero</code> 都是不同的对象，但它们都实现了 可调用 这个统一的接口，于是 <code class="language-plaintext highlighter-rouge">fix_zero_division</code> 就可以同时作用于它们并发挥作用，这就是利用多态完成了装饰器的魔法，当然我们也可以写成语法糖的形式：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@fix_zero_division</span>
+<span class="k">def</span> <span class="nf">divide_by_zero</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+
+<span class="nd">@fix_zero_division</span>
+<span class="k">def</span> <span class="nf">not_divide_by_zero</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">/</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<p>而对于没有实现 <strong>可调用</strong> 接口的，就无法执行，例如：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="nf">fix_zero_division</span><span class="p">(</span><span class="mi">1</span><span class="p">)()</span>
+<span class="err">…</span>
+<span class="c1"># TypeError: 'int' object is not callable
+</span></code></pre></div></div>
+<p>由于<code class="language-plaintext highlighter-rouge">1</code>作为整数是不可调用的，因此这个装饰器无法对它起作用。Python 中其他利用多态特性的魔法还有很多很多。</p>
+
+<h2 id="开闭原则">开闭原则</h2>
+<p>前面介绍了面向对象编程的基本概念，那么我们为什么需要这种面向对象的编程方式呢？在我看来，广义上来说面向对象编程是为了更方便地编写出架构良好的程序，狭义来说是为了对代码逻辑进行解耦。现在我们来了解两个概念：<strong>内聚性</strong> 和 <strong>耦合性</strong> 。</p>
+
+<p>软件项目，尤其是大型软件项目，都是众多包、模块互相之间配合而实现的，而在这个配合的过程中，就会产生各种各样的联系，这种联系如果过多、过于复杂，那么对整个软件是不利的。模块之间依赖关系的复杂度即为 <strong>耦合性</strong> ，如果模块之间的依赖关系盘根错节，那么对于任何修改，都有可能造成一系列的连锁反应（通常是副作用），用一句俗话来说就是“牵一发而动全身”，这样就造成软件后期迭代开发的成本和风险大大提高。</p>
+
+<p>而 <strong>内聚性</strong> 是一个与耦合度相反的概念，它是指模块减少对外部的依赖，尽量把任务都在模块内部解决，这样外部的变化可以尽可能少地对内部产生影响，或者说这种影响是有限的、可控的。</p>
+
+<p>通常来说，内聚性和耦合性就像跷跷板的两头，一边高另一边就低。在讨论软件架构设计的话题时，一句挂载嘴边的口号就是：低耦合！高内聚！</p>
+
+<p>事实上，我们的现实世界就可以说是一个低耦合、高内聚的系统， <del>气象科学家表示反对</del>， 想象一下，在一个不闹鬼的屋子里，当你打开电视的时候，冰箱门不会跟着打开，灯也不会忽然开始闪烁，因为这些物体都是各司其职，它们互相之间不会存在不必要的依赖关系。</p>
+
+<p>低耦合高内聚是软件架构设计的目标，那么如何实现这一目标呢？这时候 <strong>开闭原则</strong>  (The Open/Closed Principle, OCP) 就登场了。开闭原则可以说是模式设计中的核心原则，其他的设计原则几乎都是为了更好地实现它而提出的。</p>
+
+<p>开闭原则的定义：</p>
+
+<blockquote>
+  <p>Software entities like classes, modules and functions should be open for extension but closed for modifications 一个软件实体，如类，模块，函数等应该对扩展开放，对修改封闭。</p>
+</blockquote>
+
+<p>听起来不像人话是吧，我来举个现实中实现了开闭原则的例子：蓝牙。我们平时用的电脑大部分都支持蓝牙对吧，而很多外设都可以使用蓝牙与电脑连接，比如你的蓝牙鼠标、蓝牙键盘、蓝牙耳机、蓝牙体脂称、蓝牙洗脚盆、蓝牙牙刷等等，不论什么外设，只要支持蓝牙协议，电脑就都能轻松与之连接（对扩展开放），而不需要把电脑拆开（对修改关闭）。</p>
+
+<p>我们再回到软件设计上，在设计软件的时候，为了让软件尽可能健壮、有活力和拥有更强的适应力，在架构上就要充分考虑它的可扩展性，保留接口的灵活度，以期达到未来可以在不修改逻辑代码，只添加扩展插件的方式下增加软件的功能。</p>
+
+<p>为什么遵循开闭原则的软件可以做到高内聚、低耦合呢？因为按照开闭原则的设计理念，互相平行的扩展模块之间应该是平等且互相隔离、互相独立的，这样也就杜绝了不必要的依赖和联系，在你增加或者修改扩展模块功能的时候，也就不用担心它会对其他模块的功能造成影响。此外，由于扩展模块与主体模块有清晰的接口规则，这也让实施单个扩展模块重构成为可能。</p>
+
+<p>从这个角度出发，那么以对象为中心的编程方式就是最佳的编程模式。封装和继承可以在操作层面直接提高对象的内聚性、减少耦合度，而多态可以高效地实现开闭原则。</p>
+
+<p>再举个例子，假如我需要一个根据文件名后缀来使用合适方式打开文件的函数，如果不用对象式编程的方式，它大概会是这个样子：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+
+<span class="k">def</span> <span class="nf">correctly_open_file_by_suffix</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">suffix</span> <span class="o">==</span> <span class="sh">'</span><span class="s">.txt</span><span class="sh">'</span><span class="p">:</span>
+        <span class="sh">'</span><span class="s">解析.txt的逻辑代码</span><span class="sh">'</span>
+        <span class="k">return</span> 
+    <span class="k">elif</span> <span class="n">suffix</span> <span class="o">==</span> <span class="sh">'</span><span class="s">.json</span><span class="sh">'</span><span class="p">:</span>
+        <span class="sh">'</span><span class="s">解析.json的逻辑代码</span><span class="sh">'</span>
+        <span class="k">return</span> 
+    <span class="k">elif</span> <span class="n">suffix</span> <span class="o">==</span> <span class="sh">'</span><span class="s">.csv</span><span class="sh">'</span><span class="p">:</span>
+        <span class="sh">'</span><span class="s">解析.csv的逻辑代码</span><span class="sh">'</span>
+        <span class="k">return</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">'</span><span class="s">不支持的文件格式</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>这个函数的一个问题是，如果我想再加一种数据格式，就需要修改这个函数，再加上一条 elif 逻辑，这样就不符合开闭原则里 <strong>对修改封闭</strong> 的描述。</p>
+
+<p>但如果我修改一下:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+
+<span class="k">class</span> <span class="nc">JSONParser</span><span class="p">:</span>
+    <span class="sh">'</span><span class="s">JSON文件解码器</span><span class="sh">'</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="sh">'</span><span class="s">文件初始化</span><span class="sh">'</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="sh">'</span><span class="s">文件解析</span><span class="sh">'</span>
+        <span class="k">return</span> 
+    
+<span class="k">class</span> <span class="nc">TXTParser</span><span class="p">:</span>
+    <span class="sh">'</span><span class="s">TXT文本解码器</span><span class="sh">'</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="sh">'</span><span class="s">文件初始化</span><span class="sh">'</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="sh">'</span><span class="s">文件解析</span><span class="sh">'</span>
+        <span class="k">return</span> 
+    
+<span class="k">class</span> <span class="nc">CSVParser</span><span class="p">:</span>
+    <span class="sh">'</span><span class="s">CSV文件解码器</span><span class="sh">'</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="sh">'</span><span class="s">文件初始化</span><span class="sh">'</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="sh">'</span><span class="s">文件解析</span><span class="sh">'</span>
+        <span class="k">return</span> 
+    
+<span class="n">parsers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">'</span><span class="s">.txt</span><span class="sh">'</span><span class="p">:</span> <span class="n">TXTParser</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">.csv</span><span class="sh">'</span><span class="p">:</span> <span class="n">CSVParser</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">.json</span><span class="sh">'</span><span class="p">:</span> <span class="n">JSONParser</span>
+<span class="p">}</span>
+    
+
+<span class="k">def</span> <span class="nf">correctly_open_file_by_suffix</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">suffix</span> <span class="ow">in</span> <span class="n">parsers</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">parsers</span><span class="p">[</span><span class="n">suffix</span><span class="p">](</span><span class="n">file_path</span><span class="p">).</span><span class="nf">parse</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">'</span><span class="s">不支持的文件格式</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>用这种方式编写的 <code class="language-plaintext highlighter-rouge">correctly_open_file_by_suffix</code> 函数，如果我们想要再增加一种文件格式，只需要再创建一个实现了 <code class="language-plaintext highlighter-rouge">.parse</code> 方法的解码器对象，并把它注册到 <code class="language-plaintext highlighter-rouge">parsers</code> 字典里就行了，<code class="language-plaintext highlighter-rouge">correctly_open_file_by_suffix</code> 函数本身不需要做任何的修改，这样也就实现了开闭原则，当然这个例子的实现也是得益于多态的特性。</p>
+
+<h2 id="优秀案例-scrapy">优秀案例 scrapy</h2>
+<p>如果要列举一些遵从了开闭原则的软件，那么 scrapy 一定位列其中，scrapy 是一个十分流行的异步爬虫框架，由于它的架构简介清晰，不需要太多的篇幅就能讲清楚，因此我想在这里用它作为良好架构设计的案例来介绍。</p>
+
+<p>我们先来看看目前最新版本 scrapy 官方文档提供的项目架构图：</p>
+
+<p>可以看到 scrapy 的实体一共也就只有蜘蛛对象（Spider）、中间件对象（Middleware）、处理管道对象（Pipeline）、条目对象（Item）、引擎（Engine）和调度器（Scheduler）这六类。图中的数字表示的是项目运行时执行的逻辑顺序。</p>
+
+<p>六大实体中可扩展的实体（开放部分）包括：</p>
+
+<ul>
+  <li>蜘蛛对象（Spider）</li>
+  <li>中间件对象（Middleware）</li>
+  <li>处理管道对象（Pipeline）</li>
+  <li>条目对象（Item） 不可扩展实体（封闭部分）包括：</li>
+  <li>引擎（Engine）</li>
+  <li>调度器（Scheduler）</li>
+</ul>
+
+<p>为了更直观地感受到两类实体在爬虫开发中的区别，我们用 scrapy 提供的脚手架命令行工具来搭建结构，以官方文档提供的样例为例，执行脚手架命令：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>scrapy startproject tutorial
+</code></pre></div></div>
+<p>执行完成以后它会预生成一套项目的文件结构：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tutorial/
+    scrapy.cfg            # deploy configuration file
+    tutorial/             # project's Python module, you'll import your code from here
+        __init__.py
+        items.py          # project items definition file
+        middlewares.py    # project middlewares file
+        pipelines.py      # project pipelines file
+        settings.py       # project settings file
+        spiders/          # a directory where you'll later put your spiders
+            __init__.py
+</code></pre></div></div>
+<p>可以看到 scrapy 为我们初始化的项目文件中，为所有可扩展实体都预留了模块文件/包，也就是说这些模块都是对用户开放的 ，遵守了对扩展开放的原则 。</p>
+
+<ul>
+  <li>items.py 存放条目对象</li>
+  <li>middlewares.py 存放中间件对象</li>
+  <li>pipelines.py 存放处理管道对象</li>
+  <li>spiders/ 以包的形式存放蜘蛛对象</li>
+</ul>
+
+<p>但是我们看到项目结构中并没有为引擎或者调度器预留位置，或者说引擎和调度器对象是对用户隐藏的 ，这样就践行了对修改封闭的原则 。</p>
+
+<p>这样设计的好处是，用户只用根据需要选择性地编写与业务逻辑相关的实体对象即可，而与业务逻辑无关的异步调度工作则交给框架来完成，而且用户所有需要定义的实体都是以扩展模块的形式存在的，也是隔离的、可拔插的，因此不用担心新添加的实体会对原有实体产生副作用。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="面向对象编程" /><summary type="html"><![CDATA[如果有人问我怎么解释面向对象编程，我感觉我很难用一句言简意赅的话来回答，但如果一定要试着解释，我可能会说：“面向对象编程是一种在代码中模拟现实世界的编程理念，它是把程序里的逻辑实体当做物体来组织它们的关系并处理问题的方法论。”显然这不是一句人话，可能有些人还会认为这种解释是故弄玄虚，因为直觉告诉我们，如果一个人不能用一句言简意赅的话来总结一个理论，那么他可能根本就没有搞懂这个理论。我不敢说现在的自己对面向对象编程的理解有多么的深，但是我觉得我还是可以阐述一下我的浅薄理解。既然一句话说不清，那我们就来一场漫谈吧。]]></summary></entry><entry><title type="html">利用 OPeNDAP 快速获取格点数据</title><link href="http://localhost:4000/access-grid-data-by-opendap/" rel="alternate" type="text/html" title="利用 OPeNDAP 快速获取格点数据" /><published>2022-05-01T00:00:00+08:00</published><updated>2022-05-01T00:00:00+08:00</updated><id>http://localhost:4000/access-grid-data-by-opendap</id><content type="html" xml:base="http://localhost:4000/access-grid-data-by-opendap/"><![CDATA[<p>国内的气象圈子对于 OPeNDAP 这个单词应该是既熟悉又陌生，熟悉就熟悉在它出现频率很高，感觉好像哪哪儿都提到了它；而陌生就陌生在平时实际工作中好像又很少真正用过它。事实上 OPeNDAP 是一个可以极大提高格点数据传输和使用效率的“工具”，当初我第一次体验这个东西的时候就发出了“卧槽还可以这样”的感慨。</p>
+
+<p>当你解锁了 OPeNDAP 以后你会突然发现世界如此美好，格点数据的获取如此方便，并且 OPeNDAP 的内涵非常丰富，服务端有众多友好的实现方案，现成的 Docker 镜像，客户端的 Panoply、多语言生态下的库包甚至 GDAL 都原生支持了 OPeNDAP 协议，使用起来不要太方便。有些服务端实现方案还支持各种花里胡哨的玩法，比如可以在URL中传参数实现服务端直接切片。</p>
+
+<p>今天这一篇是这个系列的第一篇，也算是入门篇。</p>
+
+<h2 id="什么是opendap">什么是OPeNDAP？</h2>
+<p>简单介绍一下 OPeNDAP 的概念，OPeNDAP 是 Open-source Project for a Network Data Access Protocol 的缩写，直译过来就是 <strong>开源网格数据获取协议</strong>，所以说本质上它其实只是是一个纸面上的协议，或者可以理解为一种标准。那么任何基于该标准而实现的服务器或客户端程序，都可以享受 OPeNDAP 所带来的便利，它能带来什么便利呢？简单来说就是让你像使用本地文件一样使用远程的格点数据。也就省去了数据文件下载的过程，且基于 OPeNDAP 服务的数据加载模式属于“懒加载”，它只会读取你真正需要那一部分数据，从而避免你为了加载一个单一的要素而需要下载整个文件的行为，节约时间和带宽。</p>
+
+<h2 id="gfs的opendap入口">GFS的OPeNDAP入口</h2>
+<p>国外的很多气象格点数据的下载网站都提供了 OPeNDAP 的接口，比如 NCEP 的 GFS 就给不同产品分别建立了 OPeNDAP 的获取入口，下面我就带大家实操一下如何获取数据的 URL 链接及其元信息。</p>
+
+<p>进入GFS数据下载主页：<a href="https://nomads.ncep.noaa.gov/">https://nomads.ncep.noaa.gov/</a></p>
+
+<p><img src="./01.png" alt="01" /></p>
+
+<p>我们点开 <em>GFS 0.50 Degree</em> 对应的 OPeNDAP 链接。</p>
+
+<p><img src="./02.png" alt="02" /></p>
+
+<p>选择日期，比如我们选择2022年5月1日的。</p>
+
+<p><img src="./03.png" alt="03" /></p>
+
+<p>在时次选择时进入 info 链接，进入以后可以看到 OPeNDAP/DODS Data URL，这个 URL 就是可以用于直接打开的数据 URL。</p>
+
+<p><img src="./04.png" alt="04" /></p>
+
+<p>这一页内容很长，它是该时次数据的完整的元信息，你可以从这个页面查找到该数据以 OPeNDAP 协议暴露出去的数据变量名、维度及数组尺寸等信息。</p>
+
+<h2 id="如何用-panoply-打开-opendap-数据">如何用 Panoply 打开 OPeNDAP 数据</h2>
+<p>我们知道，如果想要快速查看 nc 数据，Panoply 是一个很好的选择，Panoply 是一个用 Java 写的气象数据可视化软件，支持多平台，非常好用。而且 Panoply 原生支持基于 OPeNDAP 的远程数据加载。</p>
+
+<p><img src="./05.png" alt="05" /></p>
+
+<p>我们打开Panoply以后，点击 <strong>File</strong> -&gt; <strong>Open Remote Dataset</strong></p>
+
+<p><img src="./06.png" alt="06" /></p>
+
+<p>然后把刚才的数据URL粘贴进去，点击 <strong>Load</strong></p>
+
+<p><img src="./07.png" alt="07" /></p>
+
+<p>这样我们就在 Panoply 通过 OPeNDAP 远程的方式”加载“了这个数据集。但这个时候的加载其实只是加载了数据的元信息，并没有把整个数据集全部下载下来（也就是“懒加载”），所以这一步速度很快。</p>
+
+<p>后面我们可以根据自己的需要，仅加载某一个要素，比如我们选择2米气温，在这里它的变量名为 <strong>tmp2m</strong>。</p>
+
+<p><strong>注意，这里的变量名既不是GRIB标准变量名也不是ecCodes的变量名，更不是CF-convention的标准变量名，而是他们自己重新定义的，变量名的含义可以在前面提到的 info 页面里查到</strong></p>
+
+<p><img src="./09.png" alt="09" /></p>
+
+<p>根据我们请求，Panoply 可以给我们生成预览图，同时可以看到该变量已将预报时次集成在图层里，我们可以在这里方便地选择不同时次生成预览图。而且每次切换的过程都是惰性的，只会加载所选时次而非全部时次的数据。</p>
+
+<h2 id="在-python-中使用-opendap">在 Python 中使用 OPeNDAP</h2>
+<p>Python 对 OPeNDAP 的使用是基于相应的第三方库实现的，可供使用的库包括：netcdf4、pydap 和 xarray，其中 xarray 是基于 netcdf4/pydap 作为底层引擎实现的更高级封装。</p>
+
+<p>三种方法加载 OPeNDAP 的操作其实就是把本地路径地址替换成 URL，其他都跟平时使用没啥区别。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>  <span class="c1"># pip install netCDF4
+</span><span class="kn">import</span> <span class="n">xarray</span> <span class="k">as</span> <span class="n">xr</span>  <span class="c1"># pip install array
+</span><span class="kn">from</span> <span class="n">pydap.client</span> <span class="kn">import</span> <span class="n">open_url</span>  <span class="c1"># pip install requests pydap
+</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sh">'</span><span class="s">http://nomads.ncep.noaa.gov:80/dods/gfs_0p25_1hr/gfs20220501/gfs_0p25_1hr_06z</span><span class="sh">'</span>
+
+<span class="n">ds0</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">ds1</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="nf">open_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="sh">'</span><span class="s">netcdf4</span><span class="sh">'</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">ds2</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="nf">open_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="sh">'</span><span class="s">pydap</span><span class="sh">'</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">ds3</span> <span class="o">=</span> <span class="nf">open_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>这三种方法我个人还是更倾向于使用 netCDF4 这个库来读取数据，当然 xarray 肯定更流行一些，用得人也更多，而 pydap 用的人相对会比较少。</p>
+
+<p>据我所知，其他语言对 OPeNDAP 的支持也很完善，包括但不限于 NCL、MATLAB、Java、Fortran，感兴趣的可以自己去查一下相关资料，我这里就不再赘述。</p>
+
+<h2 id="opendap-能给我们带来的便利">OPeNDAP 能给我们带来的便利</h2>
+<p>在没有解锁 OPeNDAP 之前，我们在查看一个体积很大的在线 nc 文件，可能就需要把整个文件都下载下来，然后用 Panoply 或者程序解析查看，如果我们原本只是想要查看其中的一个或很少几个要素，我们也还是需要把整个文件都下载下来，这种做法一方面会浪费很多时间和带宽资源，另一方面，我们还需要考虑本地存储全量要素是否能够存得下的问题，当然 GFS 的 grib 可以提供 filter 的方法（底层是 cgi 程序，一种服务端古老的土豪方案）挑选变量，但是如果是其他的数据集不提供这种功能怎么办呢？</p>
+
+<p>OPeNDAP 的懒加载可以让我们最大限度降低等待时间，数据根据需要去最小可用部分，提高了使用效率，降低了客户端和服务端的带宽需求，一举多得，实现双赢。因此国外的很多气象格点数据的下载网站都会提供一个 OPeNDAP 的入口，大家以后再下载格点数据的时候可以留意一下是否有这样的入口，尽量使用 OPeNDAP 来读取数据。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="python" /><category term="opendap" /><category term="panoply" /><summary type="html"><![CDATA[国内的气象圈子对于 OPeNDAP 这个单词应该是既熟悉又陌生，熟悉就熟悉在它出现频率很高，感觉好像哪哪儿都提到了它；而陌生就陌生在平时实际工作中好像又很少真正用过它。事实上 OPeNDAP 是一个可以极大提高格点数据传输和使用效率的“工具”，当初我第一次体验这个东西的时候就发出了“卧槽还可以这样”的感慨。]]></summary></entry><entry><title type="html">一键解决 matplotlib 中文显示问题</title><link href="http://localhost:4000/how-to-solve-tofu-in-matplotlib/" rel="alternate" type="text/html" title="一键解决 matplotlib 中文显示问题" /><published>2022-04-10T00:00:00+08:00</published><updated>2022-04-10T00:00:00+08:00</updated><id>http://localhost:4000/how-to-solve-tofu-in-matplotlib</id><content type="html" xml:base="http://localhost:4000/how-to-solve-tofu-in-matplotlib/"><![CDATA[<p>matplotlib 的中文显示问题是一个老生常谈的话题了，我们在网上也可以查到非常多的解决方案，但是在我看来这些解决方案都过于“手动”不够优雅，而且我身边的业务运行环境基本全部都基于 Docker 容器化技术实现，对于 matplotlib 的中文字体设置也必然需要有自动化配置流程，于是大概半年前我写了 <a href="https://github.com/Clarmy/mplfonts">mplfonts</a> 这个包，可以轻松+愉快地一键配置 matplotlib 中文字体环境。</p>
+
+<p>这个包之前一直是我自己在用，并未考虑兼容性问题，以至于我给身边的朋友说这个包以后，他在自己的电脑上用不了。很长一段时间我也没有管这个事情，最近心血来潮想把它捡起来，于是在 GitHub Actions 里增加了多系统多版本的 CI，修补了一些 bug，然后重新更新了版本。目前来看，从我自己测试和 CI 的测试结果来看应该是 OK 的，当然还是需要有更多人在实际使用中的反馈才是更真实的。</p>
+
+<h2 id="安装">安装</h2>
+<p>mplfonts 的安装方法是 pip: <code class="language-plaintext highlighter-rouge">$ pip install -U mplfonts</code></p>
+
+<h2 id="使用">使用</h2>
+<p>安装好 mplfonts 之后，需要有一个初始化的配置过程。有两种方法：</p>
+<ol>
+  <li>在终端执行 <code class="language-plaintext highlighter-rouge">$ mplfonts init</code> 即可。</li>
+  <li>嵌入初始化代码，在脚本中加入：
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">mplfonts.bin.cli</span> <span class="kn">import</span> <span class="n">init</span>
+<span class="nf">init</span><span class="p">()</span>
+</code></pre></div>    </div>
+    <p>以上两种方式的结果是等效的，并且只需要执行一次即可。</p>
+  </li>
+</ol>
+
+<p>完成以上步骤，你就可以享受丝滑的中文字体了。而且默认是 Google 和 Adobe 合作设计的开源字体 Noto，可以随意使用，无需顾虑版权争议。</p>
+
+<p>我们来看一下例子：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">mplfonts</span> <span class="kn">import</span> <span class="n">use_font</span>
+
+<span class="n">FONT_NAMES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">'</span><span class="s">Noto Sans Mono CJK SC</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Noto等宽</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">Noto Serif CJK SC</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Noto宋体</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">Noto Sans CJK SC</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Noto黑体</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">Source Han Serif SC</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">思源宋体</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">Source Han Mono SC</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">思源等宽</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">SimHei</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">微软雅黑</span><span class="sh">'</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">test_chinese</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">font_name</span><span class="p">,</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">FONT_NAMES</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
+        <span class="nf">use_font</span><span class="p">(</span><span class="n">font_name</span><span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nc">Axes</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span> 
+        <span class="n">ax</span><span class="p">.</span><span class="nf">set_axis_off</span><span class="p">()</span>  
+        <span class="n">fig</span><span class="p">.</span><span class="nf">add_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+        
+        <span class="n">plt</span><span class="p">.</span><span class="nf">text</span><span class="p">(.</span><span class="mi">1</span><span class="p">,</span> <span class="p">.</span><span class="mi">6</span><span class="p">,</span> <span class="n">font_name</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">plt</span><span class="p">.</span><span class="nf">text</span><span class="p">(.</span><span class="mi">1</span><span class="p">,</span> <span class="p">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+
+<span class="nf">test_chinese</span><span class="p">()</span>
+</code></pre></div></div>
+<p><img src="./sample.png" alt="sample" /></p>
+
+<h2 id="漫谈">漫谈</h2>
+<p>其实饱受 matplotlib 字体显示之苦的并非只有中文，邻国韩国和日本的网友在使用 matplotlib 的时候也会遇到相同的问题，社区里一般会把这个问题称为“豆腐块(tofu)”，就是说写出来的字是豆腐。</p>
+
+<p>关于豆腐问题，在 GitHub 上有一个台湾的哥们写了一个包：<a href="https://github.com/Hsins/mpl-tc-fonts">mpl-tc-fonts</a>，这是一种比较优雅的解决方案，他先下载了 Google 的 Noto CJK 开源字体，然后在程序入口自动化地执行命令安装字体，再修改 matplotlibrc 配置文件以使其生效，最终实现繁体中文的正确显示。但是他的这个包不支持简体中文，而且程序里很多硬编码，不利于更多非英文字体的扩展，于是我就参考他的一些实现方式，写了 mplfonts，初期的设计理念是在解决中文字体渲染问题的同时，为其他非拉丁字母语系问题的字体扩展留下余地。</p>
+
+<p>关于 Google 的开源字体 Noto，其名称很有意思，据说是“No tofu”的简写，也就是“不要豆腐块”，是 Google 与 Adobe 联合设计的开源字体，由于免费开源且字体优美，目前在网页设计领域已经得到了非常广泛的使用，关于这款字体的更多信息可以去 Google 搜索。目前我在 mplfonts 包里集成了 Noto CJK 字族，衬线体和无衬线体都包含：</p>
+
+<ul>
+  <li>Noto Sans Mono CJK SC：Noto等宽黑体（无衬线体）</li>
+  <li>Noto Serif CJK SC：Noto宋体（衬线体）</li>
+  <li>Noto Sans CJK SC：Noto黑体（无衬线体）</li>
+  <li>Source Han Serif SC：思源宋体（衬线体）</li>
+  <li>Source Han Mono SC：思源等宽宋体（无衬线体）</li>
+</ul>
+
+<p>其中等宽无衬线字体比较适合于与代码并存的文本环境中，具体选择的看个人喜好。</p>
+
+<p>其实我还偷偷加入了出镜率很高的微软雅黑（SimHei），但是<strong>请勿商用以免被方正集团碰瓷</strong>。</p>
+
+<p>其实 mplfonts 还有管理字体的功能，更多功能介绍建议查看 GitHub 上该仓库的README。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="python" /><category term="matplotlib" /><summary type="html"><![CDATA[matplotlib 的中文显示问题是一个老生常谈的话题了，我们在网上也可以查到非常多的解决方案，但是在我看来这些解决方案都过于“手动”不够优雅，而且我身边的业务运行环境基本全部都基于 Docker 容器化技术实现，对于 matplotlib 的中文字体设置也必然需要有自动化配置流程，于是大概半年前我写了 mplfonts 这个包，可以轻松+愉快地一键配置 matplotlib 中文字体环境。]]></summary></entry><entry><title type="html">一份 GRIB 与 NetCDF 的体积对比测试报告</title><link href="http://localhost:4000/a-size-comparison-of-grib-and-netcdf/" rel="alternate" type="text/html" title="一份 GRIB 与 NetCDF 的体积对比测试报告" /><published>2022-03-12T00:00:00+08:00</published><updated>2022-03-12T00:00:00+08:00</updated><id>http://localhost:4000/a-size-comparison-of-grib-and-netcdf</id><content type="html" xml:base="http://localhost:4000/a-size-comparison-of-grib-and-netcdf/"><![CDATA[<p>由于前面写的一篇关于 GRIB 与 NetCDF 的文章 <a href="/analysis-grib-vs-netcdf/"><em>「GRIB 与 NetCDF 数据格式的特点及性能对比」</em></a> 在 GRIB2 与 NetCDF4 文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。</p>
+
+<h2 id="摘要">摘要</h2>
+<p>本文利用工具将一个原始 ERA5 的 GRIB1 格式文件转换为不同压缩算法下的 GRIB2、NetCDF3 以及不同压缩等级下的 NetCDF4 格式文件，同时对他们进行 bz2 压缩，最后对比它们的文件体积大小。最终的结论是，不论是否使用 bz2 压缩，体积最小的都是 GRIB2 家族的文件格式。</p>
+
+<h2 id="数据简介">数据简介</h2>
+<p>本次测试使用的原始数据为通过ERA5再分析数据下载的 GRIB 文件，该原始数据为 GRIB1 格式，而为了对比不同格式下的体积，我会用一些工具将该数据进行格式转换。</p>
+
+<p>原始数据下载地址：<a href="https://doi.org/10.5281/zenodo.6348679">https://doi.org/10.5281/zenodo.6348679</a></p>
+
+<h2 id="使用工具及方法">使用工具及方法</h2>
+<p>本文使用的命令行工具包括：</p>
+
+<ol>
+  <li>ecCodes</li>
+  <li>wgrib2</li>
+  <li>netCDF4</li>
+  <li>bzip2</li>
+</ol>
+
+<p>其中 ecCodes 和 netCDF4 都可以直接使用 conda 进行安装，而 bzip2 和 wgrib2 需要根据自己的系统查询对应的安装方法在这里不再赘述，本文使用 wgrib2 是通过 docker 启动对应镜像的方式进行的: <code class="language-plaintext highlighter-rouge">$ docker pull agilesrc/wgrib2</code></p>
+
+<h2 id="使用wgrib2设置grib2压缩格式的方法">使用wgrib2设置grib2压缩格式的方法</h2>
+<p>wgirb2可以使用的压缩方法包括：</p>
+<ul>
+  <li>ieee : data is ieee format (4 bytes per data point)</li>
+  <li>simple : no compression, packed scaled integers</li>
+  <li>complex1 : complex packing</li>
+  <li>complex1-bitmap : complex and using bitmap for undefined grid points</li>
+  <li>complex2 : complex packing, pack increments (deltas)</li>
+  <li>complex2-bitmap : complex packing, pack increments (deltas) and using bitmap for undefined</li>
+  <li>complex3 : complex packing, pack increments after linear extrapolation</li>
+  <li>complex3-bitmap : complex packing, pack increments after linear extrapolation and using bitmap for undefined</li>
+  <li>jpeg : jpeg2000 compression</li>
+  <li>aec : aec/CCSDS compression</li>
+  <li>same : try to keep same packing type as input, if input is in an unsupported output packing, complex1 is used</li>
+</ul>
+
+<p>示例：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wgrib2 in.grb -set_grib_type complex3 -grib_out out.grb 
+</code></pre></div></div>
+<p>相关文档链接：<a href="https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_grib_type.html">https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/set_grib_type.html</a></p>
+
+<h2 id="使用wgrib2将grib2转化为netcdf格式的方法">使用wgrib2将grib2转化为netcdf格式的方法</h2>
+<p>示例:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wgrib2 ./in.grb2 -netcdf out.nc
+</code></pre></div></div>
+<p>相关文档链接：<a href="https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/netcdf.html">https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/netcdf.html</a></p>
+
+<h2 id="使用grib_set对grib1和grib2格式进行切换的方法">使用grib_set对grib1和grib2格式进行切换的方法</h2>
+<p><code class="language-plaintext highlighter-rouge">grib_set</code> 是 ecCodes 命令行工具包中的一个命令行工具，用于修改 grib 文件的属性，也可以对 grib1 和 grib2 格式进行切换，然而该命令行并不能转换所有的 grib 文件，例如 GFS 的 grib2 文件有时就无法转换。</p>
+
+<p>ecCodes的安装方法：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ conda install -c conda-forge -y eccodes
+</code></pre></div></div>
+<p>示例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 将girb1转换为grib2</span>
+<span class="nv">$ </span>grib_set <span class="nt">-s</span> <span class="nv">edition</span><span class="o">=</span>2 <span class="k">in</span>.grib out.grib2
+
+<span class="c"># 将grib2转换为grib1</span>
+<span class="nv">$ </span>grib_set <span class="nt">-s</span> <span class="nv">edition</span><span class="o">=</span>1 <span class="k">in</span>.grib2 out.grib1
+</code></pre></div></div>
+<h2 id="使用nccopy转换netcdf文件格式及压缩格式的方法">使用nccopy转换netcdf文件格式及压缩格式的方法</h2>
+<p><code class="language-plaintext highlighter-rouge">nccopy</code> 是 netCDF4 命令行工具包里的一个命令行工具，它可以实现nc文件的各种格式转换。</p>
+
+<p>netcdf4 的安装方法:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge <span class="nt">-y</span> netCDF4
+</code></pre></div></div>
+
+<p>根据 nccopy 的文档，与转换格式和压缩相关的参数包括：</p>
+<blockquote>
+  <p>[-k kind] specify kind of netCDF format for output file, default same as input kind strings: ‘classic’, ’64-bit offset’, ‘cdf5’, ‘netCDF-4’, ‘netCDF-4 classic model’</p>
+
+  <p>[-d n] set output deflation compression level, default same as input (0=none 9=max)</p>
+</blockquote>
+
+<p>示例：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 将netcdf3文件转换为`netCDF-4 classic model`模式的netcdf4格式，并使用1级压缩</span>
+<span class="nv">$ </span>nccopy <span class="nt">-k</span> <span class="s1">'netCDF-4 classic model'</span> <span class="nt">-d</span> 1 era5-sample.nc3 era5-sample-c0.nc4
+</code></pre></div></div>
+<h2 id="grib1-与-grib2-的体积对比">GRIB1 与 GRIB2 的体积对比</h2>
+<p>GRIB1 格式是不支持压缩的，而 GRIB2 格式支持压缩，因此我们对比 GIRB1 和 GRIB2 格式文件的体积，本质上是对比 GRIB1 与各种压缩方式下 GRIB2 文件的体积。</p>
+
+<p>由于我们的原始文件 <code class="language-plaintext highlighter-rouge">era5-sample.grib</code> 是 GRIB1 格式，我们先把它转换为 GRIB2，在终端执行:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grib_set <span class="nt">-s</span> <span class="nv">edition</span><span class="o">=</span>2 era5-sample.grib era5-sample.grib2
+</code></pre></div></div>
+<p>查看新的 GRIB2 文件:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grib_ls era5-sample.grib2
+era5-sample.grib2
+edition      centre       <span class="nb">date         </span>dataType     gridType     stepRange    typeOfLevel  level        shortName    packingType
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   8            heightAboveGround  10           10u          grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   8            heightAboveGround  10           10v          grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   8            heightAboveGround  2            2d           grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   8            heightAboveGround  2            2t           grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   8            surface      0            fal          grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   7-8          surface      0            slhf         grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   7-8          surface      0            ssr          grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   7-8          surface      0            str          grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   8            surface      0            sp           grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   7-8          surface      0            sshf         grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   7-8          surface      0            ssrd         grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   7-8          surface      0            strd         grid_simple
+2            ecmf         20211028     <span class="nb">fc           </span>regular_ll   7-8          surface      0            tp           grid_simple
+13 of 13 messages <span class="k">in </span>era5-sample.grib2
+
+13 of 13 total messages <span class="k">in </span>1 files
+</code></pre></div></div>
+<p>可以看到 GRIB 的 edition 已经变成2了，下面我们要对转换后的 GRIB2 文件进行压缩，在预装了 wgrib2 并支持 bash 命令的环境下，在数据目录运行以下脚本：</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh  </span>
+
+<span class="nv">ctypes</span><span class="o">=(</span> <span class="s2">"ieee"</span> <span class="s2">"simple"</span> <span class="s2">"complex1"</span> <span class="s2">"complex2"</span> <span class="s2">"complex3"</span> <span class="s2">"jpeg"</span> <span class="s2">"aec"</span> <span class="s2">"same"</span> <span class="o">)</span>  
+
+
+<span class="k">for </span>ctype <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">ctypes</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">do
+    </span>wgrib2 <span class="nt">-set_grib_type</span> <span class="nv">$ctype</span> era5-sample.grib2 <span class="nt">-grib_out</span> era5-sample-<span class="nv">$ctype</span>.grib2
+<span class="k">done</span>
+</code></pre></div></div>
+<p>从而获得以下文件:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample-<span class="k">*</span>.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    36M  3 12 14:02 era5-sample-aec.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    34M  3 12 14:01 era5-sample-complex1.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    27M  3 12 14:01 era5-sample-complex2.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    27M  3 12 14:02 era5-sample-complex3.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   322M  3 12 14:01 era5-sample-ieee.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    36M  3 12 14:02 era5-sample-jpeg.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    65M  3 12 14:02 era5-sample-same.grib2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    65M  3 12 14:01 era5-sample-simple.grib2
+</code></pre></div></div>
+<p>下面我们用代码统计一下这些文件的大小并绘制图形
+<img src="./1.png" alt="1" />
+可以看出来体积最大的压缩格式为 ieee，体积最小的为 complex3，而原始的 GRIB1 格式的文件是除了 ieee 以外体积最大的，使用 <code class="language-plaintext highlighter-rouge">grib_set</code> 直接转换后的 GRIB2 文件比原始文件略小，而 complex3 压缩格式的文件大约是原始文件格式的1/3左右。</p>
+
+<p>以上 GRIB 文件是在不丧失直接读取能力的存储格式，下面我们再来测试一下，将他们压缩为 .bz2 格式以后的体积，在终端执行 <code class="language-plaintext highlighter-rouge">$ bzip2 -k *grib*</code> ，可以得到以下文件:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> <span class="k">*</span>.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    25M  3 12 14:02 era5-sample-aec.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    33M  3 12 14:01 era5-sample-complex1.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    26M  3 12 14:01 era5-sample-complex2.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    26M  3 12 14:02 era5-sample-complex3.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    55M  3 12 14:01 era5-sample-ieee.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    26M  3 12 14:02 era5-sample-jpeg.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    31M  3 12 14:02 era5-sample-same.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    31M  3 12 14:01 era5-sample-simple.grib2.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    52M  3 12 13:58 era5-sample.grib.bz2
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    52M  3 12 13:58 era5-sample.grib2.bz2
+</code></pre></div></div>
+<p><img src="./2.png" alt="2" />
+可以看出来，经过 bz2 压缩以后文件体积最小的是基于 aec 方法压缩的文件，bz2 压缩效果最明显的是 ieee，而原先体积较小的文件经 bz2 算法压缩后的效果甚微。</p>
+
+<p>综上可以看出，在 GRIB 的生态下，单纯从降低文件体积的角度考虑，在不丧失读取能力的情况下，使用 complex3 压缩算法的 GRIB2 格式进行存储是最优的方案，若可以接受读取能力丧失的情况，那么 aec 压缩算法也可以考虑。</p>
+
+<h2 id="netcdf3-与-netcdf4-的体积对比">NetCDF3 与 NetCDF4 的体积对比</h2>
+<p>下面我们来讨论一下 NetCDF3 和 NetCDF4 之间的文件体积对比，跟 GRIB 类似的是，旧版本的 NetCDF3 不支持原生压缩，如果要压缩需要借助类似于 bz2 的工具进行，而新版本的 NetCDF4 支持原生压缩，因此对两种格式的对比实际上就是用 NetCDF3 与 NetCDF4 不同压缩等级之间的对比。</p>
+
+<p>grib_to_netcdf 命令支持将 GRIB 转换为下列四种 NetCDF 存储格式：</p>
+
+<ul>
+  <li>netCDF classic file format</li>
+  <li>netCDF 64 bit classic file format (Default)</li>
+  <li>netCDF-4 file format</li>
+  <li>netCDF-4 classic model file format</li>
+</ul>
+
+<p>以上四种数据格式的底层差异我们在这里不做赘述，仅比较它们的体积，我们先分别将 GRIB 文件转为这4种 nc 格式。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grib_to_netcdf <span class="nt">-k</span> 1 <span class="nt">-o</span> era5-sample-class.nc3 era5-sample.grib
+<span class="nv">$ </span>grib_to_netcdf <span class="nt">-k</span> 2 <span class="nt">-o</span> era5-sample-64class.nc3 era5-sample.grib
+<span class="nv">$ </span>grib_to_netcdf <span class="nt">-k</span> 3 <span class="nt">-o</span> era5-sample.nc4 era5-sample.grib
+<span class="nv">$ </span>grib_to_netcdf <span class="nt">-k</span> 4 <span class="nt">-o</span> era5-sample-class.nc4 era5-sample.grib
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> <span class="k">*</span>nc<span class="k">*</span>
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:26 era5-sample-64class.nc3
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:26 era5-sample-class.nc3
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:27 era5-sample-class.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:26 era5-sample.nc4
+</code></pre></div></div>
+<p>可以看到，直接使用 grib_to_netcdf 命令转换的各种 NetCDF 格式的体积没有显著差异，下面我们先使用 nccopy 对其中 nc4 进行原生压缩，执行以下脚本:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh  </span>
+
+<span class="nv">clevels</span><span class="o">=(</span> 0 1 2 3 4 5 6 7 8 9 <span class="o">)</span>  
+
+
+<span class="k">for </span>level <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">clevels</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">do
+    </span>nccopy <span class="nt">-k</span> <span class="s1">'netCDF-4'</span> <span class="nt">-d</span> <span class="nv">$level</span> era5-sample.nc4 era5-sample-c<span class="nv">$level</span>.nc4
+<span class="k">done</span>
+</code></pre></div></div>
+<p>检查结果:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample-<span class="k">*</span>nc<span class="k">*</span>
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:26 era5-sample-64class.nc3
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:44 era5-sample-c0.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c1.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c2.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c3.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c4.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c5.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c6.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c7.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c8.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    44M  3 12 15:44 era5-sample-c9.nc4
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:26 era5-sample-class.nc3
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff   161M  3 12 15:27 era5-sample-class.nc4
+</code></pre></div></div>
+<p>可以看到，在无压缩的状态下，nc4 的体积为161M，而使用1-9级压缩后的结果都是44M，也就是说 NetCDF4 格式下，压缩与非压缩的结果差异很大，而不同等级之间的压缩差异很小，并且非压缩的 NetCDF4 与 NetCDF3 的体积一样大。</p>
+
+<p>我们再对其进行 bz2 压缩，执行 <code class="language-plaintext highlighter-rouge">$ bzip2 -k era5-sample-*nc*</code>
+然后画出图来看一下：
+<img src="./3.png" alt="3" />
+从上图可以看出来，按照非 bz2 算法压缩的形式排序，体积最大的是未经任何压缩的 NetCDF4 格式的文件，而体积最小的是9级压缩的 NetCDF4 格式。
+<img src="./4.png" alt="4" />
+若按照 bz2 压缩之后的文件体积来看的话，NetCDF3 经 bz2 压缩以后会比 NetCDF4 的体积更小。</p>
+<h2 id="4种格式体积的交叉对比">4种格式体积的交叉对比</h2>
+<p>下面综合上面所有的压缩或不压缩以及不同压缩级别的格式，汇总在一起来看一下它们的体积对比
+<img src="./5.png" alt="5" />
+上图是按照非 bz2 压缩体积从大到小排序的，可以看出来的是，按照不丧失可读性的原始文件排序，依然是 complex3 压缩算法下的 GRIB2 格式的文件体积最小。
+<img src="./6.png" alt="6" />
+而使用 bz2 压缩后的格式排序，体积最小的依然是 aec 压缩算法下的 GRIB2 格式。</p>
+
+<h2 id="结论">结论</h2>
+<p>从上述的对比中，我们可以得出结论，不论是否使用 bz2 压缩，体积最小的都是 GRIB2 家族的文件格式，在非 bz2 模式下体积最小的是基于 complex3 压缩算法的 GRIB2 文件，在 bz2 模式下体积最小的是基于 aec 压缩算法的 GRIB2 文件，当然这仅仅是从体积的角度来考虑。若要考察读取速度，则还需要额外的实验和测试。</p>
+
+<p>若要引用本文，请使用以下引用格式：</p>
+
+<blockquote>
+  <p>Wentao Li. (2022). 一份GRIB与NetCDF的体积对比报告 (Version v1). Zenodo. https://doi.org/10.5281/zenodo.6348695</p>
+</blockquote>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="grib" /><category term="netcdf" /><summary type="html"><![CDATA[由于前面写的一篇关于 GRIB 与 NetCDF 的文章《浅析GRIB与NetCDF数据格式的特点及性能对比》在GRIB2与NetCDF4文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。]]></summary></entry><entry><title type="html">GRIB 与 NetCDF 数据格式的特点及性能对比</title><link href="http://localhost:4000/analysis-grib-vs-netcdf/" rel="alternate" type="text/html" title="GRIB 与 NetCDF 数据格式的特点及性能对比" /><published>2022-03-06T11:58:47+08:00</published><updated>2022-03-06T11:58:47+08:00</updated><id>http://localhost:4000/analysis-grib-vs-netcdf</id><content type="html" xml:base="http://localhost:4000/analysis-grib-vs-netcdf/"><![CDATA[<p>在气象行业里，GRIB 和 NetCDF 文件格式可谓家喻户晓，但是这两种文件格式到底有哪些优势或劣势？在工程实践上两种格式各适合于什么样的应用场景以及性能如何？这些问题似乎在国内的气象技术圈子里很少见到有人讨论，今天我就结合我这些年来和这两种格式打交道的经验，跟大家简单分享一下这两种数据格式的特点及性能对比，供各位参考。</p>
+
+<h2 id="grib-的基本特点">GRIB 的基本特点</h2>
+<p>GRIB 文件是由一种名为 Message 的自描述数据单元组成的二进制文件集合，而且它是由多个 Message 直接拼接而成的，是一种散装的数据格式。甚至一个GRIB 文件内可以同时包含 GRIB1 格式和 GRIB2 格式的 Message，这也就是为什么我们通常看到的 ECMWF 和 GFS 的 GRIB 文件没有像常规的数据文件一样带有后缀名的原因。</p>
+
+<p>由于 GRIB 格式自描述的基本单位是 Message，所以它可以以 Message 作为基本单元进行排列组合而不会影响使用，比如说，只要你恰如其分地从两个相邻的Message 中间把一个 GRIB 文件切开，那么它就会直接变成两个 GRIB 文件，就像蚯蚓一样。同样地，你把两个 GRIB 文件直接拼接到一起，它又会直接形成了一个大的 GRIB 文件。</p>
+
+<p>这种特征给它带来的最大好处是：灵活，非常有利于网络传输。</p>
+
+<p>举一个 GFS 的例子，众所周知，GFS 数据集非常的庞大，单个时次的文件能达到好几百 GB，如此庞大的数据量的下载是一个挑战。而且 GFS 输出的要素太多，对于一些只需要几个要素的需求，如果我们把它整个数据集全部下载下来对磁盘和带宽资源就太浪费了。所以我们可能需要一种方法可以切出其中一部分要素要素来下载，这时候 GRIB 文件格式的散装特征就发挥作用了，NCEP 官方在发布 GFS 数据文件时，都会附带一个 .idx 的索引文件，它会记录每一条 Message 的字节范围，而 HTTP 协议天然支持截断请求，那么你只需要根据 .idx 文件计算出自己想要的变量，然后在用 HTTP 请求的时候传入请求的字节范围即可。</p>
+
+<p>然而，GRIB 的散装结构也不都是优点，它也有它的问题，那就是文件校验会比较麻烦。通常情况下，我们在使用其他常见的二进制文件的时候，如果文件损坏，那么它就无法正常打开，例如一个损坏的 .docx 文件，你是无法用 Word 正常打开的，但 GRIB 与众不同，如果你在下载 GRIB 文件的时候，有几个字节没有下载完整，它仅会影响它所在的那个 Message，其他 Message 可以正常使用，当你没有读到残缺的 Message 时，它看起来就是个正常的文件，所以你就无法通过文件是否正常打开来判断文件是否完整，还需要结合字节数的对比以及重建索引等操作才能更有把握地判断文件的完整性。</p>
+
+<p>GRIB 在官方介绍的时候，自诩为一种紧凑且体积小的数据格式，但是事实上这一所谓的“优势”早就已经被 NetCDF4 格式按在地上摩擦了，而且它的文件读取效率也远低于 NetCDF4，基本上已经算是被 NetCDF4 全方位超越和碾压了，这一点后面我们会讲到。</p>
+
+<h2 id="netcdf-的基本特点">NetCDF 的基本特点</h2>
+<p>说到 NetCDF 格式，不得不把 NetCDF3 和 NetCDF4 分开来说。虽然它们都是 NetCDF 家族的成员，但是它们基本上算是两个物种。你知道为什么 GRIB 会自诩为紧凑而小巧的数据格式吗？那因为它在和 NetCDF3 做对比，跟 GRIB 的文件大小相比，同要素的 NetCDF3 格式的文件体积确实很大，不吹不黑基本2倍起步。</p>
+
+<p>但是后来，NetCDF4 出来了，NC4 完全舍弃了 NC3 的底层架构，而采用了 HDF5 的底层，或者换句话说，其实NC4就是一种特殊的 HDF5，它俩的关系就类似于 geojson 与 json 之间的关系，你甚至可以直接用 h5py 去打开 nc4 的文件，或者用 NetCDF4 的包去读 .h5 文件。</p>
+
+<p>NC4 对于 NC3 是全方位的提升，NC4 文件支持压缩，其压缩比相当的优秀，并且压缩后的文件可以直接读取也不影响速度，至于为什么HDF5的性能会这么好，其实我也没仔细研究过。</p>
+
+<p>上面讲了这么多，都是空口白牙，没有证据，下面我就用几个实际案例来证实上面的这些结论。</p>
+
+<h2 id="文件体积对比">文件体积对比</h2>
+<p>下面演示的例子所使用的数据，一部分来自 ERA5，一部分来自 GFS。ERA5 的数据我是下载了地面层13个要素的单一时次的 GRIB 和 NetCDF 文件，为了公平起见，两种格式就是在官网下载文件时分别选 GRIB 和 NetCDF 输出格式下载的，不是我自己转换的。而 GFS 数据仅用于演示 pygrib 的两种读取效率，并没有参与到与 NetCDF 格式的性能比较，这些数据都上传到和鲸社区了，可以去那里下载。</p>
+
+<p>我们现在有两个文件，分别是 era5-sample.grib 和 era5-sample.nc3。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample<span class="k">*</span>
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  5 19:26 era5-sample.grib
+<span class="nt">-rw-r--r--</span>@ 1 clarmylee  staff   161M  3  5 19:29 era5-sample.nc3
+</code></pre></div></div>
+
+<p>我们把 GRIB 文件转为 GRIB2 存一份：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grib_set <span class="nt">-s</span> <span class="nv">edition</span><span class="o">=</span>2 era5-sample.grib era5-sample.grib2
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample.grib<span class="k">*</span>
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  5 19:26 era5-sample.grib
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  6 02:14 era5-sample.grib2
+</code></pre></div></div>
+
+<p>可以看到 GRIB 和 GRIB2 的体积几乎没有变化。而在初始的状态下，NC3 的文件是 GRIB 文件的2倍。这也是 GRIB 曾经引以为豪的资本，但如果我们用 bzip2 对二者进行压缩的话：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bzip2 <span class="nt">-k</span> era5-sample.nc3
+<span class="nv">$ </span>bzip2 <span class="nt">-k</span> era5-sample.grib
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample<span class="k">*</span>
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  5 19:26 era5-sample.grib
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    52M  3  5 19:26 era5-sample.grib.bz2
+<span class="nt">-rw-r--r--</span>@ 1 clarmylee  staff   161M  3  5 19:29 era5-sample.nc3
+<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    32M  3  5 19:29 era5-sample.nc3.bz2
+</code></pre></div></div>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="grib" /><category term="netcdf" /><summary type="html"><![CDATA[在气象行业里，GRIB 和 NetCDF 文件格式可谓家喻户晓，但是这两种文件格式到底有哪些优势或劣势？在工程实践上两种格式各适合于什么样的应用场景以及性能如何？这些问题似乎在国内的气象技术圈子里很少见到有人讨论，今天我就结合我这些年来和这两种格式打交道的经验，跟大家简单分享一下这两种数据格式的特点及性能对比，供各位参考。]]></summary></entry><entry><title type="html">用 Python 绘制炫酷的立体地形图</title><link href="http://localhost:4000/how-to-draw-pretty-hillshade-with-python/" rel="alternate" type="text/html" title="用 Python 绘制炫酷的立体地形图" /><published>2022-02-19T00:00:00+08:00</published><updated>2022-02-19T00:00:00+08:00</updated><id>http://localhost:4000/how-to-draw-pretty-hillshade-with-python</id><content type="html" xml:base="http://localhost:4000/how-to-draw-pretty-hillshade-with-python/"><![CDATA[<p>众所周知，Python 的 matplotlib 是一个非常全面的制图库，它不仅可以绘制图表、地图，还可以绘制 3D 效果图，试想一下，如果你在写论文的时候，可以将立体地形图作为底图，那逼格噌一下子就上来了，今天我就来教大家画一个带有地理坐标属性的立体地形图，啥也不说，咱先上效果图：</p>
+
+<p><img src="./hillshades.gif" alt="hillshades" /></p>
+
+<p>上面这张图是展示了基于 matplotlib + cartopy 的山地阴影图在不同光影参数下的变化效果。这个变化效果有利于我们理解 matplotlib 对该效果的设计理念。</p>
+
+<p>在我讲解之前，我推荐大家读一下 matplotlib 官方文档库里的这一篇文章：<a href="https://matplotlib.org/stable/gallery/specialty_plots/topographic_hillshading.html">Topographic hillshading</a>，该文章已经介绍了如何单独基于 matplotlib 绘制山地阴影图，并给出了不同渲染参数下的渲染效果图。我当初对山地立体图的学习就是从这篇文章开始的。</p>
+
+<p>本教程代码所需依赖：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>matplotlib
+cartopy&gt;<span class="o">=</span>0.19.0
+<span class="nv">cnmaps</span><span class="o">==</span>0.2.1
+netCDF4
+numpy
+</code></pre></div></div>
+<p>本教程使用的 DEM 数据：<a href="https://www.heywhale.com/mw/dataset/620f914468364e0017a3b57a/file?shareby=620ce369c1ae5e001747085e">和鲸社区数据集: CHINA_DEM</a></p>
+
+<h2 id="神说要有光">神说：要有光</h2>
+<p>光，是三维世界最重要的东西，要绘制山地立体图，首先需要理解 matplotlib 中的 <code class="language-plaintext highlighter-rouge">LightSource</code> 对象，顾名思义，这个对象就是“光源”，与 3D 建模里的光源是同一个东西，它的调用方法是：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div></div>
+<p>其中 <code class="language-plaintext highlighter-rouge">azdeg</code> 是方位角，<code class="language-plaintext highlighter-rouge">altdeg</code> 是高度角，这两个参数可以确定一个光源的投射方向，进而可以知道被光源投射的物体，哪一部分应该是光，哪一部分应该是影，而光影便是实现地形立体效果的金钥匙。</p>
+
+<p>在我们创建了光源以后，就需要基于该光源对地形数据生成光影对象，通常情况下，对于山地阴影，我们有两个方法可以选择，一个是 <code class="language-plaintext highlighter-rouge">hillshade</code>，另一个是 <code class="language-plaintext highlighter-rouge">shade</code>，其中 <code class="language-plaintext highlighter-rouge">hillshade</code> 返回的是以0-1的数字代表的光影明暗特征，你可以把它理解为一个灰度图，而 <code class="language-plaintext highlighter-rouge">shade</code> 返回的是一个RGBA数组，也就是彩图，下面我们使用 <code class="language-plaintext highlighter-rouge">shade</code> 来看一个实际的例子：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
+<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
+
+<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
+
+<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+
+<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
+               <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+<span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./henan.png" alt="henan" /></p>
+
+<p>这样，我们的第一张立体地形图就出来了，是不是很炫酷？此外，如果你调整 <code class="language-plaintext highlighter-rouge">azdeg</code> 和 <code class="language-plaintext highlighter-rouge">altdeg</code> 的值，阴影的方位就会随之改变，就像文章开头那张动图一样，它就是通过修改 <code class="language-plaintext highlighter-rouge">azdeg</code> 的值以达到光线旋转照射的效果的。</p>
+
+<h2 id="光影参数详解">光影参数详解</h2>
+<p>接下来，我们需要了解一下 <code class="language-plaintext highlighter-rouge">ls.shade</code> 方法的各个参数是干什么的，首先第一个位置函数肯定是我们的 dem 数据，这里需要注意的是，你必须把 dem 的纬度顺序调整为低纬-&gt;高纬的顺序，否则渲染出来的图片是反的。<code class="language-plaintext highlighter-rouge">cmap</code> 是色标这个大家应该都知道就不赘述了，<code class="language-plaintext highlighter-rouge">blend_mode</code> 这个参数大家会比较陌生，它是一种渲染模式选择，预置选项有：<code class="language-plaintext highlighter-rouge">'hsv'</code>，<code class="language-plaintext highlighter-rouge">'overlay'</code>，<code class="language-plaintext highlighter-rouge">'soft'</code>。它们分别是什么意思呢？官方文档在这个参数上的解释一大堆，但是根据我的理解，这个参数其实就类似于“滤镜”，你可以调整这三个滤镜来看看哪个是你喜欢的效果，我们来试一下：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
+<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
+
+<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
+
+<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+
+<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mode</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="sh">'</span><span class="s">soft</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">hsv</span><span class="sh">'</span><span class="p">]):</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+                   <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
+
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./blend_mode.png" alt="blend_mode" /></p>
+
+<p>看得出来，还是 <code class="language-plaintext highlighter-rouge">overlay</code> 看起来更均衡一些。</p>
+
+<p>下面我们来看一下 <code class="language-plaintext highlighter-rouge">vert_exag</code> 参数，这个参数表征的是顶点的突出程度，这个点的值越大，立体感会越强，但是如果你把它设得太大，也会有一些副作用，来看示例：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
+<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
+
+<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
+
+<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+
+<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ve</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]):</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
+                   <span class="n">vert_exag</span><span class="o">=</span><span class="n">ve</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
+
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="n">ve</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./vert_exag.png" alt="vert_exag" /></p>
+
+<p>上图从左到右 <code class="language-plaintext highlighter-rouge">vert_exag</code> 分别等于0.5、1和10，可以看出来，当 <code class="language-plaintext highlighter-rouge">vert_exag==10</code> 的时候，平原地图会有很强的噪点效果，这也是 <code class="language-plaintext highlighter-rouge">vert_exag</code> 值设置过大的一个副作用，在实际绘图的时候，需要综合考虑，选一个合适的值。当然，对于 <code class="language-plaintext highlighter-rouge">vert_exag</code> 参数，还有另外两个参数会与之配合（或者说制衡），那就是 <code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code>，这两个参数的含义是在平面空间上单个顶点的重采样间隔，<code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code> 的值越小，图像越能展现原始的数据细节，<code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code> 的值越大，那么最终出来的图越平滑，一些原始数据的细节就会被平滑掉了。下面我们来看一下不同的<code class="language-plaintext highlighter-rouge">dx</code>，<code class="language-plaintext highlighter-rouge">dy</code> 取值，对图像效果有什么影响。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
+<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
+
+<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
+
+<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+
+<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dd</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]):</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
+                   <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dd</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="n">dd</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
+
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">dx=</span><span class="si">{</span><span class="n">dd</span><span class="si">}</span><span class="s">, dy=</span><span class="si">{</span><span class="n">dd</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./dx_dy.png" alt="dx_dy" /></p>
+
+<p>可以看到，当 <code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code> 偏小的时候，同样出现了噪点问题。</p>
+
+<p>最后还有一个很重要的参数就是 <code class="language-plaintext highlighter-rouge">fraction</code>，它是一个控制光影效果强度的参数，这个值越大，明暗的对比度就越大，我们来看一下对比效果：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
+<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
+
+<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
+<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
+
+<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
+
+<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
+
+<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fraction</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]):</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
+                   <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="n">fraction</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
+
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
+
+    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">fraction=</span><span class="si">{</span><span class="n">fraction</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="./fraction.png" alt="fraction" /></p>
+
+<p>可以看到当 <code class="language-plaintext highlighter-rouge">fraction=0.1</code> 时，几乎没有阴影效果，而 <code class="language-plaintext highlighter-rouge">fraction=2</code> 的时候，阴影效果很强烈，甚至感觉有点耀眼。</p>
+
+<p>最后，让我们在一个动图效果下结束我们今天的讲解：</p>
+
+<p><img src="./precip.gif" alt="precip" /></p>
+
+<p>上图展示了2021年7月20日郑州特大暴雨的逐小时降水量在一天中的分布变化，降水数据源是中国气象局的 CMPAS 格点降水产品，由于该数据非公开数据集，在此不提供数据下载。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="python" /><category term="matplotlib" /><summary type="html"><![CDATA[众所周知，Python 的 matplotlib 是一个非常全面的制图库，它不仅可以绘制图表、地图，还可以绘制3D效果图，试想一下，如果你在写论文的时候，可以将立体地形图作为底图，那逼格噌一下子就上来了，今天我就来教大家画一个带有地理坐标属性的立体地形图。]]></summary></entry></feed>

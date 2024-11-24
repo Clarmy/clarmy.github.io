@@ -81,7 +81,7 @@ layout: compress
     </main>
 
     {% if page.modified %}
-      <small class="post-updated-at">updated_at {{page.modified | date: "%Y-%m-%d"}}</small>
+      <small class="post-updated-at">更新于 {{page.modified | date: "%Y-%m-%d"}}</small>
     {% endif %}
     {% if page.next or page.previous %}
       {% include navigation.html %}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2024-11-24T01:22:12+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Clarmy.me</title><subtitle>一个正在创业的体制外气象 IT 人的博客</subtitle><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><entry><title type="html">传说中的“德尔菲气象定律”真的存在吗？</title><link href="http://localhost:4000/does-delphi-meteo-law-really-exists/" rel="alternate" type="text/html" title="传说中的“德尔菲气象定律”真的存在吗？" /><published>2024-03-12T19:00:00+08:00</published><updated>2024-03-12T19:00:00+08:00</updated><id>http://localhost:4000/does-delphi-meteo-law-really-exists</id><content type="html" xml:base="http://localhost:4000/does-delphi-meteo-law-really-exists/"><![CDATA[<p>如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2024-11-24T11:59:40+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Clarmy.me</title><subtitle>一个正在创业的体制外气象 IT 人的博客</subtitle><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><entry><title type="html">传说中的“德尔菲气象定律”真的存在吗？</title><link href="http://localhost:4000/does-delphi-meteo-law-really-exists/" rel="alternate" type="text/html" title="传说中的“德尔菲气象定律”真的存在吗？" /><published>2024-03-12T19:00:00+08:00</published><updated>2024-03-12T19:00:00+08:00</updated><id>http://localhost:4000/does-delphi-meteo-law-really-exists</id><content type="html" xml:base="http://localhost:4000/does-delphi-meteo-law-really-exists/"><![CDATA[<p>如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。</p>
 
 <p>首先，从我们习惯上来说，对于一个陌生的概念，我们会下意识地去搜索百科词条，我们来看一下百度百科在这个概念上的描述：</p>
 
@@ -72,7 +72,211 @@
 
 <p><img src="./12.webp" alt="12" /></p>
 
-<p>鉴于高考的时间一般是每年的6-7月，因此我们在互联网上无法搜索到在2003年7月之前的任何有关“德尔菲气象定律”的信息，这也和我们实际搜索结果相吻合，因此基本可以断定这个文综考题即为该定律在国内流传的最原始出处。然而，该出处并没有引用任何真实的外文参考文献做支撑，再结合之前在英文语境下的搜索结果，我们大致可以确认“德尔菲气象定律”不是一个来源可靠的定律，很有可能并不真实存在。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。]]></summary></entry><entry><title type="html">优雅地解译机场 METAR 报文</title><link href="http://localhost:4000/elegantly-interpreting-airport-metar-reports/" rel="alternate" type="text/html" title="优雅地解译机场 METAR 报文" /><published>2024-01-31T00:00:00+08:00</published><updated>2024-01-31T00:00:00+08:00</updated><id>http://localhost:4000/elegantly-interpreting-airport-metar-reports</id><content type="html" xml:base="http://localhost:4000/elegantly-interpreting-airport-metar-reports/"><![CDATA[<p>当我们想要获取气象观测数据的时候，除了抓取气象局的网站以外，还可以考虑抓取民航的航空例行天气报告（METAR），METAR 报告是隶属于民航空管局或机场的气象部门（非气象局序列）对机场天气状况的观测报告。这类报告不仅囊括了常规的天气要素，还会对影响飞机起降的特殊天气现象做额外的观测和报告。其观测质量并不逊色于气象局的站点观测，甚至在特殊天气现象的观测质量上要比气象局的观测结果更准确。</p>
+<p>鉴于高考的时间一般是每年的6-7月，因此我们在互联网上无法搜索到在2003年7月之前的任何有关“德尔菲气象定律”的信息，这也和我们实际搜索结果相吻合，因此基本可以断定这个文综考题即为该定律在国内流传的最原始出处。然而，该出处并没有引用任何真实的外文参考文献做支撑，再结合之前在英文语境下的搜索结果，我们大致可以确认“德尔菲气象定律”不是一个来源可靠的定律，很有可能并不真实存在。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。]]></summary></entry><entry><title type="html">推荐几个民航机场 METAR 报文的数据源</title><link href="http://localhost:4000/recommend-metar-data-sources/" rel="alternate" type="text/html" title="推荐几个民航机场 METAR 报文的数据源" /><published>2024-02-03T00:00:00+08:00</published><updated>2024-02-03T00:00:00+08:00</updated><id>http://localhost:4000/recommend-metar-data-sources</id><content type="html" xml:base="http://localhost:4000/recommend-metar-data-sources/"><![CDATA[<p>前几天我写了一篇关于解译 METAR 报文的文章： <a href="/elegantly-interpreting-airport-metar-reports/"><em>「优雅地解译机场 METAR 报文」</em></a>，其中提到 METAR 报文作为全球共享的公共数据，可以从多个渠道免费获得，那么今天我就来盘点几个公开提供 METAR 报文源的网络资源。</p>
+
+<h2 id="美国航空天气中心">美国航空天气中心</h2>
+<p>主页网址：<a href="https://aviationweather.gov">https://aviationweather.gov</a></p>
+
+<p><img src="./01.webp" alt="01" /></p>
+
+<p>美国航空天气中心（Aviation Weather Center, AWC）是美国政府对外提供公开航空信息服务的网站，它隶属于美国国家天气服务（National Weather Service, NWS）。该网站提供相对全面的航空气象信息服务，且并不仅限于美国本土，它可以提供它收集来的全球大多数国家机场或航司公开共享的航空信息，包括但不限于终端观测、预报、飞行员报等丰富的数据产品。AWC 除了提供网页可视化的服务，也公开免费提供后端 API 接口服务，也就是说它是欢迎你用爬虫通过接口去他抓它的数据的。</p>
+
+<p>后端 API 接口说明文档：<a href="https://aviationweather.gov/data/api/#/">https://aviationweather.gov/data/api/#/</a></p>
+
+<p><img src="./02.webp" alt="02" /></p>
+
+<p>它的接口文档看样子使用的是 Swagger UI 框架实现的，既可以作为文档阅读，也可以现场测试，不要太方便。</p>
+
+<p><img src="./03.gif" alt="03" /></p>
+
+<p>我们根据它的文档，用后端调用一下接口：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://aviationweather.gov/api/data/metar?ids=ZBAA&amp;format=raw&amp;taf=false&amp;hours=1</span><span class="sh">'</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>返回的结果：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['ZBAA 020730Z 19003MPS 160V220 CAVOK M01/M15 Q1034 NOSIG',
+ 'ZBAA 020700Z VRB03MPS CAVOK M01/M15 Q1033 NOSIG']
+</code></pre></div></div>
+<p>是不是很简单，而且如果你把 <code class="language-plaintext highlighter-rouge">format=raw</code> 参数改成 <code class="language-plaintext highlighter-rouge">format=json</code>，它还可以自动帮你把报文解译成 json 格式的数据。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>URL = 'https://aviationweather.gov/api/data/metar?ids=ZGGG&amp;format=json&amp;taf=false&amp;hours=1'
+</code></pre></div></div>
+
+<p>返回结果（json 格式美化后）：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="nl">"metar_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">490844811</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"icaoId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZGGG"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"receiptTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-02 07:35:22"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"obsTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1706859000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reportTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-02 07:30:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"temp"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dewp"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wdir"</span><span class="p">:</span><span class="w"> </span><span class="mi">170</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wspd"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wgst"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visib"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6+"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"altim"</span><span class="p">:</span><span class="w"> </span><span class="mi">1014</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"slp"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"qcField"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wxString"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"presTend"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maxT"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"minT"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maxT24"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"minT24"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"precip"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pcp3hr"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pcp6hr"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pcp24hr"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"snow"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vertVis"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"metarType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METAR"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rawOb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZGGG 020730Z 17006MPS 9999 SCT040 29/18 Q1014 NOSIG"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mostRecent"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">23.392</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">113.307</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"elev"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"prior"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guangzhou/Baiyun Intl, GD, CN"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clouds"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SCT"</span><span class="p">,</span><span class="w"> </span><span class="nl">"base"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">}]}]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>此外你也可以通过修改 URL 中的 <code class="language-plaintext highlighter-rouge">hours</code> 参数来指定要回溯查找过去多少个小时的数据，例如 <code class="language-plaintext highlighter-rouge">hours=5</code> 表示回溯查找到5个小时前的数据，最长支持约一个月（720个小时）的回溯。</p>
+
+<p>其他数据和使用方法可以参考文档的内容做探索。</p>
+
+<h2 id="美国国家天气服务">美国国家天气服务</h2>
+<p>主页地址：<a href="https://www.weather.gov">https://www.weather.gov</a></p>
+
+<p><img src="./04.webp" alt="04" /></p>
+
+<p>美国国家天气服务（National Weather Service, NWS）是美国政府的一个机构，隶属于美国商务部下的国家海洋和大气管理局（National Oceanic and Atmospheric Administration, NOAA）。</p>
+
+<p>前面提到的 AWC 就是 NWS 的子机构，从航空 METAR 报文的角度来说，NWS 除了在 AWC 这个渠道公布数据以外，自己也会通过另一个渠道分享全量的气象数据（其中也包括 METAR 报告）：匿名 FTP。数据说明页面：<a href="https://www.weather.gov/tg/engfiles">https://www.weather.gov/tg/engfiles</a></p>
+
+<p><img src="./05.webp" alt="05" /></p>
+
+<p>网站中关于匿名 FTP 的说明，翻译如下：</p>
+
+<blockquote>
+  <p>美国国家气象服务提供匿名FTP访问，以获取包含单个编码观测和文本警告以及预报的文件，这些文件存放在一个特别的“英文描述格式”目录和文件名结构下。国际航空数据、美国警告和所有类型的水文气象预报的内容按照源头传输的方式存储，但它们被解析成使用站点ID或警告和预报区域指示符的文件名，或者通过AWIPS通信标识符进行分离。文件的内部内容为ASCII字符代码。文件的命名约定用英语拼写或由NWS区域指示符名称定义，使用“区域指示符”或“县警告区域”编号来反映文件内容的地理位置。数据可通过匿名FTP在URL tgftp.nws.noaa.gov/data处获取。有一个帮助指南展示了如何访问服务器并检索文件。</p>
+</blockquote>
+
+<p>也就是说，我们可以使用任何合适的 FTP 客户端（比如 Windows 的 XFTP、Mac 的 Finder），直接以 FTP 的协议访问 Host: tgftp.nws.noaa.gov/data 即可，用户名和密码留空即可访问。或者你也可以在浏览器里直接访问：<a href="https://tgftp.nws.noaa.gov/data/">https://tgftp.nws.noaa.gov/data/</a> 以 HTTP 的方式访问 FTP 资源。</p>
+
+<p><img src="./06.webp" alt="06" /></p>
+
+<p>该 FTP 服务存储了他们所声称的所有公开的数据，对于我们想要的 METAR 报文数据，只需要按照 observations/ -&gt; metar/ -&gt; stations/ 的顺序依次点开目录即可。</p>
+
+<p><img src="./07.webp" alt="07" /></p>
+
+<p>这里存储他们从全世界所能搜集到的所有的 METAR 原始报文，按照直观统计有 1.1w 个机场（实际上保持更新的比这个数量少，有很多机场的数据不再更新），我们点开昆明长水机场所对应的 ICAO 码: ZPPP.TXT ，可以看到长水机场的最新 METAR 报文（行文至此的当前时间为北京时间2024年2月2日16:25，即 UTC 时间2024年2月2日08:25）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2024/02/02 08:00
+ZPPP 020800Z 24008MPS 9999 SCT030 BKN043 14/01 Q1018 NOSIG
+</code></pre></div></div>
+
+<p>如果我们想要用后端程序抓取，也很简单，我们套用前面的那段代码，修改 URL 地址：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://tgftp.nws.noaa.gov/data/observations/metar/stations/ZPPP.TXT</span><span class="sh">'</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">datetimestr</span><span class="p">,</span> <span class="n">metar</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>这就可以既得到原始 METAR 报文，也得到了准确的时间信息（METAR 报文不提供年和月的信息）。你只需要替换 URL 中的 ICAO 码（即 ZPPP）即可。但是要注意的是 NWS 只能提供大型国际机场的 METAR 报，提供不了国内非国际机场的的数据。但是 NWS 提供的数据稳定性是有保障的，而且对于爬虫的容忍度相对较高。</p>
+
+<h2 id="爱荷华州立大学">爱荷华州立大学</h2>
+<p>爱荷华州立大学提供了一个可以下载长周期历史回溯的 METAR 报文归档查询的服务。</p>
+
+<p>网址：<a href="https://mesonet.agron.iastate.edu/request/download.phtml?network=CN__ASOS">https://mesonet.agron.iastate.edu/request/download.phtml?network=CN__ASOS</a></p>
+
+<p><img src="./08.webp" alt="08" /></p>
+
+<p>根据网站的自我介绍：</p>
+
+<blockquote>
+  <p>IEM维护着一个不断增长的全球机场天气自动观测数据档案库！这些观测通常被称为“ASOS”或有时是“AWOS”传感器。一个更通用的术语可能是METAR数据，这是一个描述数据传输格式的术语。如果您在请求数据时没有获得数据，请随时联系我们寻求帮助。IEM还拥有美国ASOS（2000年至今）和艾奥瓦州AWOS（1995-2011年）站点的一分钟间隔数据集。这个档案仅提供历史观测数据的原始收集，几乎没有进行质量控制。有关这个数据集的更多详情在这里。</p>
+
+  <p>数据来源：此页面上提供的数据来自多个来源，包括：Unidata IDD、NCEI ISD和MADIS One Minute ASOS。</p>
+</blockquote>
+
+<p>我们可以根据需要选择国家（Select Network）、机场代码、所查询的要素以及时间区间，然后点击 <strong>Get Data</strong> ，即可获得相应的所在区间的相应信息（如果存在）。</p>
+
+<p><img src="./09.webp" alt="09" /></p>
+
+<p>比如如果我查询北京首都机场的 METAR 报文，最远甚至可以查询到 1973 年。</p>
+
+<p><img src="./10.webp" alt="10" /></p>
+
+<p>因此，如果你想做一些大型机场的历史气象研究又苦于拿不到长周期的历史观测数据，可以到这里来下载，且完全公开免费。</p>
+
+<h2 id="ogimetcom">ogimet.com</h2>
+<p>主页：<a href="https://ogimet.com">https://ogimet.com</a></p>
+
+<p><img src="./11.webp" alt="11" /></p>
+
+<p>ogimet.com 是一个提供公共气象数据的简陋小网站，但是内部能够提供的气象数据相当的丰富，甚至 54511（WMO位于北京的国际交换站编号）的最新探空数据都可以在上面查到。原网站是西班牙语的，这里用 ChatGPT 翻译了一下它的自我介绍：</p>
+
+<blockquote>
+  <p>这是 www.ogimet.com 的气象信息服务，它使用在网络上公开可用的数据，主要来自 NOAA，以及开源软件来处理这些数据。这个网站的目标是以快速和专业的方式为用户提供最新的气象信息。这个服务器通过一条相对狭窄的带宽连接到互联网。所有内容都运行在您可以在这里看到的一台PC上。请不要滥用请求大量信息。</p>
+
+  <p>我们正在努力为这个网站添加新的页面和服务。我们的愿望是它们能够有所帮助。</p>
+</blockquote>
+
+<p>当然网页自我介绍里说了不希望滥用请求，就说明该网站在稳定性上无法得到保证，很有可能随时被爬虫抓崩。但是我们仍然可以把它作为一个备用数据源，具体的查询页面是：<a href="https://www.ogimet.com/umetars.phtml.en">https://www.ogimet.com/umetars.phtml.en</a>，以这个网址访问，页面就会按照英文显示了。</p>
+
+<p><img src="./12.webp" alt="12" /></p>
+
+<p>我们可以按照国家来选择要获取的 METAR 报文信息，它会返回该国家最新的 METAR 报文，例如我选 China，它会返回中国大陆地区的所有机场报文。</p>
+
+<p><img src="./13.webp" alt="13" />
+<img src="./14.webp" alt="14" /></p>
+
+<p>出于一种礼貌的保护，我就不在这里演示使用后端程序抓取了。</p>
+
+<h2 id="skyvectorcom">skyvector.com</h2>
+<p>主页：<a href="https://skyvector.com">https://skyvector.com</a></p>
+
+<p>skyvector.com 是一个提供了丰富可视化的航空服务网站，它的特点是提供了自己绘制的精美的全球航空瓦片地图，在底图中绘制了航空行业的很多更专业的信息。同时也提供全球机场的 METAR 报文数据。</p>
+
+<p><img src="./15.webp" alt="15" /></p>
+
+<p>但是该网站的服务性能并不优秀，网页加载速度较慢。但是该网站的架构是前后端分离的，没有特别的反爬防御，可以通过抓包的方式高效抓取数据，但在这里不做演示。</p>
+
+<h2 id="metar-tafcom">metar-taf.com</h2>
+<p>主页：<a href="https://metar-taf.com">https://metar-taf.com</a></p>
+
+<p><img src="./16.webp" alt="16" /></p>
+
+<p>metar-taf.com 是一个商业化的机场气象信息网站，该网站的 UI 设计相当精美。它提供 METAR 报文信息，也提供相应的后端查询接口，但是因为它是一个商业化网站，所以通过后端抓取 METAR 数据是要购买额度的。该网站的反爬虫防御仅做了 User-Agent 识别，因此直接抓取的难度较低，然而它的数据也并不能覆盖中国地区的中小型机场。</p>
+
+<p>这里给出一个后端抓取的简单示例：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
+<span class="kn">import</span> <span class="n">requests</span>
+
+<span class="k">def</span> <span class="nf">extract_metar</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">METAR\s[\w\s\/]+\d{6}Z\s[AUTO\s\dKT\s]+[\dSM\s]+[CLR\s]+[\w\s\/\d]+</span><span class="sh">"</span>
+
+    <span class="n">metars</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">list</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">metars</span><span class="p">))</span>
+    
+<span class="n">url</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://metar-taf.com/KBFF</span><span class="sh">'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">User-Agent</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36</span><span class="sh">'</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">resp</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">extract_metar</span><span class="p">,</span> <span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+<p>结果：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="sh">'</span><span class="s">METAR KBFF 031353Z AUTO 09004KT 6SM BR OVC005 04/03 A2959 RMK AO2 SLP025 T00390028</span><span class="sh">'</span><span class="p">]</span>
+</code></pre></div></div>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="metar" /><category term="航空气象" /><summary type="html"><![CDATA[前几天我写了一篇关于解译 METAR 报文的文章：优雅地解译机场 METAR 报文，其中提到 METAR 报文作为全球共享的公共数据，可以从多个渠道免费获得，那么今天我就来盘点几个公开提供 METAR 报文源的网络资源。]]></summary></entry><entry><title type="html">优雅地解译机场 METAR 报文</title><link href="http://localhost:4000/elegantly-interpreting-airport-metar-reports/" rel="alternate" type="text/html" title="优雅地解译机场 METAR 报文" /><published>2024-01-31T00:00:00+08:00</published><updated>2024-01-31T00:00:00+08:00</updated><id>http://localhost:4000/elegantly-interpreting-airport-metar-reports</id><content type="html" xml:base="http://localhost:4000/elegantly-interpreting-airport-metar-reports/"><![CDATA[<p>当我们想要获取气象观测数据的时候，除了抓取气象局的网站以外，还可以考虑抓取民航的航空例行天气报告（METAR），METAR 报告是隶属于民航空管局或机场的气象部门（非气象局序列）对机场天气状况的观测报告。这类报告不仅囊括了常规的天气要素，还会对影响飞机起降的特殊天气现象做额外的观测和报告。其观测质量并不逊色于气象局的站点观测，甚至在特殊天气现象的观测质量上要比气象局的观测结果更准确。</p>
 
 <p>而且 METAR 报是全球公开共享的公共数据，在网络上很容易获取。比如我们可以从美国的航空天气网 <a href="https://aviationweather.gov">https://aviationweather.gov</a> 实时获取全球任何国家的国际机场（4F级）的最新 METAR 报文。而民航机场的地理坐标也是公开的，很方便对观测数据的地理坐标做校准。因此 METAR 报文是气象实况观测数据的一个很好的补充，甚至美国的气象预报测评网站 ForecastWatch 也主要使用机场 METAR 报文解析后的数据作为测评的真值。</p>
 
@@ -1057,259 +1261,4 @@ edition      centre       <span class="nb">date         </span>dataType     grid
 <span class="nt">-rw-r--r--</span>  1 clarmylee  staff    52M  3  5 19:26 era5-sample.grib.bz2
 <span class="nt">-rw-r--r--</span>@ 1 clarmylee  staff   161M  3  5 19:29 era5-sample.nc3
 <span class="nt">-rw-r--r--</span>  1 clarmylee  staff    32M  3  5 19:29 era5-sample.nc3.bz2
-</code></pre></div></div>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="grib" /><category term="netcdf" /><summary type="html"><![CDATA[在气象行业里，GRIB 和 NetCDF 文件格式可谓家喻户晓，但是这两种文件格式到底有哪些优势或劣势？在工程实践上两种格式各适合于什么样的应用场景以及性能如何？这些问题似乎在国内的气象技术圈子里很少见到有人讨论，今天我就结合我这些年来和这两种格式打交道的经验，跟大家简单分享一下这两种数据格式的特点及性能对比，供各位参考。]]></summary></entry><entry><title type="html">用 Python 绘制炫酷的立体地形图</title><link href="http://localhost:4000/how-to-draw-pretty-hillshade-with-python/" rel="alternate" type="text/html" title="用 Python 绘制炫酷的立体地形图" /><published>2022-02-19T00:00:00+08:00</published><updated>2022-02-19T00:00:00+08:00</updated><id>http://localhost:4000/how-to-draw-pretty-hillshade-with-python</id><content type="html" xml:base="http://localhost:4000/how-to-draw-pretty-hillshade-with-python/"><![CDATA[<p>众所周知，Python 的 matplotlib 是一个非常全面的制图库，它不仅可以绘制图表、地图，还可以绘制 3D 效果图，试想一下，如果你在写论文的时候，可以将立体地形图作为底图，那逼格噌一下子就上来了，今天我就来教大家画一个带有地理坐标属性的立体地形图，啥也不说，咱先上效果图：</p>
-
-<p><img src="./hillshades.gif" alt="hillshades" /></p>
-
-<p>上面这张图是展示了基于 matplotlib + cartopy 的山地阴影图在不同光影参数下的变化效果。这个变化效果有利于我们理解 matplotlib 对该效果的设计理念。</p>
-
-<p>在我讲解之前，我推荐大家读一下 matplotlib 官方文档库里的这一篇文章：<a href="https://matplotlib.org/stable/gallery/specialty_plots/topographic_hillshading.html">Topographic hillshading</a>，该文章已经介绍了如何单独基于 matplotlib 绘制山地阴影图，并给出了不同渲染参数下的渲染效果图。我当初对山地立体图的学习就是从这篇文章开始的。</p>
-
-<p>本教程代码所需依赖：</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>matplotlib
-cartopy&gt;<span class="o">=</span>0.19.0
-<span class="nv">cnmaps</span><span class="o">==</span>0.2.1
-netCDF4
-numpy
-</code></pre></div></div>
-<p>本教程使用的 DEM 数据：<a href="https://www.heywhale.com/mw/dataset/620f914468364e0017a3b57a/file?shareby=620ce369c1ae5e001747085e">和鲸社区数据集: CHINA_DEM</a></p>
-
-<h2 id="神说要有光">神说：要有光</h2>
-<p>光，是三维世界最重要的东西，要绘制山地立体图，首先需要理解 matplotlib 中的 <code class="language-plaintext highlighter-rouge">LightSource</code> 对象，顾名思义，这个对象就是“光源”，与 3D 建模里的光源是同一个东西，它的调用方法是：</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-</code></pre></div></div>
-<p>其中 <code class="language-plaintext highlighter-rouge">azdeg</code> 是方位角，<code class="language-plaintext highlighter-rouge">altdeg</code> 是高度角，这两个参数可以确定一个光源的投射方向，进而可以知道被光源投射的物体，哪一部分应该是光，哪一部分应该是影，而光影便是实现地形立体效果的金钥匙。</p>
-
-<p>在我们创建了光源以后，就需要基于该光源对地形数据生成光影对象，通常情况下，对于山地阴影，我们有两个方法可以选择，一个是 <code class="language-plaintext highlighter-rouge">hillshade</code>，另一个是 <code class="language-plaintext highlighter-rouge">shade</code>，其中 <code class="language-plaintext highlighter-rouge">hillshade</code> 返回的是以0-1的数字代表的光影明暗特征，你可以把它理解为一个灰度图，而 <code class="language-plaintext highlighter-rouge">shade</code> 返回的是一个RGBA数组，也就是彩图，下面我们使用 <code class="language-plaintext highlighter-rouge">shade</code> 来看一个实际的例子：</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
-<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
-<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
-<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
-
-<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
-
-<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
-
-<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-
-<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-<span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
-               <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-<span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-<span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p><img src="./henan.png" alt="henan" /></p>
-
-<p>这样，我们的第一张立体地形图就出来了，是不是很炫酷？此外，如果你调整 <code class="language-plaintext highlighter-rouge">azdeg</code> 和 <code class="language-plaintext highlighter-rouge">altdeg</code> 的值，阴影的方位就会随之改变，就像文章开头那张动图一样，它就是通过修改 <code class="language-plaintext highlighter-rouge">azdeg</code> 的值以达到光线旋转照射的效果的。</p>
-
-<h2 id="光影参数详解">光影参数详解</h2>
-<p>接下来，我们需要了解一下 <code class="language-plaintext highlighter-rouge">ls.shade</code> 方法的各个参数是干什么的，首先第一个位置函数肯定是我们的 dem 数据，这里需要注意的是，你必须把 dem 的纬度顺序调整为低纬-&gt;高纬的顺序，否则渲染出来的图片是反的。<code class="language-plaintext highlighter-rouge">cmap</code> 是色标这个大家应该都知道就不赘述了，<code class="language-plaintext highlighter-rouge">blend_mode</code> 这个参数大家会比较陌生，它是一种渲染模式选择，预置选项有：<code class="language-plaintext highlighter-rouge">'hsv'</code>，<code class="language-plaintext highlighter-rouge">'overlay'</code>，<code class="language-plaintext highlighter-rouge">'soft'</code>。它们分别是什么意思呢？官方文档在这个参数上的解释一大堆，但是根据我的理解，这个参数其实就类似于“滤镜”，你可以调整这三个滤镜来看看哪个是你喜欢的效果，我们来试一下：</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
-<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
-<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
-<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
-
-<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
-
-<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
-
-<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-
-<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mode</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="sh">'</span><span class="s">soft</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">hsv</span><span class="sh">'</span><span class="p">]):</span>
-    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-                   <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
-
-    
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
-
-    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p><img src="./blend_mode.png" alt="blend_mode" /></p>
-
-<p>看得出来，还是 <code class="language-plaintext highlighter-rouge">overlay</code> 看起来更均衡一些。</p>
-
-<p>下面我们来看一下 <code class="language-plaintext highlighter-rouge">vert_exag</code> 参数，这个参数表征的是顶点的突出程度，这个点的值越大，立体感会越强，但是如果你把它设得太大，也会有一些副作用，来看示例：</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
-<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
-<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
-<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
-
-<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
-
-<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
-
-<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-
-<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ve</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]):</span>
-    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
-                   <span class="n">vert_exag</span><span class="o">=</span><span class="n">ve</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
-
-    
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="n">ve</span><span class="p">)</span>
-
-    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p><img src="./vert_exag.png" alt="vert_exag" /></p>
-
-<p>上图从左到右 <code class="language-plaintext highlighter-rouge">vert_exag</code> 分别等于0.5、1和10，可以看出来，当 <code class="language-plaintext highlighter-rouge">vert_exag==10</code> 的时候，平原地图会有很强的噪点效果，这也是 <code class="language-plaintext highlighter-rouge">vert_exag</code> 值设置过大的一个副作用，在实际绘图的时候，需要综合考虑，选一个合适的值。当然，对于 <code class="language-plaintext highlighter-rouge">vert_exag</code> 参数，还有另外两个参数会与之配合（或者说制衡），那就是 <code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code>，这两个参数的含义是在平面空间上单个顶点的重采样间隔，<code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code> 的值越小，图像越能展现原始的数据细节，<code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code> 的值越大，那么最终出来的图越平滑，一些原始数据的细节就会被平滑掉了。下面我们来看一下不同的<code class="language-plaintext highlighter-rouge">dx</code>，<code class="language-plaintext highlighter-rouge">dy</code> 取值，对图像效果有什么影响。</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
-<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
-<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
-<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
-
-<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
-
-<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
-
-<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-
-<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dd</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]):</span>
-    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
-                   <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dd</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="n">dd</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
-
-    
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">dx=</span><span class="si">{</span><span class="n">dd</span><span class="si">}</span><span class="s">, dy=</span><span class="si">{</span><span class="n">dd</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
-
-    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p><img src="./dx_dy.png" alt="dx_dy" /></p>
-
-<p>可以看到，当 <code class="language-plaintext highlighter-rouge">dx</code> 和 <code class="language-plaintext highlighter-rouge">dy</code> 偏小的时候，同样出现了噪点问题。</p>
-
-<p>最后还有一个很重要的参数就是 <code class="language-plaintext highlighter-rouge">fraction</code>，它是一个控制光影效果强度的参数，这个值越大，明暗的对比度就越大，我们来看一下对比效果：</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">netCDF4</span> <span class="k">as</span> <span class="n">nc</span>
-<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="n">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
-<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LightSource</span>
-<span class="kn">from</span> <span class="n">cnmaps</span> <span class="kn">import</span> <span class="n">get_map</span><span class="p">,</span> <span class="n">draw_map</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="nc">Dataset</span><span class="p">(</span><span class="sh">'</span><span class="s">./data/cldasgrid_dem.nc</span><span class="sh">'</span><span class="p">)</span>
-
-<span class="n">_lon</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LON</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_lat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">LAT</span><span class="sh">'</span><span class="p">][:]</span>
-<span class="n">_dem</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">variables</span><span class="p">[</span><span class="sh">'</span><span class="s">elevation</span><span class="sh">'</span><span class="p">][:]</span>
-
-<span class="n">lon</span> <span class="o">=</span> <span class="n">_lon</span><span class="p">[</span><span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="n">_lat</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">]</span>
-
-<span class="n">dem</span> <span class="o">=</span> <span class="n">_dem</span><span class="p">[</span><span class="mi">1635</span><span class="p">:</span> <span class="mi">2134</span><span class="p">,</span> <span class="mi">4032</span><span class="p">:</span> <span class="mi">4662</span><span class="p">]</span>
-
-<span class="n">ls</span> <span class="o">=</span> <span class="nc">LightSource</span><span class="p">(</span><span class="n">azdeg</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span> <span class="n">altdeg</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fraction</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]):</span>
-    <span class="n">rgb</span> <span class="o">=</span> <span class="n">ls</span><span class="p">.</span><span class="nf">shade</span><span class="p">(</span><span class="n">dem</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">gist_earth</span><span class="p">,</span> <span class="n">blend_mode</span><span class="o">=</span><span class="sh">'</span><span class="s">overlay</span><span class="sh">'</span><span class="p">,</span>
-                   <span class="n">vert_exag</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="n">fraction</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">2300</span><span class="p">)</span>
-
-    
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="nf">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="n">img</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">lon</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lon</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span><span class="n">lat</span><span class="p">.</span><span class="nf">max</span><span class="p">()),</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="nc">PlateCarree</span><span class="p">())</span>
-
-    <span class="nf">draw_map</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">fraction=</span><span class="si">{</span><span class="n">fraction</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
-
-    <span class="n">ax</span><span class="p">.</span><span class="nf">set_extent</span><span class="p">(</span><span class="nf">get_map</span><span class="p">(</span><span class="sh">'</span><span class="s">河南</span><span class="sh">'</span><span class="p">).</span><span class="nf">get_extent</span><span class="p">(</span><span class="nb">buffer</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p><img src="./fraction.png" alt="fraction" /></p>
-
-<p>可以看到当 <code class="language-plaintext highlighter-rouge">fraction=0.1</code> 时，几乎没有阴影效果，而 <code class="language-plaintext highlighter-rouge">fraction=2</code> 的时候，阴影效果很强烈，甚至感觉有点耀眼。</p>
-
-<p>最后，让我们在一个动图效果下结束我们今天的讲解：</p>
-
-<p><img src="./precip.gif" alt="precip" /></p>
-
-<p>上图展示了2021年7月20日郑州特大暴雨的逐小时降水量在一天中的分布变化，降水数据源是中国气象局的 CMPAS 格点降水产品，由于该数据非公开数据集，在此不提供数据下载。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="python" /><category term="matplotlib" /><summary type="html"><![CDATA[众所周知，Python 的 matplotlib 是一个非常全面的制图库，它不仅可以绘制图表、地图，还可以绘制3D效果图，试想一下，如果你在写论文的时候，可以将立体地形图作为底图，那逼格噌一下子就上来了，今天我就来教大家画一个带有地理坐标属性的立体地形图。]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="grib" /><category term="netcdf" /><summary type="html"><![CDATA[在气象行业里，GRIB 和 NetCDF 文件格式可谓家喻户晓，但是这两种文件格式到底有哪些优势或劣势？在工程实践上两种格式各适合于什么样的应用场景以及性能如何？这些问题似乎在国内的气象技术圈子里很少见到有人讨论，今天我就结合我这些年来和这两种格式打交道的经验，跟大家简单分享一下这两种数据格式的特点及性能对比，供各位参考。]]></summary></entry></feed>

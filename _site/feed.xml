@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2024-11-24T12:32:56+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Clarmy.me</title><subtitle>一个正在创业的体制外气象 IT 人的博客</subtitle><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><entry><title type="html">传说中的“德尔菲气象定律”真的存在吗？</title><link href="http://localhost:4000/does-delphi-meteo-law-really-exists/" rel="alternate" type="text/html" title="传说中的“德尔菲气象定律”真的存在吗？" /><published>2024-03-12T19:00:00+08:00</published><updated>2024-03-12T19:00:00+08:00</updated><id>http://localhost:4000/does-delphi-meteo-law-really-exists</id><content type="html" xml:base="http://localhost:4000/does-delphi-meteo-law-really-exists/"><![CDATA[<p>如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2024-11-24T12:44:37+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Clarmy.me</title><subtitle>一个正在创业的体制外气象 IT 人的博客</subtitle><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><entry><title type="html">传说中的“德尔菲气象定律”真的存在吗？</title><link href="http://localhost:4000/does-delphi-meteo-law-really-exists/" rel="alternate" type="text/html" title="传说中的“德尔菲气象定律”真的存在吗？" /><published>2024-03-12T19:00:00+08:00</published><updated>2024-03-12T19:00:00+08:00</updated><id>http://localhost:4000/does-delphi-meteo-law-really-exists</id><content type="html" xml:base="http://localhost:4000/does-delphi-meteo-law-really-exists/"><![CDATA[<p>如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。</p>
 
 <p>首先，从我们习惯上来说，对于一个陌生的概念，我们会下意识地去搜索百科词条，我们来看一下百度百科在这个概念上的描述：</p>
 
@@ -547,7 +547,79 @@ ZPPP 020800Z 24008MPS 9999 SCT030 BKN043 14/01 Q1018 NOSIG
 
 <p>AI 无法替代人的一个最重要的现实因素是，AI 不能作为责任体来承担责任，通俗来讲就是“AI不粘锅定理”，气象行业是一个需要背锅的行业，AI 没有软肋，不领工资，无法开除，你能让它背锅？所以说气象工作者还是无法替代的。</p>
 
-<p>最后，人生苦短，用上 AI 好好享受生活它不香吗？</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[自从盘古气象模型点爆气象圈子以后，各种 AI 预报模型就像雨后春笋一样遍地开花，名字起得好听不说，还争相上了《Nature》。这些 AI 预报模型在赚足了眼球的同时，也迎来了业内的一些质疑，而 AI 预报模型的盛行也真真切切地让很多气象工作者感到焦虑，甚至有一些博主喊出了“留口饭吃”的口号。很多行业专家、学者、KOL都在热烈讨论 AI 预报的这个话题。我也看了很多观点，有一些感触，所以也想就着话题的热度，聊一聊我的看法。]]></summary></entry><entry><title type="html">漫谈面向对象编程</title><link href="http://localhost:4000/rambling-about-object-oriented-programming/" rel="alternate" type="text/html" title="漫谈面向对象编程" /><published>2023-04-24T19:00:00+08:00</published><updated>2023-04-24T19:00:00+08:00</updated><id>http://localhost:4000/rambling-about-object-oriented-programming</id><content type="html" xml:base="http://localhost:4000/rambling-about-object-oriented-programming/"><![CDATA[<p><em>任何计算机问题都可以通过加一层来解决，如果解决不了，那就再加一层。</em></p>
+<p>最后，人生苦短，用上 AI 好好享受生活它不香吗？</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[自从盘古气象模型点爆气象圈子以后，各种 AI 预报模型就像雨后春笋一样遍地开花，名字起得好听不说，还争相上了《Nature》。这些 AI 预报模型在赚足了眼球的同时，也迎来了业内的一些质疑，而 AI 预报模型的盛行也真真切切地让很多气象工作者感到焦虑，甚至有一些博主喊出了“留口饭吃”的口号。很多行业专家、学者、KOL都在热烈讨论 AI 预报的这个话题。我也看了很多观点，有一些感触，所以也想就着话题的热度，聊一聊我的看法。]]></summary></entry><entry><title type="html">用 Python 绘制你自己的海（nan）拉鲁</title><link href="http://localhost:4000/draw-your-own-hyrule-with-python/" rel="alternate" type="text/html" title="用 Python 绘制你自己的海（nan）拉鲁" /><published>2023-05-24T21:24:00+08:00</published><updated>2023-05-24T21:24:00+08:00</updated><id>http://localhost:4000/draw-your-own-hyrule-with-python</id><content type="html" xml:base="http://localhost:4000/draw-your-own-hyrule-with-python/"><![CDATA[<p>说起来塞尔达2王国之泪发售快两周了，这两周我已经狂卷了60个小时在海拉鲁大地。今天我想祭出一个去年就已经写好的一段代码，用真实世界 DEM 数据（海南岛）绘制的一个海拉鲁 style 的地图。</p>
+
+<p>为了方便获取 DEM 数据，我写了一个 pyterrain 的小包，可以通过制定经纬度范围和缩放等级自动下载和拼接出网格 DEM。安装方法：<code class="language-plaintext highlighter-rouge">pip install -U pyterrain</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">copy</span>
+
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">matplotlib.colors</span> <span class="k">as</span> <span class="n">colors</span>
+
+<span class="kn">from</span> <span class="n">pyterrain</span> <span class="kn">import</span> <span class="n">Terrain</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="mf">108.444319</span><span class="p">,</span> <span class="mf">20.161757</span><span class="p">,</span> <span class="mf">111.318897</span><span class="p">,</span> <span class="mf">18.05883</span>  <span class="c1"># 海南岛
+</span>
+    <span class="n">terrain</span> <span class="o">=</span> <span class="nc">Terrain</span><span class="p">(</span><span class="sh">"</span><span class="s">qBD4m7PNT5apV-Xl7PROxA</span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">elevation</span> <span class="o">=</span> <span class="n">terrain</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="sh">"</span><span class="s">lonlat</span><span class="sh">"</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="n">land</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">deepcopy</span><span class="p">(</span><span class="n">elevation</span><span class="p">)</span>
+    <span class="n">land</span><span class="p">[</span><span class="n">land</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">elevation</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="n">elevation</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span>
+    <span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nc">Axes</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set_axis_off</span><span class="p">()</span>
+    <span class="n">fig</span><span class="p">.</span><span class="nf">add_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">hyrule</span> <span class="o">=</span> <span class="n">colors</span><span class="p">.</span><span class="n">LinearSegmentedColormap</span><span class="p">.</span><span class="nf">from_list</span><span class="p">(</span>
+        <span class="sh">"</span><span class="s">hyrule</span><span class="sh">"</span><span class="p">,</span> <span class="p">[</span><span class="sh">"</span><span class="s">#3D2E00</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">#C6C7B0</span><span class="sh">"</span><span class="p">]</span>
+    <span class="p">)</span>  <span class="c1"># colormap for hyrule land
+</span>    <span class="n">ax</span><span class="p">.</span><span class="nf">contourf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">land</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">hyrule</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">land</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contourf</span><span class="p">(</span>
+        <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">elevation</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="n">elevation</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span> <span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">#212A2D</span><span class="sh">"</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contourf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">elevation</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">#41535A</span><span class="sh">"</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contour</span><span class="p">(</span>
+        <span class="n">xs</span><span class="p">,</span>
+        <span class="n">ys</span><span class="p">,</span>
+        <span class="n">elevation</span><span class="p">,</span>
+        <span class="n">colors</span><span class="o">=</span><span class="sh">"</span><span class="s">#382D06</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">elevation</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span> <span class="mi">20</span><span class="p">),</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+        <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+        <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contour</span><span class="p">(</span>
+        <span class="n">xs</span><span class="p">,</span>
+        <span class="n">ys</span><span class="p">,</span>
+        <span class="n">elevation</span><span class="p">,</span>
+        <span class="n">colors</span><span class="o">=</span><span class="sh">"</span><span class="s">#382D06</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">elevation</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">),</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+        <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+        <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fig</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="sh">"</span><span class="s">./hynanrule.png</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>程序运行的过程中，它会自动进行瓦片 DEM 的下载、拼接，最后画图。图片效果如下：</p>
+
+<p><img src="/assets/img/draw-your-own-hyrule-with-python/01.png" alt="hynanrule" /></p>
+
+<p>我们看一下细节：</p>
+
+<p><img src="/assets/img/draw-your-own-hyrule-with-python/02.png" alt="hynanrule" />
+<img src="/assets/img/draw-your-own-hyrule-with-python/03.webp" alt="hynanrule" /></p>
+
+<p>是不是有内味儿了🙃 哦对了，代码里用了我自己的一个 API key，我不能保证它永远都有效。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="dem" /><summary type="html"><![CDATA[说起来塞尔达2王国之泪发售快两周了，这两周我已经狂卷了60个小时在海拉鲁大地。今天我想祭出一个去年就已经写好的一段代码，用真实世界 DEM 数据（海南岛）绘制的一个海拉鲁 style 的地图。]]></summary></entry><entry><title type="html">漫谈面向对象编程</title><link href="http://localhost:4000/rambling-about-object-oriented-programming/" rel="alternate" type="text/html" title="漫谈面向对象编程" /><published>2023-04-24T19:00:00+08:00</published><updated>2023-04-24T19:00:00+08:00</updated><id>http://localhost:4000/rambling-about-object-oriented-programming</id><content type="html" xml:base="http://localhost:4000/rambling-about-object-oriented-programming/"><![CDATA[<p><em>任何计算机问题都可以通过加一层来解决，如果解决不了，那就再加一层。</em></p>
 
 <p>如果有人问我怎么解释面向对象编程，我感觉我很难用一句言简意赅的话来回答，但如果一定要试着解释，我可能会说：“面向对象编程是一种在代码中模拟现实世界的编程理念，它是把程序里的逻辑实体当做物体来组织它们的关系并处理问题的方法论。”</p>
 
@@ -1214,53 +1286,4 @@ edition      centre       <span class="nb">date         </span>dataType     grid
 
 <blockquote>
   <p>Wentao Li. (2022). 一份GRIB与NetCDF的体积对比报告 (Version v1). Zenodo. https://doi.org/10.5281/zenodo.6348695</p>
-</blockquote>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="grib" /><category term="netcdf" /><summary type="html"><![CDATA[由于前面写的一篇关于 GRIB 与 NetCDF 的文章《浅析GRIB与NetCDF数据格式的特点及性能对比》在GRIB2与NetCDF4文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。]]></summary></entry><entry><title type="html">GRIB 与 NetCDF 数据格式的特点及性能对比</title><link href="http://localhost:4000/analysis-grib-vs-netcdf/" rel="alternate" type="text/html" title="GRIB 与 NetCDF 数据格式的特点及性能对比" /><published>2022-03-06T11:58:47+08:00</published><updated>2022-03-06T11:58:47+08:00</updated><id>http://localhost:4000/analysis-grib-vs-netcdf</id><content type="html" xml:base="http://localhost:4000/analysis-grib-vs-netcdf/"><![CDATA[<p>在气象行业里，GRIB 和 NetCDF 文件格式可谓家喻户晓，但是这两种文件格式到底有哪些优势或劣势？在工程实践上两种格式各适合于什么样的应用场景以及性能如何？这些问题似乎在国内的气象技术圈子里很少见到有人讨论，今天我就结合我这些年来和这两种格式打交道的经验，跟大家简单分享一下这两种数据格式的特点及性能对比，供各位参考。</p>
-
-<h2 id="grib-的基本特点">GRIB 的基本特点</h2>
-<p>GRIB 文件是由一种名为 Message 的自描述数据单元组成的二进制文件集合，而且它是由多个 Message 直接拼接而成的，是一种散装的数据格式。甚至一个GRIB 文件内可以同时包含 GRIB1 格式和 GRIB2 格式的 Message，这也就是为什么我们通常看到的 ECMWF 和 GFS 的 GRIB 文件没有像常规的数据文件一样带有后缀名的原因。</p>
-
-<p>由于 GRIB 格式自描述的基本单位是 Message，所以它可以以 Message 作为基本单元进行排列组合而不会影响使用，比如说，只要你恰如其分地从两个相邻的Message 中间把一个 GRIB 文件切开，那么它就会直接变成两个 GRIB 文件，就像蚯蚓一样。同样地，你把两个 GRIB 文件直接拼接到一起，它又会直接形成了一个大的 GRIB 文件。</p>
-
-<p>这种特征给它带来的最大好处是：灵活，非常有利于网络传输。</p>
-
-<p>举一个 GFS 的例子，众所周知，GFS 数据集非常的庞大，单个时次的文件能达到好几百 GB，如此庞大的数据量的下载是一个挑战。而且 GFS 输出的要素太多，对于一些只需要几个要素的需求，如果我们把它整个数据集全部下载下来对磁盘和带宽资源就太浪费了。所以我们可能需要一种方法可以切出其中一部分要素要素来下载，这时候 GRIB 文件格式的散装特征就发挥作用了，NCEP 官方在发布 GFS 数据文件时，都会附带一个 .idx 的索引文件，它会记录每一条 Message 的字节范围，而 HTTP 协议天然支持截断请求，那么你只需要根据 .idx 文件计算出自己想要的变量，然后在用 HTTP 请求的时候传入请求的字节范围即可。</p>
-
-<p>然而，GRIB 的散装结构也不都是优点，它也有它的问题，那就是文件校验会比较麻烦。通常情况下，我们在使用其他常见的二进制文件的时候，如果文件损坏，那么它就无法正常打开，例如一个损坏的 .docx 文件，你是无法用 Word 正常打开的，但 GRIB 与众不同，如果你在下载 GRIB 文件的时候，有几个字节没有下载完整，它仅会影响它所在的那个 Message，其他 Message 可以正常使用，当你没有读到残缺的 Message 时，它看起来就是个正常的文件，所以你就无法通过文件是否正常打开来判断文件是否完整，还需要结合字节数的对比以及重建索引等操作才能更有把握地判断文件的完整性。</p>
-
-<p>GRIB 在官方介绍的时候，自诩为一种紧凑且体积小的数据格式，但是事实上这一所谓的“优势”早就已经被 NetCDF4 格式按在地上摩擦了，而且它的文件读取效率也远低于 NetCDF4，基本上已经算是被 NetCDF4 全方位超越和碾压了，这一点后面我们会讲到。</p>
-
-<h2 id="netcdf-的基本特点">NetCDF 的基本特点</h2>
-<p>说到 NetCDF 格式，不得不把 NetCDF3 和 NetCDF4 分开来说。虽然它们都是 NetCDF 家族的成员，但是它们基本上算是两个物种。你知道为什么 GRIB 会自诩为紧凑而小巧的数据格式吗？那因为它在和 NetCDF3 做对比，跟 GRIB 的文件大小相比，同要素的 NetCDF3 格式的文件体积确实很大，不吹不黑基本2倍起步。</p>
-
-<p>但是后来，NetCDF4 出来了，NC4 完全舍弃了 NC3 的底层架构，而采用了 HDF5 的底层，或者换句话说，其实NC4就是一种特殊的 HDF5，它俩的关系就类似于 geojson 与 json 之间的关系，你甚至可以直接用 h5py 去打开 nc4 的文件，或者用 NetCDF4 的包去读 .h5 文件。</p>
-
-<p>NC4 对于 NC3 是全方位的提升，NC4 文件支持压缩，其压缩比相当的优秀，并且压缩后的文件可以直接读取也不影响速度，至于为什么HDF5的性能会这么好，其实我也没仔细研究过。</p>
-
-<p>上面讲了这么多，都是空口白牙，没有证据，下面我就用几个实际案例来证实上面的这些结论。</p>
-
-<h2 id="文件体积对比">文件体积对比</h2>
-<p>下面演示的例子所使用的数据，一部分来自 ERA5，一部分来自 GFS。ERA5 的数据我是下载了地面层13个要素的单一时次的 GRIB 和 NetCDF 文件，为了公平起见，两种格式就是在官网下载文件时分别选 GRIB 和 NetCDF 输出格式下载的，不是我自己转换的。而 GFS 数据仅用于演示 pygrib 的两种读取效率，并没有参与到与 NetCDF 格式的性能比较，这些数据都上传到和鲸社区了，可以去那里下载。</p>
-
-<p>我们现在有两个文件，分别是 era5-sample.grib 和 era5-sample.nc3。</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample<span class="k">*</span>
-<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  5 19:26 era5-sample.grib
-<span class="nt">-rw-r--r--</span>@ 1 clarmylee  staff   161M  3  5 19:29 era5-sample.nc3
-</code></pre></div></div>
-
-<p>我们把 GRIB 文件转为 GRIB2 存一份：</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>grib_set <span class="nt">-s</span> <span class="nv">edition</span><span class="o">=</span>2 era5-sample.grib era5-sample.grib2
-<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample.grib<span class="k">*</span>
-<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  5 19:26 era5-sample.grib
-<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  6 02:14 era5-sample.grib2
-</code></pre></div></div>
-
-<p>可以看到 GRIB 和 GRIB2 的体积几乎没有变化。而在初始的状态下，NC3 的文件是 GRIB 文件的2倍。这也是 GRIB 曾经引以为豪的资本，但如果我们用 bzip2 对二者进行压缩的话：</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bzip2 <span class="nt">-k</span> era5-sample.nc3
-<span class="nv">$ </span>bzip2 <span class="nt">-k</span> era5-sample.grib
-<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lh</span> era5-sample<span class="k">*</span>
-<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    80M  3  5 19:26 era5-sample.grib
-<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    52M  3  5 19:26 era5-sample.grib.bz2
-<span class="nt">-rw-r--r--</span>@ 1 clarmylee  staff   161M  3  5 19:29 era5-sample.nc3
-<span class="nt">-rw-r--r--</span>  1 clarmylee  staff    32M  3  5 19:29 era5-sample.nc3.bz2
-</code></pre></div></div>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="grib" /><category term="netcdf" /><summary type="html"><![CDATA[在气象行业里，GRIB 和 NetCDF 文件格式可谓家喻户晓，但是这两种文件格式到底有哪些优势或劣势？在工程实践上两种格式各适合于什么样的应用场景以及性能如何？这些问题似乎在国内的气象技术圈子里很少见到有人讨论，今天我就结合我这些年来和这两种格式打交道的经验，跟大家简单分享一下这两种数据格式的特点及性能对比，供各位参考。]]></summary></entry></feed>
+</blockquote>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="grib" /><category term="netcdf" /><summary type="html"><![CDATA[由于前面写的一篇关于 GRIB 与 NetCDF 的文章《浅析GRIB与NetCDF数据格式的特点及性能对比》在GRIB2与NetCDF4文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。]]></summary></entry></feed>

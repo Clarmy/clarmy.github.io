@@ -54,7 +54,7 @@ def test_chinese():
 
 test_chinese()
 ```
-![sample](./sample.png)
+![sample](/assets/img/how-to-solve-tofu-in-matplotlib/sample.png)
 
 ## 漫谈
 其实饱受 matplotlib 字体显示之苦的并非只有中文，邻国韩国和日本的网友在使用 matplotlib 的时候也会遇到相同的问题，社区里一般会把这个问题称为“豆腐块(tofu)”，就是说写出来的字是豆腐。

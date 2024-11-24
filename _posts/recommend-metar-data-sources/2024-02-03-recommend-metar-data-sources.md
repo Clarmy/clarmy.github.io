@@ -11,17 +11,17 @@ description: 前几天我写了一篇关于解译 METAR 报文的文章：优雅
 ## 美国航空天气中心
 主页网址：[https://aviationweather.gov](https://aviationweather.gov)
 
-![01](./01.webp)
+![01](/assets/img/recommend-metar-data-sources/01.webp)
 
 美国航空天气中心（Aviation Weather Center, AWC）是美国政府对外提供公开航空信息服务的网站，它隶属于美国国家天气服务（National Weather Service, NWS）。该网站提供相对全面的航空气象信息服务，且并不仅限于美国本土，它可以提供它收集来的全球大多数国家机场或航司公开共享的航空信息，包括但不限于终端观测、预报、飞行员报等丰富的数据产品。AWC 除了提供网页可视化的服务，也公开免费提供后端 API 接口服务，也就是说它是欢迎你用爬虫通过接口去他抓它的数据的。
 
 后端 API 接口说明文档：[https://aviationweather.gov/data/api/#/](https://aviationweather.gov/data/api/#/)
 
-![02](./02.webp)
+![02](/assets/img/recommend-metar-data-sources/02.webp)
 
 它的接口文档看样子使用的是 Swagger UI 框架实现的，既可以作为文档阅读，也可以现场测试，不要太方便。
 
-![03](./03.gif)
+![03](/assets/img/recommend-metar-data-sources/03.gif)
 
 我们根据它的文档，用后端调用一下接口：
 
@@ -91,13 +91,13 @@ URL = 'https://aviationweather.gov/api/data/metar?ids=ZGGG&format=json&taf=false
 ## 美国国家天气服务
 主页地址：[https://www.weather.gov](https://www.weather.gov)
 
-![04](./04.webp)
+![04](/assets/img/recommend-metar-data-sources/04.webp)
 
 美国国家天气服务（National Weather Service, NWS）是美国政府的一个机构，隶属于美国商务部下的国家海洋和大气管理局（National Oceanic and Atmospheric Administration, NOAA）。
 
 前面提到的 AWC 就是 NWS 的子机构，从航空 METAR 报文的角度来说，NWS 除了在 AWC 这个渠道公布数据以外，自己也会通过另一个渠道分享全量的气象数据（其中也包括 METAR 报告）：匿名 FTP。数据说明页面：[https://www.weather.gov/tg/engfiles](https://www.weather.gov/tg/engfiles)
 
-![05](./05.webp)
+![05](/assets/img/recommend-metar-data-sources/05.webp)
 
 网站中关于匿名 FTP 的说明，翻译如下：
 
@@ -105,11 +105,11 @@ URL = 'https://aviationweather.gov/api/data/metar?ids=ZGGG&format=json&taf=false
 
 也就是说，我们可以使用任何合适的 FTP 客户端（比如 Windows 的 XFTP、Mac 的 Finder），直接以 FTP 的协议访问 Host: tgftp.nws.noaa.gov/data 即可，用户名和密码留空即可访问。或者你也可以在浏览器里直接访问：[https://tgftp.nws.noaa.gov/data/](https://tgftp.nws.noaa.gov/data/) 以 HTTP 的方式访问 FTP 资源。
 
-![06](./06.webp)
+![06](/assets/img/recommend-metar-data-sources/06.webp)
 
 该 FTP 服务存储了他们所声称的所有公开的数据，对于我们想要的 METAR 报文数据，只需要按照 observations/ -> metar/ -> stations/ 的顺序依次点开目录即可。
 
-![07](./07.webp)
+![07](/assets/img/recommend-metar-data-sources/07.webp)
 
 这里存储他们从全世界所能搜集到的所有的 METAR 原始报文，按照直观统计有 1.1w 个机场（实际上保持更新的比这个数量少，有很多机场的数据不再更新），我们点开昆明长水机场所对应的 ICAO 码: ZPPP.TXT ，可以看到长水机场的最新 METAR 报文（行文至此的当前时间为北京时间2024年2月2日16:25，即 UTC 时间2024年2月2日08:25）：
 
@@ -136,7 +136,7 @@ datetimestr, metar = resp.text.strip().split('\n')
 
 网址：[https://mesonet.agron.iastate.edu/request/download.phtml?network=CN__ASOS](https://mesonet.agron.iastate.edu/request/download.phtml?network=CN__ASOS)
 
-![08](./08.webp)
+![08](/assets/img/recommend-metar-data-sources/08.webp)
 
 根据网站的自我介绍：
 
@@ -146,18 +146,18 @@ datetimestr, metar = resp.text.strip().split('\n')
 
 我们可以根据需要选择国家（Select Network）、机场代码、所查询的要素以及时间区间，然后点击 **Get Data** ，即可获得相应的所在区间的相应信息（如果存在）。
 
-![09](./09.webp)
+![09](/assets/img/recommend-metar-data-sources/09.webp)
 
 比如如果我查询北京首都机场的 METAR 报文，最远甚至可以查询到 1973 年。
 
-![10](./10.webp)
+![10](/assets/img/recommend-metar-data-sources/10.webp)
 
 因此，如果你想做一些大型机场的历史气象研究又苦于拿不到长周期的历史观测数据，可以到这里来下载，且完全公开免费。
 
 ## ogimet.com
 主页：[https://ogimet.com](https://ogimet.com)
 
-![11](./11.webp)
+![11](/assets/img/recommend-metar-data-sources/11.webp)
 
 ogimet.com 是一个提供公共气象数据的简陋小网站，但是内部能够提供的气象数据相当的丰富，甚至 54511（WMO位于北京的国际交换站编号）的最新探空数据都可以在上面查到。原网站是西班牙语的，这里用 ChatGPT 翻译了一下它的自我介绍：
 
@@ -167,12 +167,12 @@ ogimet.com 是一个提供公共气象数据的简陋小网站，但是内部能
 
 当然网页自我介绍里说了不希望滥用请求，就说明该网站在稳定性上无法得到保证，很有可能随时被爬虫抓崩。但是我们仍然可以把它作为一个备用数据源，具体的查询页面是：[https://www.ogimet.com/umetars.phtml.en](https://www.ogimet.com/umetars.phtml.en)，以这个网址访问，页面就会按照英文显示了。
 
-![12](./12.webp)
+![12](/assets/img/recommend-metar-data-sources/12.webp)
 
 我们可以按照国家来选择要获取的 METAR 报文信息，它会返回该国家最新的 METAR 报文，例如我选 China，它会返回中国大陆地区的所有机场报文。
 
-![13](./13.webp)
-![14](./14.webp)
+![13](/assets/img/recommend-metar-data-sources/13.webp)
+![14](/assets/img/recommend-metar-data-sources/14.webp)
 
 出于一种礼貌的保护，我就不在这里演示使用后端程序抓取了。
 
@@ -181,14 +181,14 @@ ogimet.com 是一个提供公共气象数据的简陋小网站，但是内部能
 
 skyvector.com 是一个提供了丰富可视化的航空服务网站，它的特点是提供了自己绘制的精美的全球航空瓦片地图，在底图中绘制了航空行业的很多更专业的信息。同时也提供全球机场的 METAR 报文数据。
 
-![15](./15.webp)
+![15](/assets/img/recommend-metar-data-sources/15.webp)
 
 但是该网站的服务性能并不优秀，网页加载速度较慢。但是该网站的架构是前后端分离的，没有特别的反爬防御，可以通过抓包的方式高效抓取数据，但在这里不做演示。
 
 ## metar-taf.com
 主页：[https://metar-taf.com](https://metar-taf.com)
 
-![16](./16.webp)
+![16](/assets/img/recommend-metar-data-sources/16.webp)
 
 metar-taf.com 是一个商业化的机场气象信息网站，该网站的 UI 设计相当精美。它提供 METAR 报文信息，也提供相应的后端查询接口，但是因为它是一个商业化网站，所以通过后端抓取 METAR 数据是要购买额度的。该网站的反爬虫防御仅做了 User-Agent 识别，因此直接抓取的难度较低，然而它的数据也并不能覆盖中国地区的中小型机场。
 

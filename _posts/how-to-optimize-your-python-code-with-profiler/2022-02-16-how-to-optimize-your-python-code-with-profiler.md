@@ -65,7 +65,7 @@ def good_morning():
         eat_breakfast()
         print('go to work')
 ```
-假如上面程序保存的文件名为: my_morning.py，我们就可以在终端执行: `$ kernprof -v -l ./my_morning.py`
+假如上面程序保存的文件名为: my_morning.py，我们就可以在终端执行: `$ kernprof -v -l /assets/img/how-to-optimize-your-python-code-with-profiler/my_morning.py`
 
 该命令会将程序完整跑一遍，最终跑完我们就可以看到 line_profiler 给我们做的程序剖面了：
 ```
@@ -73,7 +73,7 @@ Wrote profile results to my_morning.py.lprof
 Timer unit: 1e-06 s
 
 Total time: 50.0267 s
-File: ./my_morning.py
+File: /assets/img/how-to-optimize-your-python-code-with-profiler/my_morning.py
 Function: good_morning at line 24
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
@@ -96,7 +96,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
 上面的例子是放在脚本文件里执行的，如果是在 Jupyter 里，要怎么做剖面呢？方法也很简单，首先需要在一个单独的 cell 里执行：`%load_ext line_profiler` 以加载该插件，然后在定义完函数以后执行 `%lprun -f good_morning good_morning()` 即可，它会在 Jupyter 的弹窗中显示剖面的数据，其效果如下图：
 
-![jupyter-example](./jupyter-example.png)
+![jupyter-example](/assets/img/how-to-optimize-your-python-code-with-profiler/jupyter-example.png)
 
 在工程实践中，我们不仅要关心代码的执行速度（时间维度），还需要考察代码的内存占用（空间维度），而 line_profiler 仅能构建时间维度的剖面，想要给程序的内存做剖面，就需要引入另一个包: memory_profiler 。
 
@@ -116,7 +116,7 @@ def memory_example():
 if __name__ == '__main__':
     memory_example()
 ```
-将文件保存为 memory_example.py，注意，memory_profiler 的调用方法和 line_profiler 不太一样，我们回到终端，执行：`$ python -m memory_profiler ./memory_sample.py`。
+将文件保存为 memory_example.py，注意，memory_profiler 的调用方法和 line_profiler 不太一样，我们回到终端，执行：`$ python -m memory_profiler /assets/img/how-to-optimize-your-python-code-with-profiler/memory_sample.py`。
 
 最后出来的结果：
 
@@ -137,6 +137,6 @@ Line #    Mem usage    Increment  Occurrences   Line Contents
 
 memory_profiler 也可以集成在 Jupyter 中，调用的命令是 `%mprun -f`, 但是需要注意的是，你不能像 line_profiler 那样直接在 Jupyter 中定义函数然后用 `%mprun -f` 做剖面，否则它会提示: **NOTE: %mprun can only be used on functions defined in physical files, and not in the IPython environment.**，也就是说你必须把你要剖析的函数放在一个 .py 模块中（注意此时函数不应加 `@profile` 装饰器），然后在 IPython 或者 Jupyter 里导入该函数，再做剖面，例如：
 
-![jupter-memory-example](./jupyter-memory-example.png)
+![jupter-memory-example](/assets/img/how-to-optimize-your-python-code-with-profiler/jupyter-memory-example.png)
 
 好了，今天关于 profiler 的介绍就到此为止了，但是两个包的功能可远不止上面介绍的这些，关于两个包的更多用法，可以去读一下 GitHub 上两个代码仓库的 README（直接在 GitHub 里搜包的名字即可），写得很详细，也很有趣。

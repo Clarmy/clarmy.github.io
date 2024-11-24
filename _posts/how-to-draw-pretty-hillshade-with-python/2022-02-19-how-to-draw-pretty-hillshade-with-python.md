@@ -7,7 +7,7 @@ description: 众所周知，Python 的 matplotlib 是一个非常全面的制图
 ---
 众所周知，Python 的 matplotlib 是一个非常全面的制图库，它不仅可以绘制图表、地图，还可以绘制 3D 效果图，试想一下，如果你在写论文的时候，可以将立体地形图作为底图，那逼格噌一下子就上来了，今天我就来教大家画一个带有地理坐标属性的立体地形图，啥也不说，咱先上效果图：
 
-![hillshades](./hillshades.gif)
+![hillshades](/assets/img/how-to-draw-pretty-hillshade-with-python/hillshades.gif)
 
 上面这张图是展示了基于 matplotlib + cartopy 的山地阴影图在不同光影参数下的变化效果。这个变化效果有利于我们理解 matplotlib 对该效果的设计理念。
 
@@ -40,7 +40,7 @@ import cartopy.crs as ccrs
 from matplotlib.colors import LightSource
 from cnmaps import get_map, draw_map
 
-ds = nc.Dataset('./data/cldasgrid_dem.nc')
+ds = nc.Dataset('/assets/img/how-to-draw-pretty-hillshade-with-python/data/cldasgrid_dem.nc')
 
 _lon = ds.variables['LON'][:]
 _lat = ds.variables['LAT'][:]
@@ -68,7 +68,7 @@ ax.set_extent(get_map('河南').get_extent(buffer=0))
 plt.show()
 ```
 
-![henan](./henan.png)
+![henan](/assets/img/how-to-draw-pretty-hillshade-with-python/henan.png)
 
 这样，我们的第一张立体地形图就出来了，是不是很炫酷？此外，如果你调整 `azdeg` 和 `altdeg` 的值，阴影的方位就会随之改变，就像文章开头那张动图一样，它就是通过修改 `azdeg` 的值以达到光线旋转照射的效果的。
 
@@ -83,7 +83,7 @@ import cartopy.crs as ccrs
 from matplotlib.colors import LightSource
 from cnmaps import get_map, draw_map
 
-ds = nc.Dataset('./data/cldasgrid_dem.nc')
+ds = nc.Dataset('/assets/img/how-to-draw-pretty-hillshade-with-python/data/cldasgrid_dem.nc')
 
 _lon = ds.variables['LON'][:]
 _lat = ds.variables['LAT'][:]
@@ -117,7 +117,7 @@ for i, mode in enumerate(['soft', 'overlay', 'hsv']):
 plt.show()
 ```
 
-![blend_mode](./blend_mode.png)
+![blend_mode](/assets/img/how-to-draw-pretty-hillshade-with-python/blend_mode.png)
 
 看得出来，还是 `overlay` 看起来更均衡一些。
 
@@ -131,7 +131,7 @@ import cartopy.crs as ccrs
 from matplotlib.colors import LightSource
 from cnmaps import get_map, draw_map
 
-ds = nc.Dataset('./data/cldasgrid_dem.nc')
+ds = nc.Dataset('/assets/img/how-to-draw-pretty-hillshade-with-python/data/cldasgrid_dem.nc')
 
 _lon = ds.variables['LON'][:]
 _lat = ds.variables['LAT'][:]
@@ -165,7 +165,7 @@ for i, ve in enumerate([0.5, 1, 10]):
 plt.show()
 ```
 
-![vert_exag](./vert_exag.png)
+![vert_exag](/assets/img/how-to-draw-pretty-hillshade-with-python/vert_exag.png)
 
 上图从左到右 `vert_exag` 分别等于0.5、1和10，可以看出来，当 `vert_exag==10` 的时候，平原地图会有很强的噪点效果，这也是 `vert_exag` 值设置过大的一个副作用，在实际绘图的时候，需要综合考虑，选一个合适的值。当然，对于 `vert_exag` 参数，还有另外两个参数会与之配合（或者说制衡），那就是 `dx` 和 `dy`，这两个参数的含义是在平面空间上单个顶点的重采样间隔，`dx` 和 `dy` 的值越小，图像越能展现原始的数据细节，`dx` 和 `dy` 的值越大，那么最终出来的图越平滑，一些原始数据的细节就会被平滑掉了。下面我们来看一下不同的`dx`，`dy` 取值，对图像效果有什么影响。
 
@@ -177,7 +177,7 @@ import cartopy.crs as ccrs
 from matplotlib.colors import LightSource
 from cnmaps import get_map, draw_map
 
-ds = nc.Dataset('./data/cldasgrid_dem.nc')
+ds = nc.Dataset('/assets/img/how-to-draw-pretty-hillshade-with-python/data/cldasgrid_dem.nc')
 
 _lon = ds.variables['LON'][:]
 _lat = ds.variables['LAT'][:]
@@ -211,7 +211,7 @@ for i, dd in enumerate([1, 10, 100]):
 plt.show()
 ```
 
-![dx_dy](./dx_dy.png)
+![dx_dy](/assets/img/how-to-draw-pretty-hillshade-with-python/dx_dy.png)
 
 可以看到，当 `dx` 和 `dy` 偏小的时候，同样出现了噪点问题。
 
@@ -225,7 +225,7 @@ import cartopy.crs as ccrs
 from matplotlib.colors import LightSource
 from cnmaps import get_map, draw_map
 
-ds = nc.Dataset('./data/cldasgrid_dem.nc')
+ds = nc.Dataset('/assets/img/how-to-draw-pretty-hillshade-with-python/data/cldasgrid_dem.nc')
 
 _lon = ds.variables['LON'][:]
 _lat = ds.variables['LAT'][:]
@@ -259,12 +259,12 @@ for i, fraction in enumerate([0.1, 1, 2]):
 plt.show()
 ```
 
-![fraction](./fraction.png)
+![fraction](/assets/img/how-to-draw-pretty-hillshade-with-python/fraction.png)
 
 可以看到当 `fraction=0.1` 时，几乎没有阴影效果，而 `fraction=2` 的时候，阴影效果很强烈，甚至感觉有点耀眼。
 
 最后，让我们在一个动图效果下结束我们今天的讲解：
 
-![precip](./precip.gif)
+![precip](/assets/img/how-to-draw-pretty-hillshade-with-python/precip.gif)
 
 上图展示了2021年7月20日郑州特大暴雨的逐小时降水量在一天中的分布变化，降水数据源是中国气象局的 CMPAS 格点降水产品，由于该数据非公开数据集，在此不提供数据下载。

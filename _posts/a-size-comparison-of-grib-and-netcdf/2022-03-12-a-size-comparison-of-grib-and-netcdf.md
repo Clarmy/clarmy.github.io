@@ -48,7 +48,7 @@ $ wgrib2 in.grb -set_grib_type complex3 -grib_out out.grb
 ## 使用wgrib2将grib2转化为netcdf格式的方法
 示例:
 ```
-$ wgrib2 ./in.grb2 -netcdf out.nc
+$ wgrib2 /assets/img/a-size-comparison-of-grib-and-netcdf/in.grb2 -netcdf out.nc
 ```
 相关文档链接：[https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/netcdf.html](https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/netcdf.html)
 
@@ -140,7 +140,9 @@ $ ls -lh era5-sample-*.grib2
 -rw-r--r--  1 clarmylee  staff    65M  3 12 14:01 era5-sample-simple.grib2
 ```
 下面我们用代码统计一下这些文件的大小并绘制图形
-![1](./1.png)
+
+![1](/assets/img/a-size-comparison-of-grib-and-netcdf/1.png)
+
 可以看出来体积最大的压缩格式为 ieee，体积最小的为 complex3，而原始的 GRIB1 格式的文件是除了 ieee 以外体积最大的，使用 `grib_set` 直接转换后的 GRIB2 文件比原始文件略小，而 complex3 压缩格式的文件大约是原始文件格式的1/3左右。
 
 以上 GRIB 文件是在不丧失直接读取能力的存储格式，下面我们再来测试一下，将他们压缩为 .bz2 格式以后的体积，在终端执行 `$ bzip2 -k *grib*` ，可以得到以下文件:
@@ -157,7 +159,7 @@ $ ls -lh *.bz2
 -rw-r--r--  1 clarmylee  staff    52M  3 12 13:58 era5-sample.grib.bz2
 -rw-r--r--  1 clarmylee  staff    52M  3 12 13:58 era5-sample.grib2.bz2
 ```
-![2](./2.png)
+![2](/assets/img/a-size-comparison-of-grib-and-netcdf/2.png)
 可以看出来，经过 bz2 压缩以后文件体积最小的是基于 aec 方法压缩的文件，bz2 压缩效果最明显的是 ieee，而原先体积较小的文件经 bz2 算法压缩后的效果甚微。
 
 综上可以看出，在 GRIB 的生态下，单纯从降低文件体积的角度考虑，在不丧失读取能力的情况下，使用 complex3 压缩算法的 GRIB2 格式进行存储是最优的方案，若可以接受读取能力丧失的情况，那么 aec 压缩算法也可以考虑。
@@ -218,15 +220,15 @@ $ ls -lh era5-sample-*nc*
 
 我们再对其进行 bz2 压缩，执行 `$ bzip2 -k era5-sample-*nc*`
 然后画出图来看一下：
-![3](./3.png)
+![3](/assets/img/a-size-comparison-of-grib-and-netcdf/3.png)
 从上图可以看出来，按照非 bz2 算法压缩的形式排序，体积最大的是未经任何压缩的 NetCDF4 格式的文件，而体积最小的是9级压缩的 NetCDF4 格式。
-![4](./4.png)
+![4](/assets/img/a-size-comparison-of-grib-and-netcdf/4.png)
 若按照 bz2 压缩之后的文件体积来看的话，NetCDF3 经 bz2 压缩以后会比 NetCDF4 的体积更小。
 ## 4种格式体积的交叉对比
 下面综合上面所有的压缩或不压缩以及不同压缩级别的格式，汇总在一起来看一下它们的体积对比
-![5](./5.png)
+![5](/assets/img/a-size-comparison-of-grib-and-netcdf/5.png)
 上图是按照非 bz2 压缩体积从大到小排序的，可以看出来的是，按照不丧失可读性的原始文件排序，依然是 complex3 压缩算法下的 GRIB2 格式的文件体积最小。
-![6](./6.png)
+![6](/assets/img/a-size-comparison-of-grib-and-netcdf/6.png)
 而使用 bz2 压缩后的格式排序，体积最小的依然是 aec 压缩算法下的 GRIB2 格式。
 
 ## 结论

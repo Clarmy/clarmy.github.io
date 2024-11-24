@@ -19,34 +19,34 @@ description: 国内的气象圈子对于 OPeNDAP 这个单词应该是既熟悉�
 
 进入GFS数据下载主页：[https://nomads.ncep.noaa.gov/](https://nomads.ncep.noaa.gov/)
 
-![01](./01.png)
+![01](/assets/img/access-grid-data-by-opendap/01.png)
 
 我们点开 *GFS 0.50 Degree* 对应的 OPeNDAP 链接。
 
-![02](./02.png)
+![02](/assets/img/access-grid-data-by-opendap/02.png)
 
 选择日期，比如我们选择2022年5月1日的。
 
-![03](./03.png)
+![03](/assets/img/access-grid-data-by-opendap/03.png)
 
 在时次选择时进入 info 链接，进入以后可以看到 OPeNDAP/DODS Data URL，这个 URL 就是可以用于直接打开的数据 URL。
 
-![04](./04.png)
+![04](/assets/img/access-grid-data-by-opendap/04.png)
 
 这一页内容很长，它是该时次数据的完整的元信息，你可以从这个页面查找到该数据以 OPeNDAP 协议暴露出去的数据变量名、维度及数组尺寸等信息。
 
 ## 如何用 Panoply 打开 OPeNDAP 数据
 我们知道，如果想要快速查看 nc 数据，Panoply 是一个很好的选择，Panoply 是一个用 Java 写的气象数据可视化软件，支持多平台，非常好用。而且 Panoply 原生支持基于 OPeNDAP 的远程数据加载。
 
-![05](./05.png)
+![05](/assets/img/access-grid-data-by-opendap/05.png)
 
 我们打开Panoply以后，点击 **File** -> **Open Remote Dataset**
 
-![06](./06.png)
+![06](/assets/img/access-grid-data-by-opendap/06.png)
 
 然后把刚才的数据URL粘贴进去，点击 **Load**
 
-![07](./07.png)
+![07](/assets/img/access-grid-data-by-opendap/07.png)
 
 这样我们就在 Panoply 通过 OPeNDAP 远程的方式”加载“了这个数据集。但这个时候的加载其实只是加载了数据的元信息，并没有把整个数据集全部下载下来（也就是“懒加载”），所以这一步速度很快。
 
@@ -54,7 +54,7 @@ description: 国内的气象圈子对于 OPeNDAP 这个单词应该是既熟悉�
 
 **注意，这里的变量名既不是GRIB标准变量名也不是ecCodes的变量名，更不是CF-convention的标准变量名，而是他们自己重新定义的，变量名的含义可以在前面提到的 info 页面里查到**
 
-![09](./09.png)
+![09](/assets/img/access-grid-data-by-opendap/09.png)
 
 根据我们请求，Panoply 可以给我们生成预览图，同时可以看到该变量已将预报时次集成在图层里，我们可以在这里方便地选择不同时次生成预览图。而且每次切换的过程都是惰性的，只会加载所选时次而非全部时次的数据。
 

@@ -1,1 +1,41 @@
 .DS_Store
+# Operating system and IDE files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs and database files
+*.log
+
+# Node modules (if you're using tools like npm or yarn for Jekyll-related tasks)
+node_modules/
+yarn.lock
+
+# Bundler dependencies
+.bundle/
+vendor/
+
+# Output directory for Jekyll (default _site)
+_site/
+
+# Cache and intermediate files
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Temporary files created during builds
+*.bak
+*.tmp
+*.pid
+*.seed
+
+# Build artifact (if you are using Jekyll Assets or other plugins)
+assets/generated/
+
+# Configuration override (optional, if you use multiple config files)
+_config_*.yml
+
+# VS Code settings (if applicable)
+.vscode/

@@ -2,7 +2,7 @@
 title: 一份 GRIB 与 NetCDF 的体积对比测试报告
 date: 2022-03-12 00:00:00 +08:00
 modified: 2022-03-12 00:00:00 +08:00
-tags: [grib, netcdf]
+tags: [GRIB, NetCDF]
 description: 由于前面写的一篇关于 GRIB 与 NetCDF 的文章《浅析GRIB与NetCDF数据格式的特点及性能对比》在GRIB2与NetCDF4文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。
 ---
 由于前面写的一篇关于 GRIB 与 NetCDF 的文章 [*「GRIB 与 NetCDF 数据格式的特点及性能对比」*]({% post_url 2022-03-06-analysis-grib-vs-netcdf %}) 在 GRIB2 与 NetCDF4 文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。

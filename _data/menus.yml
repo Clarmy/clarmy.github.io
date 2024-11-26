@@ -6,6 +6,10 @@
   url: /archive/
   external: false
 
+- title: 标签
+  url: /tags/
+  external: false
+
 - title: 关于
   url: /about/
   external: false # set true if you using external link, see below

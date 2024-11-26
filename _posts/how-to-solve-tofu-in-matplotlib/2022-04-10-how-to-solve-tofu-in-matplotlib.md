@@ -2,7 +2,7 @@
 title: 一键解决 matplotlib 中文显示问题
 date: 2022-04-10 00:00:00 +08:00
 modified: 2022-04-10 00:00:00 +08:00
-tags: [python, matplotlib]
+tags: [Python, Matplotlib]
 description: matplotlib 的中文显示问题是一个老生常谈的话题了，我们在网上也可以查到非常多的解决方案，但是在我看来这些解决方案都过于“手动”不够优雅，而且我身边的业务运行环境基本全部都基于 Docker 容器化技术实现，对于 matplotlib 的中文字体设置也必然需要有自动化配置流程，于是大概半年前我写了 mplfonts 这个包，可以轻松+愉快地一键配置 matplotlib 中文字体环境。
 ---
 matplotlib 的中文显示问题是一个老生常谈的话题了，我们在网上也可以查到非常多的解决方案，但是在我看来这些解决方案都过于“手动”不够优雅，而且我身边的业务运行环境基本全部都基于 Docker 容器化技术实现，对于 matplotlib 的中文字体设置也必然需要有自动化配置流程，于是大概半年前我写了 [mplfonts](https://github.com/Clarmy/mplfonts) 这个包，可以轻松+愉快地一键配置 matplotlib 中文字体环境。

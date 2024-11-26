@@ -2,7 +2,7 @@
 title: Cartopy 是如何对 Matplotlib 做移花接木的
 date: 2022-02-13 00:00:00 +08:00
 modified: 2022-02-13 00:00:00 +08:00
-tags: [python, cartopy]
+tags: [Python, Cartopy]
 description: 你有没有发现，当你用 Python 画图时使用 Cartopy 的投影参数以后，你的 `ax` 对象会莫名其妙多出好多新的方法，比如用于绘制岸线的 `ax.coastlines()` ，或者缩放到全球视角的 `ax.set_global()`。这些都是 Matplotlib 原生 `Axes` 对象所没有的方法，而你创建子图的时候，明明用的是 Matplotlib 原生的工厂函数创建的画轴啊，Cartopy 是怎么做到偷梁换柱，移花接木的呢？下面我们就来解密一下。
 ---
 

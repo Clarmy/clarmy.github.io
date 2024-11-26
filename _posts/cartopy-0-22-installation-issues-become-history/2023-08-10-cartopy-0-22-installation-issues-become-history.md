@@ -2,7 +2,7 @@
 title: Cartopy 0.22 来了！安装难的问题将成为历史
 date: 2023-08-10 21:54:00 +08:00
 modified: 2023-08-10 21:54:00 +08:00
-tags: [python, cartopy]
+tags: [Python, Cartopy]
 description: 一直以来，Cartopy 的安装都是一个老大难的事情，由于一些依赖包的问题，我们是无法直接用 pip 快速安装的，要么需要手动安装一些特殊的依赖，要么就转而用 conda 安装，但是用 conda 安装有一个很磨人的事情是它经常会因为计算包依赖之间的关系而卡在 Solving environment 步骤，导致安装过程并不丝滑。而现在，Cartopy 安装难的问题，要成为历史了。
 ---
 

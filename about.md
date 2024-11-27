@@ -10,8 +10,8 @@ comments: false
 
 **联系方式**
 
-- {{ site.author.email }}
-- https://github.com/{{ site.author.github }}
+* <a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope"></i> {{ site.author.email }}</a>
+* <a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github"></i> GitHub</a>
 
 **请我喝杯咖啡 ☕️**
 

@@ -22,7 +22,7 @@ comments: false
 
 **补充说明 🌟**
 
-我曾经搭建过另一个个人博客网站：[*Clarmy吱声*](http://www.clarmy.net)。由于该网站是基于 WordPress 搭建的，编辑文章的编辑器无法支持 markdown，我觉得不是很方便，所以又基于 Jekyll 搭建了这个网站。后续我对 *Clarmy吱声* 的文章会逐渐迁移到这个网站上，并停止对 *Clarmy吱声* 的维护。
+我曾经搭建过另一个个人博客网站：[*Clarmy吱声*](http://www.clarmy.net)。由于该网站是基于 WordPress 搭建的，编辑文章的编辑器无法支持 markdown，我觉得不是很方便，所以又基于 Jekyll 搭建了这个网站。后续我对 [*Clarmy吱声*](http://www.clarmy.net) 的文章会逐渐迁移到这个网站上，并停止对 [*Clarmy吱声*](http://www.clarmy.net) 的维护。
 
 
 此外，我还有一个微信公众号，欢迎关注：

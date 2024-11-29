@@ -116,7 +116,7 @@ Server: Werkzeug/0.14.1 Python/3.6.4
 }
 ```
 
-关于 Flask 的 `PROPAGATE_EXCEPTIONS` 配置的作用，根据官方文档的描述：
+关于 Flask 的 `PROPAGATE_EXCEPTIONS` 配置的作用，根据[官方文档](https://flask.palletsprojects.com/en/stable/config/#PROPAGATE_EXCEPTIONS)的描述：
 > Exceptions are re-raised rather than being handled by the app's error handlers. If not set, this is implicitly true if `TESTING` or `DEBUG` is enabled.
 
 根据描述，这个参数是用于控制异常是否重新抛出，而不是被应用的错误处理器处理。如果没有设置，当 `TESTING` 或 `DEBUG` 启用时，这个参数会被隐式设置为 `True`。这也就是为什么在调试模式下可以正常返回 401 错误，而在生产环境下会返回 500 错误的原因。

@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://clarmy.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://clarmy.me/" rel="alternate" type="text/html" hreflang="zh-CN" /><updated>2024-12-02T02:18:52+08:00</updated><id>https://clarmy.me/feed.xml</id><title type="html">Clarmy.me</title><subtitle>一个正在创业的体制外气象 IT 人的博客</subtitle><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><entry><title type="html">当 Flask-JWT-Extended 遇到 ExpiredSignatureError</title><link href="https://clarmy.me/flask-jwt-extended-expire-error/" rel="alternate" type="text/html" title="当 Flask-JWT-Extended 遇到 ExpiredSignatureError" /><published>2024-11-29T00:00:00+08:00</published><updated>2024-11-29T00:00:00+08:00</updated><id>https://clarmy.me/flask-jwt-extended-expire-error</id><content type="html" xml:base="https://clarmy.me/flask-jwt-extended-expire-error/"><![CDATA[<p>最近我们在使用 Flask 开发后端接口的时候，遇到一个奇怪的问题。它的具体表现是：在默认的 Debug 环境下运行服务时，如果请求头带有一个已经过期的 Access Token 它能正常返回预期的 401 错误。但是一旦上线到线上环境（基于 uWSGI + Nginx），接口就会返回 500 错误，后台记录错误信息是 <code class="language-plaintext highlighter-rouge">jwt.exceptions.ExpiredSignatureError: Signature has expired</code>。经过一番排查，找到了问题的原因。</p>
+
+<p>在 Stack Overflow 上有人提出了跟我们遇到的<a href="https://stackoverflow.com/questions/56281886/api-with-flask-jwt-extended-with-authentication-problems">完全一样的问题</a>。在这个提问下，有人引用了一个来自 Flask-JWT-Extended 官方代码仓库的 <a href="https://github.com/vimalloc/flask-jwt-extended/issues/20">Issue</a>。</p>
+
+<p>提出这个 Issue 的人也是遇到了完全一样的问题，而且描述得更详细。</p>
+
+<p>对于样例代码：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'''</span><span class="s">In app.py</span><span class="sh">'''</span>
+<span class="kn">from</span> <span class="n">flask_jwt_extended</span> <span class="kn">import</span> <span class="n">JWTManager</span>
+<span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">jwtmanager</span> <span class="o">=</span> <span class="nc">JWTManager</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">create_app</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">register_extensions</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="n">jwtmanager</span><span class="p">.</span><span class="nf">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+
+<span class="sh">'''</span><span class="s">in views.py</span><span class="sh">'''</span>
+<span class="kn">from</span> <span class="n">flask_restful</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Api</span>
+<span class="kn">from</span> <span class="n">flask_jwt_extended</span> <span class="kn">import</span> <span class="n">jwt_required</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="nc">Api</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">TokenResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="n">method_decorators</span> <span class="o">=</span> <span class="p">[</span><span class="n">jwt_required</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">(</span><span class="n">TokenResource</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">'</span><span class="s">Hello, World!</span><span class="sh">'</span>
+
+<span class="n">api</span><span class="p">.</span><span class="nf">add_resource</span><span class="p">(</span><span class="n">HelloWorld</span><span class="p">,</span> <span class="sh">'</span><span class="s">/hello</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>该接口运行在调试模式下，可以正常返回预期的结果:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token has expired"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>但是如果使用 gunicorn 启动服务，则会返回 Internal Server Error:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>在 Issue 的讨论中 Flask-JWT-Extended 项目的发起人给出了解决的方案，即在 Flask 的配置文件里增加一个配置：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PROPAGATE_EXCEPTIONS</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<p>这个问题同时也存在于一个已经被归档的项目 <a href="https://github.com/pallets-eco/flask-jwt">flask-jwt</a>，并在  <a href="https://github.com/pallets-eco/flask-jwt/issues/74">flask-jwt/issues/74</a> 被提出过。</p>
+
+<p>至于安全性问题，Flask-JWT-Extended 的作者认为这个设置并不会引起内部代码的对外泄露风险。并举了例子：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span> <span class="n">flask_jwt_extended</span> <span class="kn">import</span>  <span class="n">JWTManager</span><span class="p">,</span> <span class="n">jwt_required</span>
+<span class="kn">from</span> <span class="n">flask_jwt_extended.exceptions</span> <span class="kn">import</span> <span class="n">NoAuthorizationError</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c1"># Setup the Flask-JWT-Extended extension
+</span><span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">'</span><span class="s">JWT_SECRET_KEY</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">'</span><span class="s">super-secret</span><span class="sh">'</span>
+<span class="n">app</span><span class="p">.</span><span class="n">config</span><span class="p">[</span><span class="sh">'</span><span class="s">PROPAGATE_EXCEPTIONS</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">jwt</span> <span class="o">=</span> <span class="nc">JWTManager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/login</span><span class="sh">'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">POST</span><span class="sh">'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">exception without errorhandler</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/protected</span><span class="sh">'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">GET</span><span class="sh">'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">protected</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="nc">NoAuthorizationError</span><span class="p">(</span><span class="sh">"</span><span class="s">exception with errorhandler</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ http POST :5000/login
+HTTP/1.0 500 INTERNAL SERVER ERROR
+Content-Length: 291
+Content-Type: text/html
+Date: Sun, 24 Jun 2018 03:38:22 GMT
+Server: Werkzeug/0.14.1 Python/3.6.4
+
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+
+$ http :5000/protected
+HTTP/1.0 401 UNAUTHORIZED
+Content-Length: 38
+Content-Type: application/json
+Date: Sun, 24 Jun 2018 03:38:31 GMT
+Server: Werkzeug/0.14.1 Python/3.6.4
+
+{
+    "msg": "exception with errorhandler"
+}
+</code></pre></div></div>
+
+<p>关于 Flask 的 <code class="language-plaintext highlighter-rouge">PROPAGATE_EXCEPTIONS</code> 配置的作用，根据<a href="https://flask.palletsprojects.com/en/stable/config/#PROPAGATE_EXCEPTIONS">官方文档</a>的描述：</p>
+<blockquote>
+  <p>Exceptions are re-raised rather than being handled by the app’s error handlers. If not set, this is implicitly true if <code class="language-plaintext highlighter-rouge">TESTING</code> or <code class="language-plaintext highlighter-rouge">DEBUG</code> is enabled.</p>
+</blockquote>
+
+<p>根据描述，这个参数是用于控制异常是否重新抛出，而不是被应用的错误处理器处理。如果没有设置，当 <code class="language-plaintext highlighter-rouge">TESTING</code> 或 <code class="language-plaintext highlighter-rouge">DEBUG</code> 启用时，这个参数会被隐式设置为 <code class="language-plaintext highlighter-rouge">True</code>。这也就是为什么在调试模式下可以正常返回 401 错误，而在生产环境下会返回 500 错误的原因。</p>
+
+<p>所以在使用 Flask-JWT-Extended 的时候，应该显性地在 Flask 的生产环境配置文件里设置 <code class="language-plaintext highlighter-rouge">PROPAGATE_EXCEPTIONS = True</code> 才能充分利用插件对异常的再处理能力。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="Python" /><category term="Flask" /><category term="JWT" /><category term="Flask-JWT-Extended" /><summary type="html"><![CDATA[最近我们在使用 Flask 开发后端接口的时候，遇到一个奇怪的问题。它的具体表现是：在默认的 Debug 环境下运行服务时，如果请求头带有一个已经过期的 Access Token 它能正常返回预期的 401 错误。但是一旦上线到线上环境（基于 uWSGI + Nginx），接口就会返回 500 错误，后台记录错误信息是 `jwt.exceptions.ExpiredSignatureError: Signature has expired`。经过一番排查，找到了问题的原因。]]></summary></entry><entry><title type="html">传说中的“德尔菲气象定律”真的存在吗？</title><link href="https://clarmy.me/does-delphi-meteo-law-really-exists/" rel="alternate" type="text/html" title="传说中的“德尔菲气象定律”真的存在吗？" /><published>2024-03-12T19:00:00+08:00</published><updated>2024-03-12T19:00:00+08:00</updated><id>https://clarmy.me/does-delphi-meteo-law-really-exists</id><content type="html" xml:base="https://clarmy.me/does-delphi-meteo-law-really-exists/"><![CDATA[<p>如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。</p>
+
+<p>首先，从我们习惯上来说，对于一个陌生的概念，我们会下意识地去搜索百科词条，我们来看一下百度百科在这个概念上的描述：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/1.webp" alt="1" /></p>
+
+<p>可以看到，百度百科对该定律有明确的定义，但是并没有任何引用的链接，没有办法从这里找到这个定律的原始出处。我们再来看该词条的编辑历史：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/2.webp" alt="2" /></p>
+
+<p>可以看到这个词条早在<strong>2011</strong>年就已经创建了，那么我们就从这里获得了一条有用的时间线索。</p>
+
+<p>搜索完百度百科，我们再来搜索一下维基百科：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/3.png" alt="3" /></p>
+
+<p>不好意思，没有相应的词条。有意思的事情出现了，如果德尔菲气象定律是一个来自于西方发达国家的著名经济学定律，那么维基百科为什么会不收录呢？</p>
+
+<p>我们先合理怀疑这是因为语言差异造成的，众所周知，有很多维基百科的词条是没有对应的中文翻译版本的，所以可能是我们用中文搜索所以搜索不到。那么我们现在就把这个定律用英文的形式在维基百科里再做一次搜索：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/4.webp" alt="4" /></p>
+
+<p>哦吼，也没有。</p>
+
+<p>好吧，到这里，我们还可以合理怀疑，这是由于维基百科在模糊搜索匹配上太弱造成的。那我们请出 Google 大法来做搜索：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/5.webp" alt="5" /></p>
+
+<p>根据搜索结果来看，并没有很好匹配的结果，但是 Google 为我们带来了一些新的相关信息：Delphi Method（德尔菲法）。当我们去维基百科搜索这个词条时，它是存在的：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/6.webp" alt="6" /></p>
+
+<p>但是从这个词条的描述来看，它只是一种问卷调查的方法，并没有任何与气象相关的信息，也并没有记述任何与 “98” 相关的描述。</p>
+
+<p>既然我们要考证的德尔菲气象定律与 “98” 这个数字紧密联系，那么我们是不是可以从这个点下手，在搜索时加入“98” 这个关键字：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/7.webp" alt="7" /></p>
+
+<p>结果令人失望，我查看了靠前的几个搜索结果，并没有得到想要的。</p>
+
+<p>到这里，我们已经可以合理怀疑这条所谓的“西方著名的经济学定律”可能并不存在。</p>
+
+<p>我们再回到中文互联网语境下，来根据时间查找这条定律在中文圈里最早的来源。还记得前面百度百科的那个时间线索吗？2011年。我们可以用搜索引擎搜索2011年以前的相关记录：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/8.png" alt="8" /></p>
+
+<p>Google 中最早可以找到一条在 2003 年由新浪新闻发布的文章：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/9.webp" alt="9" /></p>
+
+<p>这条新闻写的出处来自国际先驱导报，但是在网上似乎没有办法找到国际先驱导报里相应的文章。好吧，线索断了，那我们就转战学术圈，毕竟学术圈是相对严谨和负责任的，通常都会注明结论的出处。现在我们去中国知网搜索相关的信息：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/10.webp" alt="10" /></p>
+
+<p>可以看到，知网中收录的相关信息，也是出自2003年，是一篇名为《“德尔菲气象定律”与“气象经济”》的文章，根据知网自动生成的标准引用：</p>
+
+<blockquote>
+  <p>[1]吴伟民.“德尔菲气象定律”与“气象经济”[J].中学政治教学参考,2003(12):54-55.</p>
+</blockquote>
+
+<p>很明显这个“中学政治教学参考”并不是一个气象或者经济学领域的期刊。</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/11.webp" alt="11" /></p>
+
+<p>我们再来看看《“德尔菲气象定律”与“气象经济”》这篇文章的具体内容，这篇文章的开头，有这么一段引子：</p>
+
+<blockquote>
+  <p>2003年全国文综考试第39题：以西方气象经济学界流行的“德尔菲气象定律”为材料，揭示了气象与经济之间的关系，并要求学生运用所学的政治知识对“人工增雨”“气象经济”进行分析。“德尔菲气象定律”与“气象经济”有何关联呢？要了解这个问题，先从德尔菲、德尔菲法谈起。</p>
+</blockquote>
+
+<p>哇，又有新的线索产生了，居然是2003年全国文综考试的试题。然后我就直接去搜索这张高考试卷，还真的让我找到了这道题：</p>
+
+<p><img src="/assets/img/does-delphi-meteo-law-really-exists/12.webp" alt="12" /></p>
+
+<p>鉴于高考的时间一般是每年的6-7月，因此我们在互联网上无法搜索到在2003年7月之前的任何有关“德尔菲气象定律”的信息，这也和我们实际搜索结果相吻合，因此基本可以断定这个文综考题即为该定律在国内流传的最原始出处。然而，该出处并没有引用任何真实的外文参考文献做支撑，再结合之前在英文语境下的搜索结果，我们大致可以确认“德尔菲气象定律”不是一个来源可靠的定律，很有可能并不真实存在。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[如果你是气象从业人员，我猜你大概率听说过一个 1:98 的故事，即每向气象信息服务投入1元钱，即可获得98元的经济回报。在很多报道或者文章中，这个故事被称为“德尔菲气象定律”，而且这个定律还经常被描述为“来自于西方发达国家的著名经济学定律”。在我当年第一次听说这个定律的时候就不明觉厉，大受震撼，一直以来我都很想搞清楚这个有零有整的数字到底是怎么得到的。那么今天就请大家跟着我一起来考证一下这个所谓的“定律”。]]></summary></entry><entry><title type="html">推荐几个民航机场 METAR 报文的数据源</title><link href="https://clarmy.me/recommend-metar-data-sources/" rel="alternate" type="text/html" title="推荐几个民航机场 METAR 报文的数据源" /><published>2024-02-03T00:00:00+08:00</published><updated>2024-02-03T00:00:00+08:00</updated><id>https://clarmy.me/recommend-metar-data-sources</id><content type="html" xml:base="https://clarmy.me/recommend-metar-data-sources/"><![CDATA[<p>前几天我写了一篇关于解译 METAR 报文的文章： <a href="/elegantly-interpreting-airport-metar-reports/"><em>「优雅地解译机场 METAR 报文」</em></a>，其中提到 METAR 报文作为全球共享的公共数据，可以从多个渠道免费获得，那么今天我就来盘点几个公开提供 METAR 报文源的网络资源。</p>
+
+<h2 id="美国航空天气中心">美国航空天气中心</h2>
+<p>主页网址：<a href="https://aviationweather.gov">https://aviationweather.gov</a></p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/01.webp" alt="01" /></p>
+
+<p>美国航空天气中心（Aviation Weather Center, AWC）是美国政府对外提供公开航空信息服务的网站，它隶属于美国国家天气服务（National Weather Service, NWS）。该网站提供相对全面的航空气象信息服务，且并不仅限于美国本土，它可以提供它收集来的全球大多数国家机场或航司公开共享的航空信息，包括但不限于终端观测、预报、飞行员报等丰富的数据产品。AWC 除了提供网页可视化的服务，也公开免费提供后端 API 接口服务，也就是说它是欢迎你用爬虫通过接口去他抓它的数据的。</p>
+
+<p>后端 API 接口说明文档：<a href="https://aviationweather.gov/data/api/#/">https://aviationweather.gov/data/api/#/</a></p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/02.webp" alt="02" /></p>
+
+<p>它的接口文档看样子使用的是 Swagger UI 框架实现的，既可以作为文档阅读，也可以现场测试，不要太方便。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/03.gif" alt="03" /></p>
+
+<p>我们根据它的文档，用后端调用一下接口：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://aviationweather.gov/api/data/metar?ids=ZBAA&amp;format=raw&amp;taf=false&amp;hours=1</span><span class="sh">'</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>返回的结果：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['ZBAA 020730Z 19003MPS 160V220 CAVOK M01/M15 Q1034 NOSIG',
+ 'ZBAA 020700Z VRB03MPS CAVOK M01/M15 Q1033 NOSIG']
+</code></pre></div></div>
+<p>是不是很简单，而且如果你把 <code class="language-plaintext highlighter-rouge">format=raw</code> 参数改成 <code class="language-plaintext highlighter-rouge">format=json</code>，它还可以自动帮你把报文解译成 json 格式的数据。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>URL = 'https://aviationweather.gov/api/data/metar?ids=ZGGG&amp;format=json&amp;taf=false&amp;hours=1'
+</code></pre></div></div>
+
+<p>返回结果（json 格式美化后）：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="nl">"metar_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">490844811</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"icaoId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZGGG"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"receiptTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-02 07:35:22"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"obsTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1706859000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reportTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-02 07:30:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"temp"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dewp"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wdir"</span><span class="p">:</span><span class="w"> </span><span class="mi">170</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wspd"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wgst"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visib"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6+"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"altim"</span><span class="p">:</span><span class="w"> </span><span class="mi">1014</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"slp"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"qcField"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wxString"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"presTend"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maxT"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"minT"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maxT24"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"minT24"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"precip"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pcp3hr"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pcp6hr"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pcp24hr"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"snow"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vertVis"</span><span class="p">:</span><span class="w"> </span><span class="err">None</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"metarType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METAR"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rawOb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZGGG 020730Z 17006MPS 9999 SCT040 29/18 Q1014 NOSIG"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"mostRecent"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">23.392</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">113.307</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"elev"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"prior"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guangzhou/Baiyun Intl, GD, CN"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clouds"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SCT"</span><span class="p">,</span><span class="w"> </span><span class="nl">"base"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">}]}]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>此外你也可以通过修改 URL 中的 <code class="language-plaintext highlighter-rouge">hours</code> 参数来指定要回溯查找过去多少个小时的数据，例如 <code class="language-plaintext highlighter-rouge">hours=5</code> 表示回溯查找到5个小时前的数据，最长支持约一个月（720个小时）的回溯。</p>
+
+<p>其他数据和使用方法可以参考文档的内容做探索。</p>
+
+<h2 id="美国国家天气服务">美国国家天气服务</h2>
+<p>主页地址：<a href="https://www.weather.gov">https://www.weather.gov</a></p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/04.webp" alt="04" /></p>
+
+<p>美国国家天气服务（National Weather Service, NWS）是美国政府的一个机构，隶属于美国商务部下的国家海洋和大气管理局（National Oceanic and Atmospheric Administration, NOAA）。</p>
+
+<p>前面提到的 AWC 就是 NWS 的子机构，从航空 METAR 报文的角度来说，NWS 除了在 AWC 这个渠道公布数据以外，自己也会通过另一个渠道分享全量的气象数据（其中也包括 METAR 报告）：匿名 FTP。数据说明页面：<a href="https://www.weather.gov/tg/engfiles">https://www.weather.gov/tg/engfiles</a></p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/05.webp" alt="05" /></p>
+
+<p>网站中关于匿名 FTP 的说明，翻译如下：</p>
+
+<blockquote>
+  <p>美国国家气象服务提供匿名FTP访问，以获取包含单个编码观测和文本警告以及预报的文件，这些文件存放在一个特别的“英文描述格式”目录和文件名结构下。国际航空数据、美国警告和所有类型的水文气象预报的内容按照源头传输的方式存储，但它们被解析成使用站点ID或警告和预报区域指示符的文件名，或者通过AWIPS通信标识符进行分离。文件的内部内容为ASCII字符代码。文件的命名约定用英语拼写或由NWS区域指示符名称定义，使用“区域指示符”或“县警告区域”编号来反映文件内容的地理位置。数据可通过匿名FTP在URL tgftp.nws.noaa.gov/data处获取。有一个帮助指南展示了如何访问服务器并检索文件。</p>
+</blockquote>
+
+<p>也就是说，我们可以使用任何合适的 FTP 客户端（比如 Windows 的 XFTP、Mac 的 Finder），直接以 FTP 的协议访问 Host: tgftp.nws.noaa.gov/data 即可，用户名和密码留空即可访问。或者你也可以在浏览器里直接访问：<a href="https://tgftp.nws.noaa.gov/data/">https://tgftp.nws.noaa.gov/data/</a> 以 HTTP 的方式访问 FTP 资源。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/06.webp" alt="06" /></p>
+
+<p>该 FTP 服务存储了他们所声称的所有公开的数据，对于我们想要的 METAR 报文数据，只需要按照 observations/ -&gt; metar/ -&gt; stations/ 的顺序依次点开目录即可。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/07.webp" alt="07" /></p>
+
+<p>这里存储他们从全世界所能搜集到的所有的 METAR 原始报文，按照直观统计有 1.1w 个机场（实际上保持更新的比这个数量少，有很多机场的数据不再更新），我们点开昆明长水机场所对应的 ICAO 码: ZPPP.TXT ，可以看到长水机场的最新 METAR 报文（行文至此的当前时间为北京时间2024年2月2日16:25，即 UTC 时间2024年2月2日08:25）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2024/02/02 08:00
+ZPPP 020800Z 24008MPS 9999 SCT030 BKN043 14/01 Q1018 NOSIG
+</code></pre></div></div>
+
+<p>如果我们想要用后端程序抓取，也很简单，我们套用前面的那段代码，修改 URL 地址：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://tgftp.nws.noaa.gov/data/observations/metar/stations/ZPPP.TXT</span><span class="sh">'</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span>
+<span class="n">datetimestr</span><span class="p">,</span> <span class="n">metar</span> <span class="o">=</span> <span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>这就可以既得到原始 METAR 报文，也得到了准确的时间信息（METAR 报文不提供年和月的信息）。你只需要替换 URL 中的 ICAO 码（即 ZPPP）即可。但是要注意的是 NWS 只能提供大型国际机场的 METAR 报，提供不了国内非国际机场的的数据。但是 NWS 提供的数据稳定性是有保障的，而且对于爬虫的容忍度相对较高。</p>
+
+<h2 id="爱荷华州立大学">爱荷华州立大学</h2>
+<p>爱荷华州立大学提供了一个可以下载长周期历史回溯的 METAR 报文归档查询的服务。</p>
+
+<p>网址：<a href="https://mesonet.agron.iastate.edu/request/download.phtml?network=CN__ASOS">https://mesonet.agron.iastate.edu/request/download.phtml?network=CN__ASOS</a></p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/08.webp" alt="08" /></p>
+
+<p>根据网站的自我介绍：</p>
+
+<blockquote>
+  <p>IEM维护着一个不断增长的全球机场天气自动观测数据档案库！这些观测通常被称为“ASOS”或有时是“AWOS”传感器。一个更通用的术语可能是METAR数据，这是一个描述数据传输格式的术语。如果您在请求数据时没有获得数据，请随时联系我们寻求帮助。IEM还拥有美国ASOS（2000年至今）和艾奥瓦州AWOS（1995-2011年）站点的一分钟间隔数据集。这个档案仅提供历史观测数据的原始收集，几乎没有进行质量控制。有关这个数据集的更多详情在这里。</p>
+
+  <p>数据来源：此页面上提供的数据来自多个来源，包括：Unidata IDD、NCEI ISD和MADIS One Minute ASOS。</p>
+</blockquote>
+
+<p>我们可以根据需要选择国家（Select Network）、机场代码、所查询的要素以及时间区间，然后点击 <strong>Get Data</strong> ，即可获得相应的所在区间的相应信息（如果存在）。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/09.webp" alt="09" /></p>
+
+<p>比如如果我查询北京首都机场的 METAR 报文，最远甚至可以查询到 1973 年。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/10.webp" alt="10" /></p>
+
+<p>因此，如果你想做一些大型机场的历史气象研究又苦于拿不到长周期的历史观测数据，可以到这里来下载，且完全公开免费。</p>
+
+<h2 id="ogimetcom">ogimet.com</h2>
+<p>主页：<a href="https://ogimet.com">https://ogimet.com</a></p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/11.webp" alt="11" /></p>
+
+<p>ogimet.com 是一个提供公共气象数据的简陋小网站，但是内部能够提供的气象数据相当的丰富，甚至 54511（WMO位于北京的国际交换站编号）的最新探空数据都可以在上面查到。原网站是西班牙语的，这里用 ChatGPT 翻译了一下它的自我介绍：</p>
+
+<blockquote>
+  <p>这是 www.ogimet.com 的气象信息服务，它使用在网络上公开可用的数据，主要来自 NOAA，以及开源软件来处理这些数据。这个网站的目标是以快速和专业的方式为用户提供最新的气象信息。这个服务器通过一条相对狭窄的带宽连接到互联网。所有内容都运行在您可以在这里看到的一台PC上。请不要滥用请求大量信息。</p>
+
+  <p>我们正在努力为这个网站添加新的页面和服务。我们的愿望是它们能够有所帮助。</p>
+</blockquote>
+
+<p>当然网页自我介绍里说了不希望滥用请求，就说明该网站在稳定性上无法得到保证，很有可能随时被爬虫抓崩。但是我们仍然可以把它作为一个备用数据源，具体的查询页面是：<a href="https://www.ogimet.com/umetars.phtml.en">https://www.ogimet.com/umetars.phtml.en</a>，以这个网址访问，页面就会按照英文显示了。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/12.webp" alt="12" /></p>
+
+<p>我们可以按照国家来选择要获取的 METAR 报文信息，它会返回该国家最新的 METAR 报文，例如我选 China，它会返回中国大陆地区的所有机场报文。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/13.webp" alt="13" />
+<img src="/assets/img/recommend-metar-data-sources/14.webp" alt="14" /></p>
+
+<p>出于一种礼貌的保护，我就不在这里演示使用后端程序抓取了。</p>
+
+<h2 id="skyvectorcom">skyvector.com</h2>
+<p>主页：<a href="https://skyvector.com">https://skyvector.com</a></p>
+
+<p>skyvector.com 是一个提供了丰富可视化的航空服务网站，它的特点是提供了自己绘制的精美的全球航空瓦片地图，在底图中绘制了航空行业的很多更专业的信息。同时也提供全球机场的 METAR 报文数据。</p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/15.webp" alt="15" /></p>
+
+<p>但是该网站的服务性能并不优秀，网页加载速度较慢。但是该网站的架构是前后端分离的，没有特别的反爬防御，可以通过抓包的方式高效抓取数据，但在这里不做演示。</p>
+
+<h2 id="metar-tafcom">metar-taf.com</h2>
+<p>主页：<a href="https://metar-taf.com">https://metar-taf.com</a></p>
+
+<p><img src="/assets/img/recommend-metar-data-sources/16.webp" alt="16" /></p>
+
+<p>metar-taf.com 是一个商业化的机场气象信息网站，该网站的 UI 设计相当精美。它提供 METAR 报文信息，也提供相应的后端查询接口，但是因为它是一个商业化网站，所以通过后端抓取 METAR 数据是要购买额度的。该网站的反爬虫防御仅做了 User-Agent 识别，因此直接抓取的难度较低，然而它的数据也并不能覆盖中国地区的中小型机场。</p>
+
+<p>这里给出一个后端抓取的简单示例：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
+<span class="kn">import</span> <span class="n">requests</span>
+
+<span class="k">def</span> <span class="nf">extract_metar</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">METAR\s[\w\s\/]+\d{6}Z\s[AUTO\s\dKT\s]+[\dSM\s]+[CLR\s]+[\w\s\/\d]+</span><span class="sh">"</span>
+
+    <span class="n">metars</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">list</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">metars</span><span class="p">))</span>
+    
+<span class="n">url</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://metar-taf.com/KBFF</span><span class="sh">'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sh">'</span><span class="s">User-Agent</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36</span><span class="sh">'</span><span class="p">}</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">resp</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">extract_metar</span><span class="p">,</span> <span class="n">resp</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+<p>结果：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="sh">'</span><span class="s">METAR KBFF 031353Z AUTO 09004KT 6SM BR OVC005 04/03 A2959 RMK AO2 SLP025 T00390028</span><span class="sh">'</span><span class="p">]</span>
+</code></pre></div></div>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="METAR" /><category term="航空气象" /><summary type="html"><![CDATA[前几天我写了一篇关于解译 METAR 报文的文章：优雅地解译机场 METAR 报文，其中提到 METAR 报文作为全球共享的公共数据，可以从多个渠道免费获得，那么今天我就来盘点几个公开提供 METAR 报文源的网络资源。]]></summary></entry><entry><title type="html">优雅地解译机场 METAR 报文</title><link href="https://clarmy.me/elegantly-interpreting-airport-metar-reports/" rel="alternate" type="text/html" title="优雅地解译机场 METAR 报文" /><published>2024-01-31T00:00:00+08:00</published><updated>2024-01-31T00:00:00+08:00</updated><id>https://clarmy.me/elegantly-interpreting-airport-metar-reports</id><content type="html" xml:base="https://clarmy.me/elegantly-interpreting-airport-metar-reports/"><![CDATA[<p>当我们想要获取气象观测数据的时候，除了抓取气象局的网站以外，还可以考虑抓取民航的航空例行天气报告（METAR），METAR 报告是隶属于民航空管局或机场的气象部门（非气象局序列）对机场天气状况的观测报告。这类报告不仅囊括了常规的天气要素，还会对影响飞机起降的特殊天气现象做额外的观测和报告。其观测质量并不逊色于气象局的站点观测，甚至在特殊天气现象的观测质量上要比气象局的观测结果更准确。</p>
+
+<p>而且 METAR 报是全球公开共享的公共数据，在网络上很容易获取。比如我们可以从美国的航空天气网 <a href="https://aviationweather.gov">https://aviationweather.gov</a> 实时获取全球任何国家的国际机场（4F级）的最新 METAR 报文。而民航机场的地理坐标也是公开的，很方便对观测数据的地理坐标做校准。因此 METAR 报文是气象实况观测数据的一个很好的补充，甚至美国的气象预报测评网站 ForecastWatch 也主要使用机场 METAR 报文解析后的数据作为测评的真值。</p>
+
+<p>METAR 报文有着全球统一的格式标准，任何熟悉该格式规则的人，都可以很容易地将原始报文解译成真实的观测数据。当然，为了能更简单和优雅地解译报文，有一些工具可以帮助我们做这一类工作。比如 <code class="language-plaintext highlighter-rouge">metpy.io.parse_metar_to_dataframe</code>，可以把原始报文解译并构建成 DataFrame 对象，有兴趣的朋友可以自己去了解这个函数。</p>
+
+<p>今天我想要介绍的还是自己写的一个解译 METAR/TAF 报文的 Python 扩展包：pymetaf。这个包是很多年前由于工作需要而临时开发的，当时 metpy 还没有开发相关功能的函数。现在虽然 metpy 有解析 METAR 的功能，但是由于 metpy 的 METAR 解译函数在单位等方面并不适合我们国内的使用习惯，因此近期我对 pymetaf 做了一些通用化的调整，让它的解译结果更适合我们中国宝宝体质。</p>
+
+<p>我们可以使用 pip 来安装 pymetaf:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>pip <span class="nb">install </span>pymetaf
+</code></pre></div></div>
+
+<p>解译的方法也很简单，我们来看一个简单的例子：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pymetaf</span> <span class="kn">import</span> <span class="n">parse_text</span>
+
+<span class="c1"># 一条首都机场在2021年5月发出的真实 METAR 报文
+</span><span class="n">metar_string</span> <span class="o">=</span> <span class="sh">"</span><span class="s">METAR ZBAA 311400Z 01002MPS CAVOK 14/12 Q1009 NOSIG=</span><span class="sh">"</span>
+
+<span class="c1"># 由于 METAR 原始报文不包含年和月的信息，需要手动传入年月信息
+</span><span class="n">data</span> <span class="o">=</span> <span class="nf">parse_text</span><span class="p">(</span><span class="n">metar_string</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>解译后的结果：</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METAR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZBAA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-31T14:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m/s"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gust"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_range"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cavok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility"</span><span class="p">:</span><span class="w"> </span><span class="mi">99999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dew_temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh"</span><span class="p">:</span><span class="w"> </span><span class="mi">1009</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hPa"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cloud"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Clear Sky"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"auto"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>结果是以字典的形式存储的，对于一些未观测或者省略的字段，用空值来填充了。由于该报文发出了 CAVOK 的标志，意思是好天气，因此 visibility 的值会被处理为 99999，它代表的不是缺省，而是能见度无限好。</p>
+
+<p>除了这种很常规的报文解译，它还可以解译一些相对比较特殊的报文结果，例如下面这条报文：</p>
+<blockquote>
+  <p>METAR RCKH 160600Z VRB03KT 2500 SHRA BR SCT003 BKN006 OVC020 26/26 Q1008 TEMPO 5000 -SHRA RMK A2977 RA AMT 5.4MM=</p>
+</blockquote>
+
+<p>这条来自我国台湾地区的高雄国际机场（2021年5月16日），可以看到它与首都机场有一个明显不同的地方是风观测组：VRB03KT，而首都机场的风观测组是 01002MPS。这里第一个不同是单位，高雄机场使用的单位是 KT，即“节”(knot)。在我们的使用习惯里，作为公制单位的 MPS(m/s) 才是主流，因此 pymetaf 会对其做一次单位转换。第二个不同，VRB03KT 中的 VRB 表示不定风向，也就是风速太小了风向不确定或者风向变化过快没有主导风向，对于这种情况 pymetaf 会把风向的结果输出为 None。</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"METAR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RCKH"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"auto"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-16T06:00:00+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_speed_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m/s"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gust"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wind_direction_range"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility"</span><span class="p">:</span><span class="w"> </span><span class="mi">2500</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"visibility_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cavok"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dew_temperature"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"temperature_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree C"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh"</span><span class="p">:</span><span class="w"> </span><span class="mi">1008</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"qnh_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hPa"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cloud"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"cloud_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_height_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_mask"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"cloud_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_height_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_mask"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"cloud_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_height_units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_mask"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cloud_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"weather"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Showers of Rain"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Mist"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>这一条解译的结果多了一些，由于我们对 METAR 解析的首要目标是观测而非预测，所以 pymetaf 会把趋势报（TEMPO后面的部分）剪掉，然后解译前面的部分，天气现象部分，SHRA 对应 Showers of Rain（阵雨），BR 对应 Mist（轻雾）；云组部分，根据 METAR 的标准规范反算出以米为单位的云高 cloud_height，及云覆盖度 cloud_mask，由于原始的云覆盖度是以 FEW/SCT/BKN/OVC 等字符编码表示，它们各自对应一个8分位的覆盖度范围，pymetaf 会对其进行一个标准化处理，输出为 0-1 的小数，以适应常规气象数据的使用习惯。如果报文中出现带有云类型表示的云组，例如 SCT030CB，则它可以解译出 <code class="language-plaintext highlighter-rouge">"cloud_type": "cumulonimbus"</code>。</p>
+
+<p>另外，对于一些自动观测的报文，或者使用英里作为能见度单位的报文，pymetaf 也能轻松处理：</p>
+
+<blockquote>
+  <p>METAR ZYQQ 081700Z AUTO /////MPS //// // ////// M05/M07 Q1006</p>
+
+  <p>METAR KSUA 300715Z AUTO 10SM CLR 12/08 A3013 RMK AO2 T01170076</p>
+</blockquote>
+
+<p>当然，虽然我为该项目编写了一些测试用例，但是依然不能保证遇到一些更特殊的报文会触发某些 BUG。也希望读者朋友们如果使用的话，遇到 BUG 可以给我提一些 Issue。</p>
+
+<p>项目地址：<a href="https://github.com/cnmetlab/pymetaf">https://github.com/cnmetlab/pymetaf</a></p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="Python" /><category term="METAR" /><summary type="html"><![CDATA[当我们想要获取气象观测数据的时候，除了抓取气象局的网站以外，还可以考虑抓取民航的航空例行天气报告（METAR），METAR 报告是隶属于民航空管局或机场的气象部门（非气象局序列）对机场天气状况的观测报告。这类报告不仅囊括了常规的天气要素，还会对影响飞机起降的特殊天气现象做额外的观测和报告。其观测质量并不逊色于气象局的站点观测，甚至在特殊天气现象的观测质量上要比气象局的观测结果更准确。]]></summary></entry><entry><title type="html">聊一聊机器学习在 WRF 模型上的应用</title><link href="https://clarmy.me/discussing-the-application-of-machine-learning-in-wrf-models/" rel="alternate" type="text/html" title="聊一聊机器学习在 WRF 模型上的应用" /><published>2024-01-24T00:00:00+08:00</published><updated>2024-01-24T00:00:00+08:00</updated><id>https://clarmy.me/discussing-the-application-of-machine-learning-in-wrf-models</id><content type="html" xml:base="https://clarmy.me/discussing-the-application-of-machine-learning-in-wrf-models/"><![CDATA[<p>这是一个粉丝的万事屋的需求，原始需求是这样的：</p>
+
+<blockquote>
+  <p>我的问题是，目前对机器学习在 WRF 模型上的应用有哪些方向？希望您对这方面有了解且能出一期简单的科普</p>
+</blockquote>
+
+<p>要聊这个话题说实话我还是有一些压力，因为实话实说我本身既不是 AI 方面的专家也不是 WRF 方面的专家。而且机器学习对数值预报的辅助应用在行业内也是比较受关注的话题，有很多老师在这个方面也做了一些研究。比如在准备本篇文章的过程中我就拜读了《人工智能技术气候预测应用简介》这篇综述文章，个人觉得论文内容在于机器学习在数值预报的辅助应用的话题上已经介绍得相当全面和深入了，强烈建议对这一话题感兴趣的朋友阅读一下这篇论文。虽然我觉得我肯定不可能写得比这篇论文更好，但是我也不想鸽掉这个需求，所以我就简要聊一下我个人在这个话题上的一些见解，不一定对。</p>
+
+<h2 id="机器学习可以为-wrf-做什么">机器学习可以为 WRF 做什么</h2>
+<p>首先简单介绍一下 WRF，WRF（Weather Research and Forecasting Model） 是一个历史悠久、规模庞大的开源的区域数值天气预报项目（<a href="https://github.com/wrf-model/WRF">https://github.com/wrf-model/WRF</a>），主要由 Fortran 语言编写（项目中还纵跨了 Fortran 语言的多个历史版本），包含了用于大气化学和空气污染建模的 WRF-Chem 及用于水文模拟的 WRF-Hydro 扩展分支，全部代码量约200万行，通常运行需要消耗大量的并行计算资源（CPU）。</p>
+
+<p>粗略地划分，WRF 的预报流程大致分为前处理 -&gt; 模型运算 -&gt; 后处理三大部分。其中模型运算部分是 WRF 运算的核心，它是由复杂的数学运算代码编写的，通常来说 ML（Machine Learning，机器学习）是难以参与其中的，但是上述论文中也提到有人尝试用机器学习方法直接求解数值预报中的偏微分方程，说明这也是一种利用 ML 为数值预报赋能的研究方向。但这明显已经超出了 WRF 的范畴，对于 WRF 这种历史悠久的巨型项目来说，用 ML 方法替换核心求解过程的难度可能要高于新建一个项目推倒重来。</p>
+
+<p>因此在我看来，就 WRF 而言，ML 为其服务的主要关注点可能还是应该放在前处理（这里的前处理不是狭义地单指 WPS，而是模型运算之前的所有流程，包括资料同化）和后处理阶段上。</p>
+
+<h2 id="资料同化">资料同化</h2>
+<p>众所周知，高质量的数值预报离不开资料同化，而资料同化的质量也直接影响着预报的效果。资料同化通俗来说就是利用最新的观测资料对初始预报场做订正，生成一个与真实世界更接近的初始场用于模式预报。资料同化与模型运算是解耦的，有着明确的边界（例如 WRF 框架中有专门的资料同化组件 WRFDA）这也让用机器学习替换原有资料同化的过程从工程上变得相对简单。</p>
+
+<p>目前传统主流方案有集合卡尔曼滤波（EnKF）、3/4D变分（Var）等，这些方案具有比较强的可解释性。但是也有着比较明显的缺点，例如像3D-Var和4D-Var这样的方法在其核心算法中做了线性或准线性的假设，这可能限制了它们捕获非线性系统的能力。另外在计算开销方面，4D-Var需要多次运行模型来计算所需的梯度信息，这可能非常耗时。而像EnKF这样的方法需要维护一个集合，集合的大小和表示可能限制了其能够捕获的不确定性的范围，并且集合成员较多时其运算开销也比较大。</p>
+
+<p>而基于数据驱动的机器学习有着一些天然的优势，比如深度学习模型，特别是神经网络，天然地可以处理高度非线性的关系，这是许多传统方法难以捕获的。此外机器学习方法直接从数据中学习，这意味着它们可能更适合捕获复杂的、从理论上难以建模的大气规律。</p>
+
+<p>近年来，许多学者利用人工智能改进数据同化方法。其中我觉得比较有意思的是伦敦帝国理工的一个学者利用循环神经网络学习数据同化过程，提出了 DDA（Deep Data Assimilation，深度数据同化）2的概念。其他还有一些研究工作的列举可以下面这两篇论文的介绍，由于论文真的写得很好所以在这里我就不再赘述。<em>DOI:10.13878/j.cnki.dqkxxb.20210623003DOI:10.11898/1001-7313.20210101</em></p>
+
+<h2 id="模式后处理">模式后处理</h2>
+<p>模式后处理的分支有很多，比如模式输出后订正，它是目前行业内开展得比较流行的一种技术，这个领域主要是对模式输出的结果做二次订正。实践证明这种技术确实可以有效地提高模式预报的质量。当下比较流行的方案是 MOS（Model Output Statistics），它通过结合数值模型的预测和观测历史数据来纠正和优化模型输出。</p>
+
+<p>MOS 的主要思想是：尽管数值模型可能在某些方面存在偏差或误差，但这些偏差往往是可以预测的。例如，如果一个模型在特定条件下系统性地预测温度偏高，那么可以使用 MOS 技术来纠正这种偏差。</p>
+
+<p>类似地，如果将简单的统计订正方法替换成机器学习的算法，也就成了机器学习模式后处理，或者一种比较新兴的说法是 MOML（Model Output Machine Learning）。我所知道的一个比较典型的例子是国内某气象公司就是基于 XGBoost 的方法做模式后订正，还在某全球气象预报评测的结果中获得了不错的成绩。另据报道，在北京冬奥会期间举办的预报测试比赛中，MOML 算法也取得了不错的成绩。由于模式后订正在研究和工程化上成本较低，易于开展和实施，且效果立竿见影，因此有很多公司和团队在这一领域倾注了不少人力物力。</p>
+
+<p>除了后订正以外，机器学习技术还可以在 WRF 模式输出产品的时空降尺度方面提供帮助。得益于深度学习在图像处理领域取得的进步，人们在“图像超分辨率”或者叫“图像去模糊”技术上已经取得了理想的效果。对于模式输出的格点预报这种“类图”数据，尝试借助图片领域的超分辨率技术获取更高空间分辨率的预报产品。此外，基于 GAN 类神经网络可以开发出善于在预报间隔之间“创作”的模型，从而获取更高时间分辨率且高质量的预报产品，例如将3小时预报变为1小时预报甚至10分钟预报，而这一工作原本通常是由线性插值完成的。</p>
+
+<p>相信未来随着算力的提升和观测数据的增加，基于机器学习的模式后订正还有更多的想象空间。</p>
+
+<h2 id="参考文献延伸阅读">参考文献&amp;延伸阅读</h2>
+<p><em>杨淑贤,零丰华,应武杉等.人工智能技术气候预测应用简介[J].大气科学学报,2022,45(05):641-659.DOI:10.13878/j.cnki.dqkxxb.20210623003.</em></p>
+
+<p><em>孙健, 曹卓, 李恒, 等. 人工智能技术在数值天气预报中的应用. 应用气象学报, 2021, 32(1): 1-11. DOI:  10.11898/1001-7313.20210101.</em></p>
+
+<p><em>Arcucci, R.; Zhu, J.; Hu, S.; Guo, Y.-K. Deep Data Assimilation: Integrating Deep Learning with Data Assimilation. Appl. Sci. 2021, 11, 1114. https://doi.org/10.3390/app11031114</em></p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="Python" /><summary type="html"><![CDATA[这是一个粉丝的万事屋的需求，原始需求是这样的：我的问题是，目前对机器学习在 WRF 模型上的应用有哪些方向？希望您对这方面有了解且能出一期简单的科普]]></summary></entry><entry><title type="html">聊一聊最近 AI 技术给气象工作者带来的焦虑</title><link href="https://clarmy.me/discussing-the-anxiety-among-meteorologists-due-to-recent-ai-technologies/" rel="alternate" type="text/html" title="聊一聊最近 AI 技术给气象工作者带来的焦虑" /><published>2023-09-20T00:00:00+08:00</published><updated>2023-09-20T00:00:00+08:00</updated><id>https://clarmy.me/discussing-the-anxiety-among-meteorologists-due-to-recent-ai-technologies</id><content type="html" xml:base="https://clarmy.me/discussing-the-anxiety-among-meteorologists-due-to-recent-ai-technologies/"><![CDATA[<p><em>如果把数值天气预报与人工智能预报技术的 PK 比作一把王者荣耀，那毫无疑问人工智能队已经拔掉了二塔。</em></p>
+
+<p>自从盘古气象模型点爆气象圈子以后，各种 AI 预报模型就像雨后春笋一样遍地开花，名字起得好听不说，还争相上了《Nature》。这些 AI 预报模型在赚足了眼球的同时，也迎来了业内的一些质疑，而 AI 预报模型的盛行也真真切切地让很多气象工作者感到焦虑，甚至有一些博主喊出了“留口饭吃”的口号。很多行业专家、学者、KOL都在热烈讨论 AI 预报的这个话题。我也看了很多观点，有一些感触，所以也想就着话题的热度，聊一聊我的看法。</p>
+
+<h2 id="这次为什么不一样">这次为什么不一样？</h2>
+<p>说起来 AI 技术在气象领域的应用那可不是新鲜事，得有一些年头了。就据我所知，市面上叫得出名字的短临预报产品，无一例外都是基于神经网络实现的。不管是彩云还是墨迹的分钟级降水预报早在七八年前就已经面世了，而且这么多年过来也比较受业内认可。并没有觉得给气象工作者带来了多么强烈的焦虑感，但为什么今年这一波会给行业内造成如此强烈的心理冲击？</p>
+
+<p>关键词在于“替代性”。</p>
+
+<p>之所以 AI 短临大行其道的时候人们并没有那么强的焦虑，是因为 AI 技术在短临上的应用属于是一种空白的填补，而并不会替代什么原有的岗位。</p>
+
+<p>用过数值预报产品的人都知道，数值预报的时效性是一个硬伤，就拿 NCEP-GFS 和 ECMWF 的数值预报产品为例，前者发布的平均延迟4小时，后者平均7小时。也就是说，它今天早上8点做的预报，你最早得到下午2、3点才能拿到结果。这中间的几个小时实质上是无效预报，但是由于其求解的逻辑限制，你也不能跳过。</p>
+
+<p>而且我们所见到的主流的数值预报产品，最高的时间颗粒度就是1小时间隔，想要制作分钟级的预报以现在的算力和代码架构在工程上根本不可能实现。</p>
+
+<p>所以，一直以来数值预报都没有能力吃到 0-6 小时短临预报这块蛋糕，市面上 AI 短临预报的出现也是填补了数值预报无能为力的这部分空白，它是从无到有的一个过程，也就几乎不会对原有体系造成很大的冲击。</p>
+
+<p>而盘古不一样，它从出现的那一刻就自带了“踢馆”属性。</p>
+
+<p>我记得在去年盘古刚开始立项的时候就已经对外放出消息，要在天气预报领域搞事情。而从结果来看盘古的目标也很明确，初来乍到就是要在数值预报的地盘跟数值预报最强的对手板板手腕，于是它真的直接就去欧洲数值预报中心“踢馆”了，我猜想华为是想来一场气象界的“AlphaGO对战李世乭”的戏码，搞个大新闻。结果大家也都知道了，不仅搞了大新闻，也差点把气象工作者的心态搞崩了。</p>
+
+<p>就目前的现状来说，ECMWF 几乎已经成了业内大部分人的一种“技术信仰”，它的很多产品已经成了气象数值预报领域实质上的标杆。很多机构研发团队在自研格点预报产品以后，也都会去跟 EC 的预报做做对比。所以在这么一个大背景下，盘古对 EC 的冲击，毫无疑问会也会对业界的研发工作者产生心理冲击。</p>
+
+<p>排除技术信仰的因素不说，盘古的预报形式，本质上也就是在以替代数值预报为目的的，它能用排列组合的方式灵活地制作出1小时、3小时、6小时、12小时和24小时间隔的预报，这些都是模仿数值预报的预报间隔，并且运行效率还出奇的快，工程上能极大地减少无效预报的时间，而准确率还与数值预报有得一拼，甚至它可以直接在个人电脑上运行。</p>
+
+<p>简直就是天气预报的卷王。职场上冒出来一个显眼包大家会不喜欢，那预报界来这么一个卷王，谁能受得了啊？所以从现实利益和心理情感的双重角度来看，盘古的出现必然也会受到行业内一定程度的抵制，大家即使嘴上不说，心理也会不服气。</p>
+
+<p>因此对于 AI 预报的质疑声不断出现，比如大家质疑声中出现频率最高的，就是预报的可解释性。</p>
+
+<h2 id="ai-可解释性问题">AI 可解释性问题</h2>
+<p>AI 的可解释性问题并不是气象预报才有，它是一个“历史悠久”的问题，几乎是与 AI 科学相伴而生的，甚至已经逐渐成了 AI 的一种“原罪”，有很多学者在这个问题上写了不少论文。所以我们首先要承认的是：AI 天气预报结果的可解释性的问题确实存在，并且会长期存在，且难以解决。</p>
+
+<p>但同时我的另一个观点是：即使可解释性不明，但也不会阻碍它在应用领域的发展。就好像目前理论量子力学还有很多问题没有完全搞清楚，但也并不影响量子计算机的研发一样的道理。</p>
+
+<p>在我看来，可解释性问题可能并不是“可不可解释”的问题，而是“我们是否具备了解释能力”的问题。</p>
+
+<p>任何显性的知识都是经历了现象 -&gt; 规律 -&gt; 理论 -&gt; 知识的过程，现代气象科学发展这一两百年时间，几乎所有写到课本里的知识都是从“无法解释”到“可解释”的，如果因为观察到的现象“无法解释”就抵制、排斥，那气象学早就不存在了。所以“可解释性问题”并不应该是 AI 的原罪，而应该是我们发现更大世界总结更多规律获取更多知识的机会。</p>
+
+<p>此外，从现实意义出发，如果我们挣脱“可解释性问题”的枷锁，真真切切能够获得好处和实惠，那又何乐而不为呢？几千年前的老祖宗不知道大气的确切运行原理，但也不妨碍他们利用气候规律发展出发达的农耕文明，一样的道理。</p>
+
+<p>如果我们经过实测 AI 预报的效果确实更好，那么就利用它的优势创造价值就好了，至于其中难以解释的原因，可以留给未来无聊的人生慢慢探索。</p>
+
+<p>可能有人要问了，如果连内在原理都不知道，完全就是一个黑箱，那这预报的结果可信吗？敢用吗？</p>
+
+<p>我的观点是不管黑猫白猫，抓到耗子就是好猫。对于预报结果可信不可信的评判，主要还是应该取决于长期的测评结果，而不应该取决于内在原理是否透明。古代的人不知道万有引力定理，但也不妨碍他们笃信抛到空中的物体一定会落到地面，这就是长期稳定观察得到的结果。所以不管是什么算法，只要它实际测试的预报效果好，并且是长期稳定地好，那当然可以相信，也可以放心地使用。</p>
+
+<p>对于可解释性问题，还有一个观点认为 AI 的黑盒特性会造成其持续发展的路径不清晰，效果好也许只是撞大运。</p>
+
+<p>聊到这里，我想起来之前看到一篇文章中一个有趣的比喻：</p>
+
+<p>“看！我发明了汽车，它跑得比马快！” VS “看！我家骡子吃错了药，它跑得比马快！”</p>
+
+<p>原作者认为盘古当前的表现可能是上述这两种情况中的一种，并且认为我们所需要的是前一种而非后一种。</p>
+
+<p>首先这个例子里前一句是一个后入为主的比喻，它是以现代人已经普遍认知“汽车”概念以后再用回顾古代的方式叙述的。而如果真的让当时一个不知汽车为何物的人来描述，它的说法大概应该是：</p>
+
+<p>“看！我家铁皮通了汽，它跑得比马快！”</p>
+
+<p>如果用这种说法，给人的直观感觉似乎也并不比骡子吃错药好到哪去。当然我在这里并不是想咬文嚼字，而是当我们把二者拉到同一起跑线以后再看这个问题，才更公平。</p>
+
+<p>从实用主义的角度考虑，如果我们首要考虑的是速度，无论是吃错药的骡子还是通汽的铁皮，都是OK的，甚至我们应该让吃药的骡子和通汽的铁皮也比一场，才能最终得出哪个是我们所想要的，不论谁胜出，我们都去用更好的那个就好了。</p>
+
+<p>而且 AI 技术是一个动态发展自我迭代的过程，每年有成百上千的论文发表，也提出了大量的模型方案，这其中必然有吃错药的骡子也有通汽的铁皮，我们只需要在不断试错中淘汰掉那些掉队的骡子，而筛选出我们想要的“汽车”就行了，所以用汽车骡马论来质疑 AI 预报潜力在我看来也是不成立的。</p>
+
+<p>再说回实用主义，在计算机领域，有一个非常有名的命题叫“鸭子类型”，它的描述很有趣：“如果一个实体它叫声像鸭子，走路像鸭子，那它就是鸭子。”乖乖，只要符合我的需求，连鸭子是不是真的都不在乎，也从侧面也可以看出实用主义在计算机领域是多么的普遍，所以永远不要低估一个工程师对实用主义的追求程度，而如今的 AI 技术也确实是在这样一群信奉实用主义的人的手底下成长起来的。</p>
+
+<p>事实上，AI 科学能发展到今天这种程度，巨量的资金砸向这个领域，也都是拜实用主义所赐，如果每个投资人都是追求“可解释性”的严厉学者，那这个行业早就胎死腹中了。</p>
+
+<h2 id="ai-是否会替代数值预报">AI 是否会替代数值预报</h2>
+
+<p>还记得文章开头那个比喻吗？</p>
+
+<blockquote>
+  <p>如果把数值天气预报与人工智能预报技术的 PK 比作一把王者荣耀，那毫无疑问人工智能队已经拔掉了二塔。</p>
+</blockquote>
+
+<p>之所以说 AI 只拔了二塔，是因为目前以盘古为首的各种 AI 大模型虽然取得了一定程度的成功，但是由于它在数据的种类的丰富度上并不能完全覆盖 NWP（Numerical Weather Prediction，数值天气预报，下同）的预报要素，所以 AI 预报目前仍然不具备完全替代 NWP 的实力，但是逐渐蚕食的过程已经在进行之中了。</p>
+
+<p>很多人认为目前的 AI 模型严重依赖再分析数据，而再分析数据是 NWP 体系下资料同化的产品，所以当下的 AI 模型预报也不是真正独立于 NWP 的体系，而是寄生于 NWP 体系的一个分支。这个观点乍一看确实没有问题，因为从现在公开的资料来看，AI 预报大模型的训练数据几乎无一例外都是用 ERA5 数据作为训练集的。但问题是目前 AI 模型训练之所以都用 ERA5 再分析数据，是因为真实观测数据极度缺乏，除了 ERA5 几乎没有其他可选项。如果把 AI 天气大模型比作是一个婴儿，那 ERA5 就是它的婴儿车，而标志婴儿长大第一件事就是丢弃婴儿车。所以你怎么确定 AI 未来在真实观测数据充足的情况下，不能憋个大招来一个彻彻底底的端到端预报呢？如果你认为 AI 永远都离不开再分析数据，那格局就有点小了。</p>
+
+<p>而且，说现在 AI 预报模型依赖再分析数据也不完全准确，因为从工程的角度来说，现在的模型在推理阶段实质上是与数据来源无关的，只要它的输入是按照预先设定好的变量种类顺序、维度组织的多维数组，就可以执行推理，它并不在乎输入的矩阵是来自什么机构的什么产品，不同的矩阵输入大概就类似于原装电池和山寨电池的区别，现在也有很多人在尝试用多种不同来源的输入场来驱动盘古以比较其预报效果。所以这些模型严格意义上并不是被卡脖子的技术。</p>
+
+<p>从长远来看，我认为 AI 大概率是能够替代 NWP 的，而且是全链路的替代，包括资料同化。或者换一种说法，AI 最终追求的将是前面提到的端到端预报，也就是直接给模型输入非标准化的观测资料，模型直接吐出最终的预报结果，把同化和预报的界限打破，最终形成一套完全独立于 NWP 的预报体系，这几乎是 AI 进化的一个必经之路。</p>
+
+<p>当 AI 的模型真的实现了这种端到端预报，并且预报效果能追平 NWP。那就说明 AI 预报已经从婴儿车里跳了出来，可以独立行走了。到那个时候，直接的面对面竞争才算真正开始。</p>
+
+<p><em>而到那个时候，AI 就攻上了高地。</em></p>
+
+<h2 id="ai-预报的阶段性展望--nwp-还有什么机会">AI 预报的阶段性展望 &amp; NWP 还有什么机会</h2>
+<p>从短期来看（未来1年以内），除了更多基于 ERA5 的同质化模型跳出来发论文以外，应该不会有太多亮眼的新闻。可能比较值得期待的是国家队的表现，事实上现在这些模型无一例外都是基于欧洲的 ERA5 数据做的训练，而国家队实际上手里还握着比 ERA5 质量更好（中国区）的再分析数据 CRA40 没有放出来。如果能够以这套再分析做训练，是否可以得到更好的结果？值得期待。</p>
+
+<p>从中期来看（未来1-5年），一定会陆陆续续出现独立于 NWP 体系的端到端 AI 预报大模型出来，各方应该都在憋大招，就看谁先放出来了。保守估计这个时间可能会在一年到一年半之间。</p>
+
+<p>从长期来看（未来5-10年），NWP 将迎来与 AI 的直接竞争，并且 AI 模型可以凭借其数据驱动的灵活性，在资料同化、常规预报、气候预测、后处理、质控等气象预报的各个阶段和细分领域大放异彩，同时它也会不断在更终端的位置补齐从气象数据到用户真实需求的最后一公里，从而在气象的长尾市场里攻城略地，最终成为行业的主流方案。</p>
+
+<p>上个月跟一个朋友骑车的时候聊过 AI 与 NWP 竞争的话题。他的一个观点我觉得是挺有道理的。他认为对于 NWP 来说，只要能够提高运算效率，计算速度能达到与 AI 的运算相同量级，那么 NWP 也是未来可期的。</p>
+
+<p>事实上，确实有人在这方面做努力，比如我们都认识的一个前同事，就正在一家云计算公司里研发改造 WRF 让其在 GPU 上运行的项目，而且据说已经有所突破。</p>
+
+<p>假如说，当 NWP 能够利用 GPU 实现计算性能大幅提升，提升到与 AI 的计算性能相当的水平，那未来的结局可能还真未可知。当然，即使最终 NWP 在业务预报领域难以抵挡 AI 预报的竞争，也并不意味着它没有任何生存空间。</p>
+
+<p>打个不那么恰当的比方，我们可以认为 NWP 是在追求一种数学上完美的解析解（推导过程），而 AI 是通过不断迭代试错寻求一种近似值的数值解（无需推导）。众所周知，数学上大多数方程都是没有解析解的，在应用数学和工程领域，数值解才是主流。</p>
+
+<p>那么同理 NWP 其实更适合在理论研究领域发挥作用，它可以用于对各种气象假说或猜想的计算机模拟验证，这一点是 AI 模型所无法做到的（黑盒）。所以学术研究将是 NWP 的一块无人能撼动的自留地。</p>
+
+<h2 id="人生苦短我用-ai">人生苦短，我用 AI</h2>
+<p>我认为气象工作者并不需要焦虑，因为 AI 技术最终会是一种普惠的技术。它并不会让你失业，相反，它会让你工作得更幸福。</p>
+
+<p>举个例子，比如说程序员，ChatGPT 出来以后，很多人也说程序员要被替代了。但从我的观察来看这件事似乎并没有发生，反而程序员们在 Copilot 的“按摩”下过上了神仙般的日子。</p>
+
+<p>你可以想象一下，未来某个团队，基于开源大语言模型，加上几乎全部的天气过程分析的论文再加上全部的气象教材做语料，同时结合标签化的观测数据做多模态训练，训练了一个叫“首席”的 AI 模型，他每天自己去把观测数据拿下来，然后给你一通分析，最后把天气分析报告和结论都给你写好了，你只需要看一看没啥问题签个字然后发布就行了，这日子不美吗？而这个“首席”模型不也正是预报员真实需求的“最后一公里”吗？</p>
+
+<p>AI 无法替代人的一个最重要的现实因素是，AI 不能作为责任体来承担责任，通俗来讲就是“AI不粘锅定理”，气象行业是一个需要背锅的行业，AI 没有软肋，不领工资，无法开除，你能让它背锅？所以说气象工作者还是无法替代的。</p>
+
+<p>最后，人生苦短，用上 AI 好好享受生活它不香吗？</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><summary type="html"><![CDATA[自从盘古气象模型点爆气象圈子以后，各种 AI 预报模型就像雨后春笋一样遍地开花，名字起得好听不说，还争相上了《Nature》。这些 AI 预报模型在赚足了眼球的同时，也迎来了业内的一些质疑，而 AI 预报模型的盛行也真真切切地让很多气象工作者感到焦虑，甚至有一些博主喊出了“留口饭吃”的口号。很多行业专家、学者、KOL都在热烈讨论 AI 预报的这个话题。我也看了很多观点，有一些感触，所以也想就着话题的热度，聊一聊我的看法。]]></summary></entry><entry><title type="html">Cartopy 0.22 来了！安装难的问题将成为历史</title><link href="https://clarmy.me/cartopy-0-22-installation-issues-become-history/" rel="alternate" type="text/html" title="Cartopy 0.22 来了！安装难的问题将成为历史" /><published>2023-08-10T21:54:00+08:00</published><updated>2023-08-10T21:54:00+08:00</updated><id>https://clarmy.me/cartopy-0-22-installation-issues-become-history</id><content type="html" xml:base="https://clarmy.me/cartopy-0-22-installation-issues-become-history/"><![CDATA[<p>一直以来，Cartopy 的安装都是一个老大难的事情，由于一些依赖包的问题，我们是无法直接用 pip 快速安装的，要么需要手动安装一些特殊的依赖，要么就转而用 conda 安装，但是用 conda 安装有一个很磨人的事情是它经常会因为计算包依赖之间的关系而卡在 Solving environment 步骤，导致安装过程并不丝滑。而现在，Cartopy 安装难的问题，要成为历史了。</p>
+
+<p>就在上周五（8月4日），Cartopy 发布了 0.22.0 版本。先不说这个版本功能有什么更新，它最重要的改变那就是 开始支持预编译的轮子安装了！ 这意味着什么？意味着你可以像装其他包一样直接无脑怼 <code class="language-plaintext highlighter-rouge">$ pip install cartopy</code> 了，不需要你再去手动安装各种乱七八糟的依赖了，也不用忍受 conda 里无穷无尽的 Solving environment 了。</p>
+
+<p>我们可以看下图，cartopy 已经根据不同系统进行了预编译，生成了不同版本的 .whl 文件。</p>
+
+<p><img src="/assets/img/cartopy-0-22-installation-issues-become-history/01.webp" alt="01" /></p>
+
+<p>而这些在 0.21.* 及以前的版本中是不存在的。</p>
+
+<p><img src="/assets/img/cartopy-0-22-installation-issues-become-history/02.webp" alt="02" /></p>
+
+<p>我们之前之所以觉得 Cartopy 在 pip 中难以安装，是因为它没有预编译轮子，以至于我们每次用 pip 安装的时候需要现场编译轮子，而由于上游包版本的各种复杂关系很容易导致轮子构建失败或者缺失某些库文件，现在 Cartopy 已经把各主要平台和不同 Python 版本的轮子预编译好了，我们安装的时候就是直接拿来就用，可以极大地减少安装的难度和时间。</p>
+
+<p>我还特意去看了 Cartopy 的官方公告：</p>
+
+<p><img src="/assets/img/cartopy-0-22-installation-issues-become-history/03.webp" alt="03" /></p>
+
+<p>内容翻译过来：</p>
+
+<blockquote>
+  <p>Cartopy v0.22是该项目开发中的一个重要进步。之前需要本地安装PROJ和GEOS库的要求已经被删除。之前的C语言PROJ库调用被pyproj替换，C语言GEOS调用被shapely替换。这意味着现在可以使用简单的 pip install cartopy 来安装Cartopy。</p>
+</blockquote>
+
+<p>所以也就是说已经解决了非 Python 生态的依赖，转而直接使用已经构建了轮子的 Python 生态包，也就可以丝滑地使用 pip 安装了。从使用便利性上来说，0.22可以说是一个非常重大的里程碑了。</p>
+
+<p><img src="/assets/img/cartopy-0-22-installation-issues-become-history/03.gif" alt="03" /></p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="Python" /><category term="Cartopy" /><summary type="html"><![CDATA[一直以来，Cartopy 的安装都是一个老大难的事情，由于一些依赖包的问题，我们是无法直接用 pip 快速安装的，要么需要手动安装一些特殊的依赖，要么就转而用 conda 安装，但是用 conda 安装有一个很磨人的事情是它经常会因为计算包依赖之间的关系而卡在 Solving environment 步骤，导致安装过程并不丝滑。而现在，Cartopy 安装难的问题，要成为历史了。]]></summary></entry><entry><title type="html">实测盘古气象模型在真实观测场中的预报效果如何</title><link href="https://clarmy.me/testing-pangu-weather-model-forecast-accuracy/" rel="alternate" type="text/html" title="实测盘古气象模型在真实观测场中的预报效果如何" /><published>2023-07-24T19:45:00+08:00</published><updated>2023-07-24T19:45:00+08:00</updated><id>https://clarmy.me/testing-pangu-weather-model-forecast-accuracy</id><content type="html" xml:base="https://clarmy.me/testing-pangu-weather-model-forecast-accuracy/"><![CDATA[<p>根据华为盘古气象模型团队在 nature 发表的论文显示，其模型准确率已经超越了 ECMWF 的 IFS 模型，但是这些论文中的检验结果都是在人工构造的理想化气象场中（ERA5）进行的，而 ERA5 与真实观测场又是有差距的，盘古在真实观测场中的表现如何，一直以来都缺乏一些实测的报告或者文章介绍。得益于盘古气象模型团队将其模型开源，使我可以在自己个人电脑上搭建盘古气象模型进行预报检验具有了可操作性。因此我专门花了一点时间，来做了一个对盘古气象模型在真实观测场中预报的小检验，以观察其在真实气象观测场中的预报效果。</p>
+
+<p>本测评的代码已在 Github 开源，任何人都可以根据仓库的说明文档在自己本机跑通，<a href="https://github.com/Clarmy/pangu-weather-verify">仓库地址</a>。</p>
+
+<h2 id="数据来源">数据来源</h2>
+<p>本次测评的所有数据均来源于互联网上的公开数据集，且数据获取的方式合理合法、公开透明。本次测评抓取的数据跨度约 5 天，抓取的时间点为 ECMWF 的逐 3 小时预报点对应的时间点。</p>
+
+<h2 id="surf-观测站数据">SURF 观测站数据</h2>
+<p>本测评将使用中国大陆地区在<a href="http://www.nmc.cn/">中央气象台网站</a>上公布的2000多个站点的观测数据作为检验的真值。观测站点信息来自于<a href="http://data.cma.cn/Market/Detail/code/A.0012.0001/type/0.html">中国气象数据网</a>，原始站点表格<a href="http://image.data.cma.cn/static/doc/market/China_SURF_Station.xlsx">下载地址</a>，在测评中站点列表（csv文件）对原始列表做了一些经纬度表示方法的转换，主要是将度分秒表示法转换为十进制表示法，以便于后续处理。数据获取方式是以爬虫的方式抓取中央气象台网站上的观测站点数据，受网络环境影响，在实际运行中抓取的数据无法保证100%完整，会有个别站点数据缺失，属于正常现象。</p>
+
+<h2 id="era5-再分析数据">ERA5 再分析数据</h2>
+<p>我们使用的 ERA5 再分析数据作为盘古模型推理的原始输入数据。由于本次测评是以真实业务化运行的标准，而非实验室中的理想化场景来进行的，因此我们作为初始场输入盘古做推理的 ERA5 数据实际上是距离观测时间点向前推大约 5 天前的数据。</p>
+
+<h2 id="ecmwf-预报数据">ECMWF 预报数据</h2>
+<p>ECMWF 的预报产品有多种品类，本项目使用的是其中对外免费公开的实时预报数据集，获取渠道可以参考ECMWF的<a href="https://confluence.ecmwf.int/display/DAC/ECMWF+open+data:+real-time+forecasts">文档说明</a>。本项目中 ECMWF 的实时预报数据作为盘古模型的对比预报数据（陪跑），用于对比盘古模型的预报效果。由于该数据集的空间分辨率为0.4°。因此在最终计算检验指标时，我们将其插值到与其他数据集一致的 0.25° 的空间分辨率。</p>
+
+<h2 id="gfs-预报数据">GFS 预报数据</h2>
+<p>我们使用 0.25 度分辨率的 GFS 预报数据作为另一个陪跑的对比预报，GFS 的数据<a href="https://nomads.ncep.noaa.gov/gribfilter.php?ds=gfs_0p25_1hr">下载地址</a>。</p>
+
+<h2 id="测评指标">测评指标</h2>
+<h3 id="rmse">RMSE</h3>
+<p>RMSE (Root Mean Square Error) 即均方根误差，是一种常用的预测结果误差评估指标。RMSE反映预测值与实际值偏差的均方差，它能很好地反映预测的整体准确性。RMSE值越小，表示预测结果整体误差越小，预测效果越好。</p>
+
+<p>RMSE具有非负值、同量纲等特点，易于理解和解释。它既可以用于连续型预测，也可用于分类预测的误差评估。RMSE是机器学习中回归模型及时间序列预测常用的评估指标之一。总体来说，RMSE是一个简单直观而有效的预测误差评价指标。</p>
+
+<h3 id="误差阈值准确率">误差阈值准确率</h3>
+<p>对于非二值化的预报要素，可以通过误差阈值过滤的方式来定义“准确”与“不准确”，进而再进行准确率的统计计算。误差准确率是对于误差在允许范围内计为“预报准确”，然后计算“预报准确”样本数与观测总样本数之间的比值。本次测评使用以下几个指标：</p>
+
+<ol>
+  <li>1°C准确率：气温预报与观测之间偏差在 1°C 以内的样本数占总观测样本数的比例。</li>
+  <li>2°C准确率：气温预报与观测之间偏差在 2°C 以内的样本数占总观测样本数的比例。</li>
+  <li>3°C准确率：气温预报与观测之间偏差在 3°C 以内的样本数占总观测样本数的比例。</li>
+  <li>1ms准确率：风速预报与观测之间偏差在 1m/s 以内的样本数占总观测样本数的比例。</li>
+  <li>2ms准确率：风速预报与观测之间偏差在 2m/s 以内的样本数占总观测样本数的比例。</li>
+  <li>3ms准确率：风速预报与观测之间偏差在 3m/s 以内的样本数占总观测样本数的比例。</li>
+</ol>
+
+<h3 id="风级偏强率偏弱率">风级偏强率/偏弱率</h3>
+<p>风级偏强为风力等级预报偏强次数与风力等级预报总次数的百分比。预报风力所在的检验等级大于实况风力所在的检验等级,则为风力等级预报偏强。同理，风级偏弱率为风力等级预报偏弱次数与风力等级预报总次数的百分比。预报风力所在的检验等级小于实况风力所在的检验等级，则为风力等级预报偏弱。</p>
+
+<h3 id="风速评分">风速评分</h3>
+<p>风速评分是衡量预报风级与观测风级之间匹配程度的分值。其算法为：若预报与观测处于同一风级，则记1分；若二者为相邻风级，则记0.6分；若二者风级相差2级，则记0.4分；其余情况不得分，累加所有样本的评分后取算数平均值即为样本的风速评分。</p>
+
+<h3 id="风向评分">风向评分</h3>
+<p>风向评分是衡量风向准确率的一个指标，风向评分使用风向方位（而非风向角度）作为基准进行评估。</p>
+
+<ul>
+  <li>对于 8 分位风向，预报和观测风向方位完全匹配得 1 分，二者风向方位相差 1 个方位得 0.6 分，其余情况得 0 分。</li>
+  <li>对于 16 分位风向，预报和观测风向方位完全匹配得 1 分，二者风向方位相差 1 个方位得 0.8 分，相差 2 个方位得 0.6 分，其余情况得 0 分。</li>
+</ul>
+
+<p>本测评采用 8 分位风向进行评估。</p>
+
+<h2 id="测评结果">测评结果</h2>
+<h3 id="气温">气温</h3>
+<p>盘古在气温上的测评结果相比于其他两个预报系统来说，具有比较明显的优势。具体来看，盘古气温的 RMSE 总体上是略优于 ECMWF 的，且比较稳定地优于 GFS。</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/01.webp" alt="01" /></p>
+
+<p>1°C 准确率方面，盘古的结果相对于 ECMWF 有一个比较明显的优势，并且较为稳定地优于 GFS。但在 2°C 和 3°C 准确率方面，盘古相对于 ECMWF 的优势逐渐缩小，二者呈现一种势均力敌的状态，但稳定地优于 GFS。</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/02.webp" alt="02" />
+<img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/03.webp" alt="03" />
+<img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/04.webp" alt="04" /></p>
+
+<h3 id="风">风</h3>
+<p>盘古在风的预报方面就不那么尽如人意了，首先我们来看风速的 RMSE：</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/05.webp" alt="05" /></p>
+
+<p>可以看到，盘古风速的 RMSE 在三个预报系统中基本是垫底的（越高越差），而 ECMWF 和 GFS 的却难分秋色，这一点似乎打破我们一直以来认为 ECMWF 稳定优于 GFS 的固有认知。</p>
+
+<p>再来看 1m/s、2m/s、3m/s 误差阈值下的准确率：</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/06.webp" alt="06" />
+<img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/07.webp" alt="07" />
+<img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/08.webp" alt="08" /></p>
+
+<p>可以看出，盘古的结果都还是比较明显地比 ECMWF 和 GFS 要差一些。</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/09.webp" alt="09" /></p>
+
+<p>从风级的准确率来看，盘古的结果还是逊色于其他两个预报系统的。</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/10.webp" alt="10" />
+<img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/11.webp" alt="11" /></p>
+
+<p>再看风速和风向评分，盘古的结果依旧是不敌其他两个系统。</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/12.webp" alt="12" />
+<img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/13.webp" alt="13" /></p>
+
+<p>从风级的偏强和偏弱率来看，盘古应该是对风速倾向于低估，而 GFS 倾向于高估。</p>
+
+<h2 id="总结">总结</h2>
+<p>总体来说，盘古的预报相对于 ECMWF 和 GFS 在气温上具有比较明显且稳定的优势，而在风相关的预报效果基本上全面逊色于其他两个系统，但其预报效果与其他两个系统也已经相当接近。另一个可能比较颠覆我们认知的是，一直以来认为 ECMWF 稳定优于 GFS 的认知似乎正在发生变化：GFS 在风预报上的表现已经与 ECMWF 不相上下了。</p>
+
+<h2 id="对盘古的一些主观评价">对盘古的一些主观评价</h2>
+<p>虽然依据上述的测评，在真实观测场中并没有重现盘古全面优于 ECMWF 的效果。但我们也要知道这是在盘古使用的是 5 天前的 ERA5 数据作为初始场的条件下得到的结果。也就好比说是百米赛跑，ECMWF 和 GFS 先跑 40 米，结果最后三个人几乎同时撞线，这也侧面反应了盘古恐怖的实力。以下是初始场与观测场时间间隔对比图：</p>
+
+<p><img src="/assets/img/testing-pangu-weather-model-forecast-accuracy/14.webp" alt="14" /></p>
+
+<p>由于我是从一个实用角度出发进行的这个测评，所以不可能像论文里做的那样排除所有数据时效性问题，在完全理想化的情况下做测评。从某种程度上来说我的测评可能对盘古来说是不公平的，但这却是具有现实意义和可操作性的。如果把盘古比作在学校里是一个超级大学霸，那么它早晚有一天需要走出校园面对真实的世界，而这真实的世界绝不可能处处公平一样。</p>
+
+<p>虽然盘古在真实观测场中的预报效果并没有论文中那么完美，但我认为盘古具有非常大的工程价值：</p>
+
+<ol>
+  <li>运行效率高，我在做这个测试时，用个人电脑 CPU 跑单次推理大概 4 分钟，由于是 5 天前的初始场，所有需要迭代推理大概 7-8 次左右（例如 115 小时时间间隔的推理过程：24 -&gt; 24 -&gt; 24 -&gt; 24 -&gt; 6 -&gt; 6 -&gt; 6 -&gt; 1），一共消耗约 30 分钟左右。如果是做业务化运行，我们可以通过一些排列组合的技巧把推理过程并行，例如我先用一个初始场跑出未来 24 小时的预报场，用这 24 个预报场同时使用 24 小时模型进行逐日推理，那么在核数足够的情况下理论上每 4 分钟就可以预报出1天24小时的预报。未来 10 天的逐小时预报用 40 分钟左右就能生成，当然如果再使用 GPU 对单次推理加速，那么速度可以更快。如果真的像论文中那样用顶配来做推理，把速度压榨到极限那么就可以在 2 分钟之内做出 10 天逐小时预报，并且预报效果还不比数值预报差太多。</li>
+  <li>运行环境搭建极其简单。盘古模型的运行是真的非常傻瓜式，不需要很多的配置，一个对 Python 熟练的开发人员完全可以在半个小时内就搭建一个可以跑通的盘古预报系统。相比于 WRF 那种极其复杂的环境配置来说，盘古简直就是工程师的福音。</li>
+  <li>没有预报上限。盘古的推理机制是使用上一次推理的输出作为下一次推理的输入，因此理论上可以无限推理下去，而不像 ECMWF 和 GFS 那样只能预报有限时长。这种特点对于工程师的一个极大的好处是，可以解决“预报焦虑”，也就是说盘古可以作为一个可靠的兜底预报在其他预报产品不可用的时候随时顶上，它可以顶替短时预报、短期预报、中期预报和长期气候预测。也就是它可以作为一种全周期的兜底预报产品来保证产品的可用性，这种特性对于长期忍受上游数据稳定性折磨的天气类 APP 来说简直就是救世主一样的存在了。</li>
+  <li>可以做集合预报，生成大量成员。盘古的灵活推理机制结合其高效的运算效率，允许你做大量扰动预报，比如说我们不遵循官方推荐的先长后短的推理过程，用一种随机的组合方式进行推理迭代，那理论上就可以生成大量扰动预报结果，基于这些结果我们可以做一些集合预报的统计分析，比如说做概率预报等。此外，我们还可以不遵循官方推荐的 ERA5 作为初始场，使用 GFS 的初始场作为输入，也可以生成新的预报成员。当然，如果有条件的话，还可以使用中国自己的 CRA-40 再分析场作为输入，这样就可以生成更多的预报成员了。</li>
+  <li>可以作为模式后订正的基本场。现在模式后订正几乎是每一个气象工程师的必修课了，市面上大量的“自主研发”预报产品其实绝大多数都是这一类模式后订正的产品。过去的后订正会非常依赖 ECMWF、GFS 这种数值预报作为订正的基本场，但是有了盘古的加入，就可以又多一个用于研究后订正的基本场了。</li>
+</ol>
+
+<p>虽然盘古模型在工程上能给行业带来上面这些诸多的好处，但是目前来说盘古模型的应用还是有一些局限性的：</p>
+
+<ol>
+  <li>预报变量少，地面预报只有气温、海平面气压、风这三个连续性要素，缺少降水，甚至连湿度都没有，高空预报的输出倒是挺多，但是高空的要素对于终端用户来说并没有什么太大作用，对于预报员辅助预报倒是可能会有一些帮助，但是如果盘古不是设计用于端到端预报的话，那它的意义也就不大了。</li>
+  <li>开源协议限制，盘古模型的开源协议是 CC BY-NC-SA 4.0，这种协议禁止商用（NC: No Commercial）。并且这种协议对于衍生作品也有一定的限制，如果你想基于盘古模型做一些衍生的工作，那么你的衍生作品也必须遵循同样的协议，这对于大部分商业公司来说是不可接受的。所以如果气象科技公司都严格遵守盘古的开源协议，那么盘古气象模型在商业市场几乎就没有立足之地了。</li>
+</ol>
+
+<p>我觉得盘古最难能可贵的是，研发团队敢于把模型开源出来让大家使用、测试和检验，体现了他们的自信和开源精神，值得肯定和学习。</p>
+
+<h2 id="faq">FAQ</h2>
+
+<ul>
+  <li>为什么不用 ECMWF/GFS 的初始场作为盘古的输入场而是用 5 天前的 ERA5 作为输入？</li>
+</ul>
+
+<p>最开始我是想用 ECMWF 每次预报的初始场作为推理的初始场的，但是 ECMWF 公开的数据集中每次预报的初始场并不能满足盘古初始场的维度要求，盘古的初始场高空最高达到 50 hPa，而我能拿到的公开的 ECMWF 的初始场最高只到 200hPa，如果使用外推插值我认为会对结果产生不利影响，因此选择牺牲时效性来保证准确性。而至于为什么不用 GFS，因为根据盘古研发团队的建议应该使用 EC 系的数据才能体现盘古的优势，所以一开始就排除了使用 GFS 作为初始场的选项。</p>
+
+<ul>
+  <li>中央气象台网站上的气象数据，不是根据省市县查询的吗？为什么能和气象站号对应上？</li>
+</ul>
+
+<p>中央气象台网站后台的 API 系统的规则是用气象站号来查询的，在抓包的时候只需要知道气象站号即可查询，详细的过程可以参考开源仓库：https://github.com/Clarmy/pangu-weather-verify。</p>
+
+<ul>
+  <li>如果检验的时间点是按照 ECMWF 的逐 3 小时预报点来的，那么盘古的预报时间点是怎么对齐的？</li>
+</ul>
+
+<p>由于我并不想因为时间插值引入更多的误差，因此虽然 GFS 和盘古都是（或可以是）逐小时预报，但我还是以 ECMWF 公开的 3 小时预报作为基准。这个时候对于盘古来说会有一个情况，也就是说在这 3 小时间隔中，ERA5 会有新的时次的数据发布出来，因此盘古可以在三小时中做三次不同结果的预报。出于一种现实最差情况的模拟，我使用的是盘古第一次做的预报结果来做的评估，而 3 小时间隔中新补充的 ERA5 的预报是被我舍弃的。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="气象" /><category term="盘古" /><summary type="html"><![CDATA[根据华为盘古气象模型团队在 nature 发表的论文显示，其模型准确率已经超越了 ECMWF 的 IFS 模型，但是这些论文中的检验结果都是在人工构造的理想化气象场中（ERA5）进行的，而 ERA5 与真实观测场又是有差距的，盘古在真实观测场中的表现如何，一直以来都缺乏一些实测的报告或者文章介绍。得益于盘古气象模型团队将其模型开源，使我可以在自己个人电脑上搭建盘古气象模型进行预报检验具有了可操作性。因此我专门花了一点时间，来做了一个对盘古气象模型在真实观测场中预报的小检验，以观察其在真实气象观测场中的预报效果。]]></summary></entry><entry><title type="html">以更优雅的方式获取 DEM 数据</title><link href="https://clarmy.me/get-dem-data-elegantly/" rel="alternate" type="text/html" title="以更优雅的方式获取 DEM 数据" /><published>2023-05-28T02:07:00+08:00</published><updated>2023-05-28T02:07:00+08:00</updated><id>https://clarmy.me/get-dem-data-elegantly</id><content type="html" xml:base="https://clarmy.me/get-dem-data-elegantly/"><![CDATA[<p>DEM 数字高程模型数据是一个很常见的表现海拔高度的数据，在 GIS 和气象领域经常会用到。但是对于大部分人来说，使用 DEM 数据并不是一件简单的事情，通常情况下网上的 DEM 数据都是通过分区块的文件方式（通常文件还会被压缩）供用户下载，用户下载之后还需要专门的工具在本地进行一系列的操作才能使用，对于一些轻量使用的用户来说相当的不方便（比如我只是想画一个海南拉鲁：<a href="/draw-your-own-hyrule-with-python/"><em>「用 Python 绘制你自己的海（nan）拉鲁」</em></a>）。</p>
+
+<p>对于大部分比较懒的用户（比如我）来说，处理拼接的过程过于枯燥和繁琐。于是我写了一个 Python 包 —— pyterrain 来解决这个痛点，下面我就来介绍一下用 pyterrain 获取 DEM 到底有多方便。</p>
+
+<p>首先我们当然是需要安装它: <code class="language-plaintext highlighter-rouge">pip install pyterrain</code>。由于 pyterrain 自己本身并不生产 DEM 数据，它只是一个下载和处理文件的包，所以我们还需要到 <a href="https://developers.nextzen.org/">https://developers.nextzen.org/</a> 这个网站上申请一个 api_key，这个 api_key 的申请是完全免费的，并且没有任何门槛，使用 Github 账号直接就可以登录。</p>
+
+<p><img src="/assets/img/get-dem-data-elegantly/01.webp" alt="01" /></p>
+
+<p>申请完之后，我们只需要下面这短短的几行代码，就能根据指定的坐标范围获取DEM 的数据及其相应的坐标矩阵：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">pyterrain</span> <span class="kn">import</span> <span class="n">Terrain</span>
+
+<span class="n">BBOX</span> <span class="o">=</span> <span class="mf">103.660531</span><span class="p">,</span> <span class="mf">30.982824</span><span class="p">,</span> <span class="mf">104.690779</span><span class="p">,</span> <span class="mf">30.234884</span> <span class="c1"># 成都的经纬度范围坐标：(左，上，右，下)
+</span><span class="n">API_KEY</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Dto0r88DQuaQizoxcQScvw</span><span class="sh">'</span>
+<span class="n">terrain</span> <span class="o">=</span> <span class="nc">Terrain</span><span class="p">(</span><span class="n">API_KEY</span><span class="p">)</span>
+<span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">dem</span> <span class="o">=</span> <span class="n">terrain</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="n">BBOX</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="sh">"</span><span class="s">lonlat</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>它会提示一段进度条和一些信息，然后经纬度网格和 DEM 数据就直接可以用了，是不是很方便？</p>
+
+<p>如果你觉得数据的空间分辨率不够精细，可以通过在调用 <code class="language-plaintext highlighter-rouge">fetch</code> 方法时设置 <code class="language-plaintext highlighter-rouge">zoom</code> 参数来调整，<code class="language-plaintext highlighter-rouge">zoom</code> 实际上就是瓦片金字塔结构的缩放级别，<code class="language-plaintext highlighter-rouge">zoom</code> 参数越大，空间分辨率就越高，下载的文件数据量也就越大。</p>
+
+<p>如果你不设置 <code class="language-plaintext highlighter-rouge">zoom</code> 的值，那么程序会自己寻找一个合适的缩放级别，对于只是想做一些地形可视化的用户来说这就让工作变得简单很多。</p>
+
+<p>下面我们来执行一个例子，用 pyterrain 下载并绘制重庆市区的地形：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">matplotlib.colors</span> <span class="k">as</span> <span class="n">mcolors</span>
+<span class="kn">from</span> <span class="n">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LinearSegmentedColormap</span>
+
+<span class="kn">from</span> <span class="n">pyterrain</span> <span class="kn">import</span> <span class="n">Terrain</span>
+
+
+<span class="k">def</span> <span class="nf">truncate_colormap</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">min_val</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">max_val</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">num_colors</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Truncate a colormap by creating a new one from a subset of an existing.
+
+    Args:
+        cmap (Colormap): The original colormap.
+        min_val (float): The start boundary (0-1), default to 0.0.
+        max_val (float): The end boundary (0-1), default to 1.0.
+        num_colors (int): The number of colors in the new colormap. Default to 100.
+
+    Returns:
+        new_cmap (Colormap): The new colormap.
+    </span><span class="sh">"""</span>
+    <span class="n">new_cmap</span> <span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="p">.</span><span class="nf">from_list</span><span class="p">(</span>
+        <span class="sh">"</span><span class="s">trunc({n},{a:.2f},{b:.2f})</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">cmap</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">min_val</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">max_val</span><span class="p">),</span>
+        <span class="nf">cmap</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">,</span> <span class="n">num_colors</span><span class="p">)),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_cmap</span>
+
+
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Dto0r88DQuaQizoxcQScvw</span><span class="sh">"</span>
+
+<span class="n">bbox</span> <span class="o">=</span> <span class="p">(</span><span class="mf">106.327321</span><span class="p">,</span> <span class="mf">29.704862</span><span class="p">,</span> <span class="mf">106.778055</span><span class="p">,</span> <span class="mf">29.347852</span><span class="p">)</span> 
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="nf">truncate_colormap</span><span class="p">(</span><span class="n">plt</span><span class="p">.</span><span class="nf">get_cmap</span><span class="p">(</span><span class="sh">"</span><span class="s">terrain</span><span class="sh">"</span><span class="p">),</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">terrain</span> <span class="o">=</span> <span class="nc">Terrain</span><span class="p">(</span><span class="n">API_KEY</span><span class="p">)</span>
+<span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">elevation</span> <span class="o">=</span> <span class="n">terrain</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="sh">"</span><span class="s">lonlat</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">shape</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">elevation</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">norm</span> <span class="o">=</span> <span class="n">mcolors</span><span class="p">.</span><span class="nc">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">elevation</span><span class="p">.</span><span class="nf">max</span><span class="p">())</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">shape</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">contour</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="nf">contourf</span><span class="p">(</span>
+    <span class="n">xs</span><span class="p">,</span>
+    <span class="n">ys</span><span class="p">,</span>
+    <span class="n">elevation</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+    <span class="n">levels</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">.</span><span class="nf">axis</span><span class="p">(</span><span class="sh">"</span><span class="s">off</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="sh">"</span><span class="s">./重庆地形.png</span><span class="sh">"</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="sh">"</span><span class="s">tight</span><span class="sh">"</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</code></pre></div></div>
+<p>来看一下效果：</p>
+
+<p><img src="/assets/img/get-dem-data-elegantly/02.webp" alt="02" /></p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="DEM" /><category term="Python" /><summary type="html"><![CDATA[DEM 数字高程模型数据是一个很常见的表现海拔高度的数据，在 GIS 和气象领域经常会用到。但是对于大部分人来说，使用 DEM 数据并不是一件简单的事情，通常情况下网上的 DEM 数据都是通过分区块的文件方式（通常文件还会被压缩）供用户下载，用户下载之后还需要专门的工具在本地进行一系列的操作才能使用，对于一些轻量使用的用户来说相当的不方便。对于大部分比较懒的用户（比如我）来说，处理拼接的过程过于枯燥和繁琐。于是我写了一个 Python 包 —— pyterrain 来解决这个痛点，下面我就来介绍一下用 pyterrain 获取 DEM 到底有多方便。]]></summary></entry><entry><title type="html">用 Python 绘制你自己的海（nan）拉鲁</title><link href="https://clarmy.me/draw-your-own-hyrule-with-python/" rel="alternate" type="text/html" title="用 Python 绘制你自己的海（nan）拉鲁" /><published>2023-05-24T21:24:00+08:00</published><updated>2023-05-24T21:24:00+08:00</updated><id>https://clarmy.me/draw-your-own-hyrule-with-python</id><content type="html" xml:base="https://clarmy.me/draw-your-own-hyrule-with-python/"><![CDATA[<p>说起来塞尔达2王国之泪发售快两周了，这两周我已经狂卷了60个小时在海拉鲁大地。今天我想祭出一个去年就已经写好的一段代码，用真实世界 DEM 数据（海南岛）绘制的一个海拉鲁 style 的地图。</p>
+
+<p>为了方便获取 DEM 数据，我写了一个 pyterrain 的小包，可以通过制定经纬度范围和缩放等级自动下载和拼接出网格 DEM。安装方法：<code class="language-plaintext highlighter-rouge">pip install -U pyterrain</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">copy</span>
+
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="n">matplotlib.colors</span> <span class="k">as</span> <span class="n">colors</span>
+
+<span class="kn">from</span> <span class="n">pyterrain</span> <span class="kn">import</span> <span class="n">Terrain</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="n">bbox</span> <span class="o">=</span> <span class="mf">108.444319</span><span class="p">,</span> <span class="mf">20.161757</span><span class="p">,</span> <span class="mf">111.318897</span><span class="p">,</span> <span class="mf">18.05883</span>  <span class="c1"># 海南岛
+</span>
+    <span class="n">terrain</span> <span class="o">=</span> <span class="nc">Terrain</span><span class="p">(</span><span class="sh">"</span><span class="s">qBD4m7PNT5apV-Xl7PROxA</span><span class="sh">"</span><span class="p">)</span>
+
+    <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">elevation</span> <span class="o">=</span> <span class="n">terrain</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="sh">"</span><span class="s">lonlat</span><span class="sh">"</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+    <span class="n">land</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">deepcopy</span><span class="p">(</span><span class="n">elevation</span><span class="p">)</span>
+    <span class="n">land</span><span class="p">[</span><span class="n">land</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">elevation</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="n">elevation</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span>
+    <span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nc">Axes</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">.</span><span class="nf">set_axis_off</span><span class="p">()</span>
+    <span class="n">fig</span><span class="p">.</span><span class="nf">add_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">hyrule</span> <span class="o">=</span> <span class="n">colors</span><span class="p">.</span><span class="n">LinearSegmentedColormap</span><span class="p">.</span><span class="nf">from_list</span><span class="p">(</span>
+        <span class="sh">"</span><span class="s">hyrule</span><span class="sh">"</span><span class="p">,</span> <span class="p">[</span><span class="sh">"</span><span class="s">#3D2E00</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">#C6C7B0</span><span class="sh">"</span><span class="p">]</span>
+    <span class="p">)</span>  <span class="c1"># colormap for hyrule land
+</span>    <span class="n">ax</span><span class="p">.</span><span class="nf">contourf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">land</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">hyrule</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">land</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contourf</span><span class="p">(</span>
+        <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">elevation</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="n">elevation</span><span class="p">.</span><span class="nf">min</span><span class="p">(),</span> <span class="mi">0</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">#212A2D</span><span class="sh">"</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contourf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">elevation</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">#41535A</span><span class="sh">"</span><span class="p">],</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contour</span><span class="p">(</span>
+        <span class="n">xs</span><span class="p">,</span>
+        <span class="n">ys</span><span class="p">,</span>
+        <span class="n">elevation</span><span class="p">,</span>
+        <span class="n">colors</span><span class="o">=</span><span class="sh">"</span><span class="s">#382D06</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">elevation</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span> <span class="mi">20</span><span class="p">),</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+        <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+        <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">.</span><span class="nf">contour</span><span class="p">(</span>
+        <span class="n">xs</span><span class="p">,</span>
+        <span class="n">ys</span><span class="p">,</span>
+        <span class="n">elevation</span><span class="p">,</span>
+        <span class="n">colors</span><span class="o">=</span><span class="sh">"</span><span class="s">#382D06</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">elevation</span><span class="p">.</span><span class="nf">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">),</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+        <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+        <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fig</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="sh">"</span><span class="s">./hynanrule.png</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>程序运行的过程中，它会自动进行瓦片 DEM 的下载、拼接，最后画图。图片效果如下：</p>
+
+<p><img src="/assets/img/draw-your-own-hyrule-with-python/01.png" alt="hynanrule" /></p>
+
+<p>我们看一下细节：</p>
+
+<p><img src="/assets/img/draw-your-own-hyrule-with-python/02.png" alt="hynanrule" />
+<img src="/assets/img/draw-your-own-hyrule-with-python/03.webp" alt="hynanrule" /></p>
+
+<p>是不是有内味儿了🙃 哦对了，代码里用了我自己的一个 API key，我不能保证它永远都有效。</p>]]></content><author><name>Clarmy</name><email>clarmyleewt@outlook.com</email></author><category term="DEM" /><summary type="html"><![CDATA[说起来塞尔达2王国之泪发售快两周了，这两周我已经狂卷了60个小时在海拉鲁大地。今天我想祭出一个去年就已经写好的一段代码，用真实世界 DEM 数据（海南岛）绘制的一个海拉鲁 style 的地图。]]></summary></entry></feed>

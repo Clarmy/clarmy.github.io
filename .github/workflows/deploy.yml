@@ -24,11 +24,12 @@ jobs:
     - name: Build Jekyll site
       run: bundle exec jekyll build
 
+    - name: Inject environment variables
+      run: |
+        echo "window._env_ = { CLIENT_ID: '${{ secrets.CLIENT_ID }}', CLIENT_SECRET: '${{ secrets.CLIENT_SECRET }}' };" > ./_site/env.js
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
-
-    - name: Inject environment variables
-      run: echo "window._env_ = { CLIENT_ID: '${{ secrets.CLIENT_ID }}', CLIENT_SECRET: '${{ secrets.CLIENT_SECRET }}' };" > ./_site/env.js

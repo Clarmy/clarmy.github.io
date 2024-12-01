@@ -7,6 +7,7 @@
 
 <script>
   console.log('Gitalk script is running');
+  console.log('location.href: ', location.href);
   var gitalk = new Gitalk({
     clientID: 'Ov23liqw6PdnCfILInVF',
     clientSecret: '9a28b15fbe546808c4ce2d2ee3d9981c0358f555',
@@ -14,7 +15,7 @@
     owner: 'Clarmy',
     admin: ['Clarmy'],
     id: md5(location.href), 
-    distractionFreeMode: false,  // Facebook-like distraction free mode
+    distractionFreeMode: false,
   });
 
   gitalk.render('gitalk-container');

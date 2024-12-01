@@ -4,6 +4,7 @@ date: 2024-11-29 00:00:00 +08:00
 modified: 2024-11-29 00:00:00 +08:00
 tags: [Python, Flask, JWT, Flask-JWT-Extended]
 description: "最近我们在使用 Flask 开发后端接口的时候，遇到一个奇怪的问题。它的具体表现是：在默认的 Debug 环境下运行服务时，如果请求头带有一个已经过期的 Access Token 它能正常返回预期的 401 错误。但是一旦上线到线上环境（基于 uWSGI + Nginx），接口就会返回 500 错误，后台记录错误信息是 `jwt.exceptions.ExpiredSignatureError: Signature has expired`。经过一番排查，找到了问题的原因。"
+comments: true
 ---
 最近我们在使用 Flask 开发后端接口的时候，遇到一个奇怪的问题。它的具体表现是：在默认的 Debug 环境下运行服务时，如果请求头带有一个已经过期的 Access Token 它能正常返回预期的 401 错误。但是一旦上线到线上环境（基于 uWSGI + Nginx），接口就会返回 500 错误，后台记录错误信息是 `jwt.exceptions.ExpiredSignatureError: Signature has expired`。经过一番排查，找到了问题的原因。
 

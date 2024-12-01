@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'Ov23liqw6PdnCfILInVF',
+    clientSecret: '60fd964ba7558ac99af3297c326e61c92ce5725a',
+    repo: 'clarmy.github.io',
+    owner: 'Clarmy',
+    admin: ['Clarmy'],
+    // id: location.pathname + location.search,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname + location.search), // md5(location.pathname + location.search), // Ensure uniqueness and length less than 50
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+  });
+
+  gitalk.render('gitalk-container');
+</script>

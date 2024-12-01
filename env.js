@@ -1,1 +1,1 @@
-window._env_ = { CLIENT_ID: '', CLIENT_SECRET: '' };
+window._env_ = { CLIENT_ID: 'Ov23liqw6PdnCfILInVF', CLIENT_SECRET: 'd376028347177fad973429c8e46255ac0ab6dfcb' };

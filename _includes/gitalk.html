@@ -9,8 +9,8 @@
   console.log('Gitalk script is running');
   console.log('location.href: ', location.href);
   var gitalk = new Gitalk({
-    clientID: 'Ov23liqw6PdnCfILInVF',
-    clientSecret: '9a28b15fbe546808c4ce2d2ee3d9981c0358f555',
+    clientID: window._env_.CLIENT_ID,
+    clientSecret: window._env_.CLIENT_SECRET,
     repo: 'clarmy.github.io',
     owner: 'Clarmy',
     admin: ['Clarmy'],

@@ -6,14 +6,14 @@
 <div id="gitalk-container"></div>
 
 <script>
+  console.log('Gitalk script is running');
   var gitalk = new Gitalk({
     clientID: 'Ov23liqw6PdnCfILInVF',
-    clientSecret: '60fd964ba7558ac99af3297c326e61c92ce5725a',
+    clientSecret: 'a45a8432cd129664d18dd1f0c277ac9d1d9790fd',
     repo: 'clarmy.github.io',
     owner: 'Clarmy',
     admin: ['Clarmy'],
-    // id: location.pathname + location.search,      // Ensure uniqueness and length less than 50
-    id: md5(location.pathname + location.search), // md5(location.pathname + location.search), // Ensure uniqueness and length less than 50
+    id: md5(location.pathname + location.search), 
     distractionFreeMode: false,  // Facebook-like distraction free mode
   });
 

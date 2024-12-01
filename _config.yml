@@ -88,8 +88,3 @@ plugins:
   - jekyll-sitemap
   - jekyll-postfiles
 
-# Gitalk settings
-comment_gitalk_clientId: Ov23liqw6PdnCfILInVF
-comment_gitalk_clientSecret: 60fd964ba7558ac99af3297c326e61c92ce5725a
-comment_gitalk_repo: clarmy.github.io
-github_username: Clarmy

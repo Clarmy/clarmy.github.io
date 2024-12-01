@@ -9,11 +9,11 @@
   console.log('Gitalk script is running');
   var gitalk = new Gitalk({
     clientID: 'Ov23liqw6PdnCfILInVF',
-    clientSecret: 'a45a8432cd129664d18dd1f0c277ac9d1d9790fd',
+    clientSecret: '9a28b15fbe546808c4ce2d2ee3d9981c0358f555',
     repo: 'clarmy.github.io',
     owner: 'Clarmy',
     admin: ['Clarmy'],
-    id: md5(location.pathname + location.search), 
+    id: md5(location.href), 
     distractionFreeMode: false,  // Facebook-like distraction free mode
   });
 

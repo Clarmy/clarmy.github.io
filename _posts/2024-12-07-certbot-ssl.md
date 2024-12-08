@@ -13,7 +13,7 @@ comments: true
 Certbot 的安装很简单，建议执行下面的命令把 certbot 和 nginx 插件一起装了：
 
 ```bash
-$ sudo apt-get install certbot python2-certbot-nginx  # CentOS 7
+$ sudo yum install certbot python2-certbot-nginx  # CentOS 7
 ```
 
 其他平台请自行查找安装命令。

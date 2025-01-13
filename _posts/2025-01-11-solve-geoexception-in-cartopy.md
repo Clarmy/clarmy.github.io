@@ -16,7 +16,7 @@ comments: true
 在遇到这个问题时，目前的解决方法是手动升级 shapely 所依赖的本地 GEOS 版本到 3.13。在 conda 环境下的具体操作是：
 
 1. 卸载 shapely ：`pip uninstall shapely`
-2. 安装 3.13 版本的 GEOS ：`conda install -c conda-forge geos=3.13`
+2. 安装 3.13 版本的 GEOS ：`conda install -c conda-forge geos==3.13`
 3. 重新安装不带二进制版本的 shapely ：`pip install shapely --no-binary shapely`
 
 建议在 Linux、MacOS 环境下使用，Windows 环境下经常会有一些未知且棘手的问题。

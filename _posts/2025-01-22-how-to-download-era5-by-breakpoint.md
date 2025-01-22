@@ -107,7 +107,7 @@ def download_data(month, day):
         request = request_template.copy()
         request["month"] = [month]
         request["day"] = [f"{day:02d}"]
-        savedir = "/data/reanalysis/era5/upper/grib/zqtuv/"
+        savedir = "/data/reanalysis/era5/upper/grib/zqtuv/2024/"
         os.makedirs(savedir, exist_ok=True)
         savefp = os.path.join(savedir, f"era5_{month}_{day:02d}.grib.zip")
         if os.path.exists(savefp):

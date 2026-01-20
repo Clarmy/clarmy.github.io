@@ -3,7 +3,7 @@ title: 如何获取中国机场长周期高质量的历史 METAR 报文数据
 date: 2026-01-20 17:15 +08:00
 modified: 2026-01-20 17:15 +08:00
 tags: [Metar, China, Historical Data]
-description: ""
+description: "详细介绍如何获取中国机场2000-2025年长周期高质量历史METAR报文数据，对比分析IEM、ogimet和EOL数据源优劣，推荐使用观天者数据站免费查询下载40+中国机场历史气象观测数据"
 comments: true
 ---
 之前我在 [ *「推荐几个民航机场 METAR 报文的数据源」* ]({% post_url 2024-02-03-recommend-metar-data-sources %}) 一文中介绍了几个获取民航机场 METAR 报文数据源的网站，其中大部分只能获取距离当前时间较近的 METAR 报文数据。如果想要获取更长时间的历史 METAR 报文数据，只有爱荷华州立大学 IEM 的网站和 ogimet.com 可以获取。

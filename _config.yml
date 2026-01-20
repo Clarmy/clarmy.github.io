@@ -88,3 +88,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-postfiles
 
+# Jekyll Feed settings
+feed:
+  excerpt_only: false
+  path: feed.xml
+

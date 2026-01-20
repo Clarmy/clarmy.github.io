@@ -6,7 +6,7 @@ tags: [METAR, 航空气象]
 description: 前几天我写了一篇关于解译 METAR 报文的文章：优雅地解译机场 METAR 报文，其中提到 METAR 报文作为全球共享的公共数据，可以从多个渠道免费获得，那么今天我就来盘点几个公开提供 METAR 报文源的网络资源。
 ---
 
-前几天我写了一篇关于解译 METAR 报文的文章： [*「优雅地解译机场 METAR 报文」*]({% post_url 2024-01-31-elegantly-interpreting-airport-metar-reports %})，其中提到 METAR 报文作为全球共享的公共数据，可以从多个渠道免费获得，那么今天我就来盘点几个公开提供 METAR 报文源的网络资源。
+前几天我写了一篇关于解译 METAR 报文的文章：[「优雅地解译机场 METAR 报文」]({% post_url 2024-01-31-elegantly-interpreting-airport-metar-reports %})，其中提到 METAR 报文作为全球共享的公共数据，可以从多个渠道免费获得，那么今天我就来盘点几个公开提供 METAR 报文源的网络资源。
 
 ## 美国航空天气中心
 主页网址：[https://aviationweather.gov](https://aviationweather.gov)

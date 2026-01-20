@@ -5,7 +5,7 @@ modified: 2022-03-12 00:00:00 +08:00
 tags: [GRIB, NetCDF]
 description: 由于前面写的一篇关于 GRIB 与 NetCDF 的文章《浅析GRIB与NetCDF数据格式的特点及性能对比》在GRIB2与NetCDF4文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。
 ---
-由于前面写的一篇关于 GRIB 与 NetCDF 的文章 [*「GRIB 与 NetCDF 数据格式的特点及性能对比」*]({% post_url 2022-03-06-analysis-grib-vs-netcdf %}) 在 GRIB2 与 NetCDF4 文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。
+由于前面写的一篇关于 GRIB 与 NetCDF 的文章[「GRIB 与 NetCDF 数据格式的特点及性能对比」]({% post_url 2022-03-06-analysis-grib-vs-netcdf %}) 在 GRIB2 与 NetCDF4 文件体积问题上有一些错误结论，经朋友指正，因此专门做此文予以更正。
 
 ## 摘要
 本文利用工具将一个原始 ERA5 的 GRIB1 格式文件转换为不同压缩算法下的 GRIB2、NetCDF3 以及不同压缩等级下的 NetCDF4 格式文件，同时对他们进行 bz2 压缩，最后对比它们的文件体积大小。最终的结论是，不论是否使用 bz2 压缩，体积最小的都是 GRIB2 家族的文件格式。
